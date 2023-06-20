@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { HashRouter as Router} from 'react-router-dom';
+
+
+import { DeclareRoutes } from './main_components/routes';
+import { ShowLinks } from './main_components/links';
 
 function App() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ShowLinks state={isDrawerOpen} stateFunction={toggleDrawer} />
+      
+      <DeclareRoutes />
     </div>
+    </Router>
   );
 }
+
+
 
 export default App;
