@@ -29,4 +29,13 @@
     text-align: left;
     font-family: monospace;
   }
+  .logo {
+    width: 450px;
+    height: 200px;
+  }
+.img_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
+}  

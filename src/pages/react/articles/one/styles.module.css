@@ -23,10 +23,11 @@
     text-align: center;
   }
   
-  .book_content {
+
+   .book_content {
     font-size: 10px;
     color: white;
     text-align: left;
     font-family: monospace;
   }
-  
+
