@@ -1,5 +1,6 @@
 import styles from './styles.module.css';
-
+import ImgBook1 from './assets/book1.jpg'
+import ImgBook2 from './assets/book2.jpg'
 
 
 export const ShowBooks = ()=>{
@@ -10,8 +11,29 @@ export const ShowBooks = ()=>{
             <h1 className={styles.title}>Book</h1>
            
             <hr></hr>
-            <h1>No Article</h1>
-         
+
+           <div className={styles.individual}>
+                <img src={ImgBook1} className={styles.img}/>
+                <div>
+                <h1>  Practical Binary Analysis</h1>
+                </div>
+                <div>
+                <h2>pretty good and updated book on binary analysis(status and dynamic), would recommend to read if you are interested in binary analysis</h2>
+                </div>
+               
+          </div>       
+          <hr></hr>  
+
+          <div className={styles.individual}>
+                <img src={ImgBook2} className={styles.img}/>
+                <div>
+                <h1>  Rust Atmoic and Locks</h1>
+                </div>
+                <div>
+                <h2>Extremelly well written book on rust concurrency and concurrency in genral, you will need some understanding of rust to follow along</h2>
+                </div>
+          </div>       
+          <hr></hr>  
             
             </div>
           </div>
