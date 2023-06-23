@@ -8,6 +8,7 @@ import { ShowMain } from '../pages/main/ShowMain';
 import { ShowOneNodejs } from '../pages/nodejs/articles/one/one';
 import { ShowOneReact } from "../pages/react/articles/one/one";
 import { NotFound } from "./404";
+import { ShowTwoNodejs } from "../pages/nodejs/articles/two/two";
 
 export const DeclareRoutes = () =>{
     return(
@@ -15,6 +16,8 @@ export const DeclareRoutes = () =>{
 <Routes>
 <Route path="*" element={<NotFound />}/>
 <Route path='/nodejs/one' element={<ShowOneNodejs />}/>
+<Route path='/nodejs/two' element ={<ShowTwoNodejs />}/>
+
 <Route path='/react/one' element={<ShowOneReact />}/>
 
 <Route path='/' element ={<ShowMain />}/>
