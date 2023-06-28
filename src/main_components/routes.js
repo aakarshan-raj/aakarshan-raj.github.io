@@ -1,14 +1,21 @@
 import { Route,Routes } from "react-router-dom";
+
 import { ShowReact } from '../pages/react/react';
+import { ShowOneReact } from "../pages/react/articles/one/one";
+
 import { ShowCpp } from '../pages/cpp/cpp';
+
 import { ShowNodejs } from '../pages/nodejs/nodejs';
+import { ShowOneNodejs } from '../pages/nodejs/articles/one/one';
+import { ShowTwoNodejs } from "../pages/nodejs/articles/two/two";
+
 import { ShowRust } from '../pages/rust/rust';
+import { ShowOneRust } from "../pages/rust/articles/one/one";
+import { ShowTwoRust } from "../pages/rust/articles/two/two";
+
 import { ShowBooks } from '../pages/books/books'
 import { ShowMain } from '../pages/main/ShowMain';
-import { ShowOneNodejs } from '../pages/nodejs/articles/one/one';
-import { ShowOneReact } from "../pages/react/articles/one/one";
 import { NotFound } from "./404";
-import { ShowTwoNodejs } from "../pages/nodejs/articles/two/two";
 
 export const DeclareRoutes = () =>{
     return(
@@ -19,6 +26,10 @@ export const DeclareRoutes = () =>{
 <Route path='/nodejs/two' element ={<ShowTwoNodejs />}/>
 
 <Route path='/react/one' element={<ShowOneReact />}/>
+
+<Route path='/rust/one' element ={<ShowOneRust />}/>
+<Route path='/rust/two' element ={<ShowTwoRust />}/>
+
 
 <Route path='/' element ={<ShowMain />}/>
 <Route path='/rust' element ={<ShowRust />}/>
