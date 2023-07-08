@@ -12,6 +12,8 @@ import { ShowTwoNodejs } from "../pages/nodejs/articles/two/two";
 import { ShowRust } from '../pages/rust/rust';
 import { ShowOneRust } from "../pages/rust/articles/one/one";
 import { ShowTwoRust } from "../pages/rust/articles/two/two";
+import { ShowThreeRust } from "../pages/rust/articles/three/three";
+
 
 import { ShowBooks } from '../pages/books/books'
 import { ShowMain } from '../pages/main/ShowMain';
@@ -29,6 +31,8 @@ export const DeclareRoutes = () =>{
 
 <Route path='/rust/one' element ={<ShowOneRust />}/>
 <Route path='/rust/two' element ={<ShowTwoRust />}/>
+<Route path='/rust/three' element ={<ShowThreeRust />}/>
+
 
 
 <Route path='/' element ={<ShowMain />}/>

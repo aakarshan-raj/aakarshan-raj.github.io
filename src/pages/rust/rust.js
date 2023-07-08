@@ -10,7 +10,8 @@ export const ShowRust = ()=>{
        
             <hr></hr>
             <h1><Link to="/rust/one">1. Ownership concept in Rust</Link></h1>
-            <h1><Link to="/rust/two">1. Borrowing concept in Rust</Link></h1>
+            <h1><Link to="/rust/two">2. Borrowing concept in Rust</Link></h1>
+            <h1><Link to="/rust/three">3. Chat Server in Rust(tokio) </Link></h1>
 
             
             </div>
