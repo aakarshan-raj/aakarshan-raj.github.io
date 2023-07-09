@@ -13,6 +13,8 @@ import { ShowRust } from '../pages/rust/rust';
 import { ShowOneRust } from "../pages/rust/articles/one/one";
 import { ShowTwoRust } from "../pages/rust/articles/two/two";
 import { ShowThreeRust } from "../pages/rust/articles/three/three";
+import { ShowFourRust } from "../pages/rust/articles/four/four";
+
 
 
 import { ShowBooks } from '../pages/books/books'
@@ -32,6 +34,7 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/one' element ={<ShowOneRust />}/>
 <Route path='/rust/two' element ={<ShowTwoRust />}/>
 <Route path='/rust/three' element ={<ShowThreeRust />}/>
+<Route path='/rust/four' element ={<ShowFourRust />}/>
 
 
 
