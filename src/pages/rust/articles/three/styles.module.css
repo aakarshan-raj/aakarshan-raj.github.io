@@ -46,10 +46,10 @@
 }
 
 .code_background {
-  background-color:#171414;
+  background-color:black;
   padding: 10px; 
   font-family: monospace;
   white-space: pre-wrap;
   font-size: 10px;
-  color: greenyellow;
+  color: #00a12b;
 }
