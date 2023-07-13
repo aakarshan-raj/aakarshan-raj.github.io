@@ -40,16 +40,14 @@
   
 }  
 
-
-.content{
-  margin: 100px;
-}
-
 .code_background {
+  
   background-color:black;
   padding: 10px; 
   font-family: monospace;
   white-space: pre-wrap;
   font-size: 10px;
   color: #00a12b;
+  border-radius: 15px;
+  
 }
