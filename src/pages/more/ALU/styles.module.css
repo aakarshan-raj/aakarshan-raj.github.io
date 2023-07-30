@@ -29,4 +29,19 @@
     text-align: left;
     font-family: monospace;
   }
+  .img_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
+}  
+
+
+.code_background {
+  background-color:#171414;
+  padding: 10px; 
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: greenyellow;
+}
