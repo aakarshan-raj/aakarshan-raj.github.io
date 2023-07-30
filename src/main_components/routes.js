@@ -14,7 +14,7 @@ import { ShowOneRust } from "../pages/rust/articles/one/one";
 import { ShowTwoRust } from "../pages/rust/articles/two/two";
 import { ShowThreeRust } from "../pages/rust/articles/three/three";
 import { ShowFourRust } from "../pages/rust/articles/four/four";
-
+import { ShowAlu } from "../pages/more/ALU/alu";
 
 
 import { ShowBooks } from '../pages/books/books'
@@ -28,6 +28,7 @@ export const DeclareRoutes = () =>{
 <Route path="*" element={<NotFound />}/>
 <Route path='/nodejs/one' element={<ShowOneNodejs />}/>
 <Route path='/nodejs/two' element ={<ShowTwoNodejs />}/>
+<Route path='/alu' element ={<ShowAlu />}/>
 
 <Route path='/react/one' element={<ShowOneReact />}/>
 

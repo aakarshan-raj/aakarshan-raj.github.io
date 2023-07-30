@@ -9,7 +9,8 @@ export const ShowLinks = (props) =>{
         <Drawer anchor="left" open={props.state} onClose={props.stateFunction}>
         <div className="drawer">
         <ul className="drawer-list">
-          <Link to={"/nodejs"} className="drawer-item">NodeJS </Link>
+          <li><Link to={"/nodejs"} className="drawer-item">NodeJS </Link></li>
+          <li><Link to={"/alu"} className="drawer-item">ALU </Link></li>
         </ul>
         </div>
 
