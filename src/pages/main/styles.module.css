@@ -17,7 +17,7 @@
   
    
   .title {
-    font-size: 90px;
+    font-size: 40px;
     color: white;
     font-family: monospace;
     text-align: center;
@@ -30,3 +30,23 @@
     font-family: monospace;
   }
   
+
+  .img_container{
+ 
+  
+}  
+
+
+.code_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#171414;
+  padding: 10px; 
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 10px;
+  color: greenyellow;
+}
+
+
