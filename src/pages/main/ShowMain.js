@@ -7,7 +7,7 @@ export const ShowMain = ()=>{
         <div className={styles.book_container}>
           <div className={styles.book}>
             <div className={styles.book_content}>
-            <h2 className={styles.title}>My RSA key for any communications</h2>
+            <h2 className={styles.title}>My RSA key for any communication</h2>
            
 <div className={styles.code_background}>
   <h2>{keys}</h2>
