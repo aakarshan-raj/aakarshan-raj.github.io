@@ -102,6 +102,62 @@ So whatever we are doing can be easily done without using Tokio, we are not usin
         
         <h2>here is the code without tokio, that does same stuff</h2>
 <div className={styles.code_background}><h2>{code_7}</h2></div>
+<h2>Core Tokio functionality will let us handle multiple client independently</h2>
+<h2>in our code the accpet is already in the loop, so we can handle multiple client already, but we have a problem, this program cannot handle multple client at the same time, for it we need concurrency. what it means is if one client connects, we cannot handle the next client at the same time.</h2>
+<h2>to do this we will use spawn() method and all the code that handles a client into it.</h2>
+<h2>Updated code:</h2>
+<div className={styles.code_background}><h2>{code_8}</h2></div>
+<h2>we are accepting connections and then we use tokio::spawn and pass a closure that will handle each client, we use `move` to pass the owership of socket, tokio::spawn will spawn a new async task within tokio runtime thread and will be mangaged by tokio runtime.</h2>
+<h2>Now our program can handle multiple client independtly.</h2>
+<h2>now working on chat server feature, what we need to do is what was happening in the first picture, each message from client will be broadcasted to each connected client.</h2>
+<h2>what we will need is a broadcast channel, a channel is used to pass messages between threads.</h2>
+<h2>A broadcast is `A multi-producer, multi-consumer broadcast queue. Each sent value is seen by all consumers.`</h2>
+<h2>To Make a channel we can use {code_14} this will return a sender and a receiver, x is the capacity.</h2>
+<h2>{code_13}</h2>
+<h2>using tx we can transmit any value sent by the client.
+tx.send(data), sends the data to all the client.
+now we need to recieve the data, for that we will use rx.recv(), it will get the messages.</h2>
+<h2>Updated Code:</h2>
+<div className={styles.code_background}><h2>{code_9}</h2></div>
+<h2>we need to clone the tx cause we are using it in loop and we clone tx throught calling subscribe on txx.
+with txx.send() we pass the message to the channel and just after that we receiver the message by calling .recv on the Receiver, then we write that message to the socket.
+</h2>
+<h2>the current code is very bugging when it comes to when it sends the message to other clients:</h2>
+<h2>For example: when we click enter that's when we receive any message in queue, and there is no order at all, why? cause we have written code in that way
+<br />The Order</h2>
+<ul>
+  <h2>1. client sends message, we read it</h2>
+<h2>2. we pass it to Sender(txx)</h2>
+<h2>3. we pass it to reciever</h2>
+<h2>4. we send it to all the client</h2>
+</ul>
+<h2>Opeartion 1 and 3 are await , what we want is to run them at the same time and not with await</h2>
+<h2>we can use select! macro provided by tokio, that will run two async task concurrently at the same time.
+</h2>
+<h2>What we want to do first is: read from client and pass it to sender, then we want to recv it and send it to client, we can do it using select!. It takes a future and calls await on it and then we can do what we want</h2>
+<h2>Updated code:</h2>
+<div className={styles.code_background}><h2>{code_10}</h2></div>
+<h2>Tokio::select!{}
+This is  used to concurrently wait for multiple asynchronous tasks or operations to complete. Both the expression can be ran concurrently, but only on block of code will run at once
+Its syntax is like this</h2>
+<div className={styles.code_background}><h2>{code_11}</h2></div>
+<h2>each patter and expression will a async operation for which we want to wait for it.</h2>
+<h2>here we are waiting for reading the message and then sending the message. its like match expression.</h2>
+<h2>Any operation completes first will execute the block code that it was, each expression returns a future</h2>
+<ul>
+  <h2>1. buffer.read_line()</h2>
+  <h2>2. rxx.recv()</h2>
+</ul>
+<h2>We still have a problem, the message we are sending is also received by us, its just echoing, which is not the behaviour we want.
+We can send the addr to in the broadcast and when we write the data, we can exclude it if the address is same in the broadcast when the send was called.
+here is the updated code</h2>
+<div className={styles.code_background}><h2>{code_12}</h2></div>
+
+
+
+
+
+
             </div>
              </div>
           </div>
@@ -187,3 +243,128 @@ const code_7 =  `async fn main() {
       print!("Message>{}", lines);
   }
 }`;
+
+const code_8 = `async fn main() {
+  let listner = TcpListener::bind("localhost:8080").await.unwrap();
+  loop{
+  let (mut socket, _addr) = listner.accept().await.unwrap();
+
+  tokio::spawn(async move {
+
+          let (read, mut write) = socket.split();
+
+          let mut buffer = BufReader::new(read);
+          loop {
+              let mut lines = String::new();
+              let size = buffer.read_line(&mut lines).await.unwrap();
+              write.write(&mut lines.as_bytes()).await.unwrap();
+              print!("Message>{}", lines);
+          }
+  });
+}
+}`;
+const code_9 = `use tokio::{
+  io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader},
+  net::TcpListener,
+  sync::broadcast,
+};
+
+#[tokio::main]
+async fn main() {
+  let listner = TcpListener::bind("localhost:8082").await.unwrap();
+  let (tx, rx) = broadcast::channel::<String>(10);
+  loop {
+      let txx = tx.clone();
+      let mut rxx = txx.subscribe();
+      let (mut socket, _addr) = listner.accept().await.unwrap();
+
+      tokio::spawn(async move {
+          let (read, mut write) = socket.split();
+
+          let mut buffer = BufReader::new(read);
+          loop {
+              let mut lines = String::new();
+              let size = buffer.read_line(&mut lines).await.unwrap();
+              txx.send(lines.clone()).unwrap();
+              let msg = rxx.recv().await.unwrap();
+              write.write(&mut msg.as_bytes()).await.unwrap();
+              print!("Message>{}", lines);
+          }
+      });
+  }
+}`;
+const code_10 = `async fn main() {
+  let listner = TcpListener::bind("localhost:8080").await.unwrap();
+  let (tx, rx) = broadcast::channel::<String>(10);
+  loop {
+      let txx = tx.clone();
+      let mut rxx = txx.subscribe();
+      let (mut socket, _addr) = listner.accept().await.unwrap();
+
+      tokio::spawn(async move {
+          let (read, mut write) = socket.split();
+
+          let mut buffer = BufReader::new(read);
+          loop {
+              let mut lines = String::new();
+              tokio::select!{
+              result = buffer.read_line(&mut lines)=>{
+              txx.send(lines.clone()).unwrap();
+              }
+             
+              result = rxx.recv() =>{
+              let msg = result.unwrap();    
+              write.write(&mut msg.as_bytes()).await.unwrap();
+              print!("Message>{}", lines);
+              }
+              }
+          }
+      });
+  }
+}`;
+const code_11 = `tokio::select! {
+  pattern1 = expression1 => {
+      // Code to execute when expression1 completes
+  }
+  pattern2 = expression2 => {
+      // Code to execute when expression2 completes
+  }
+  // ... add more patterns and expressions as needed
+}`;
+const code_12 = `async fn main() {
+  let listner = TcpListener::bind("localhost:8080").await.unwrap();
+  let (tx, rx) = broadcast::channel(10);
+  loop {
+      let txx = tx.clone();
+      let mut rxx = txx.subscribe();
+      let (mut socket, addr) = listner.accept().await.unwrap();
+
+      tokio::spawn(async move {
+          let (read, mut write) = socket.split();
+
+          let mut buffer = BufReader::new(read);
+          loop {
+              let mut lines = String::new();
+              tokio::select!{
+              result = buffer.read_line(&mut lines)=>{
+              if result.unwrap() == 2{
+                  break;
+              }    
+              txx.send((lines.clone(),addr)).unwrap();
+              
+              }
+             
+              result = rxx.recv() =>{
+              let (msg,addr_check) = result.unwrap();    
+              if addr != addr_check{
+              write.write(&mut msg.as_bytes()).await.unwrap();
+              }
+              }
+              }
+          }
+      });
+  }
+}`;
+
+const code_13 = `let (tx,rx) = broadcast::channel::<String>(10);`;
+const code_14 = `broadcast::channel::<String>(x)`;
