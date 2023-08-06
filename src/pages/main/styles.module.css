@@ -31,22 +31,20 @@
   }
   
 
-  .img_container{
- 
-  
-}  
-
 
 .code_background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:#171414;
-  padding: 10px; 
+  background-color: #171414;
+  padding: 10px;
   font-family: monospace;
   white-space: pre-wrap;
-  font-size: 10px;
+  font-size: 10px; /* Adjust this font size for better readability on mobile */
   color: greenyellow;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  word-wrap: break-word; 
+
 }
 
-
+.centered_container {
+  display: flex;
+  justify-content: center;
+}
