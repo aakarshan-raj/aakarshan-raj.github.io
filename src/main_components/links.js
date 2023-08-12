@@ -11,6 +11,8 @@ export const ShowLinks = (props) =>{
         <ul className="drawer-list">
           <li><Link to={"/nodejs"} className="drawer-item">NodeJS </Link></li>
           <li><Link to={"/alu"} className="drawer-item">ALU </Link></li>
+          <li><Link to={"/ram16k"} className="drawer-item">RAM16K </Link></li>
+
         </ul>
         </div>
 
