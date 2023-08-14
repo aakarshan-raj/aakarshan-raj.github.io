@@ -35,7 +35,10 @@
     align-items: center;
   
 }  
-
+.img_container img {
+  max-width: 100%; 
+  height: auto;    
+}
 
 .code_background {
   background-color:#171414;
@@ -44,4 +47,5 @@
   white-space: pre-wrap;
   font-size: 14px;
   color: greenyellow;
+  overflow: auto;
 }
