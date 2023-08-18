@@ -14,12 +14,15 @@ import { ShowOneRust } from "../pages/rust/articles/one/one";
 import { ShowTwoRust } from "../pages/rust/articles/two/two";
 import { ShowThreeRust } from "../pages/rust/articles/three/three";
 import { ShowFourRust } from "../pages/rust/articles/four/four";
+import { ShowFiveRust } from "../pages/rust/articles/five/five";
+
 import { ShowAlu } from "../pages/more/ALU/alu";
 import { ShowRam } from "../pages/more/RAM16K/ram";
 
 import { ShowBooks } from '../pages/books/books'
 import { ShowMain } from '../pages/main/ShowMain';
 import { NotFound } from "./404";
+
 
 export const DeclareRoutes = () =>{
     return(
@@ -38,6 +41,7 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/two' element ={<ShowTwoRust />}/>
 <Route path='/rust/three' element ={<ShowThreeRust />}/>
 <Route path='/rust/four' element ={<ShowFourRust />}/>
+<Route path='/rust/five' element ={<ShowFiveRust />}/>
 
 
 

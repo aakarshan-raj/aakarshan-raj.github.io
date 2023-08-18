@@ -48,6 +48,8 @@
   white-space: pre-wrap;
   font-size: 10px;
   color: greenyellow;
+  overflow: auto;
+
 }
 
 

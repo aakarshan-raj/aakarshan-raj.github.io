@@ -21,6 +21,8 @@
     color: white;
     font-family: monospace;
     text-align: center;
+    overflow: auto;
+
   }
   
   .book_content {
@@ -49,4 +51,6 @@
   white-space: pre-wrap;
   font-size: 14px;
   color: greenyellow;
+  overflow: auto;
+
 }
