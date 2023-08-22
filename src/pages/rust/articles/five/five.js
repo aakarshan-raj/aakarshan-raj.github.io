@@ -45,7 +45,23 @@ export const ShowFiveRust = () => {
               <h2>{code_5}</h2>
             </div>
             <h2>Notice we also implemented Clone trait, this is because Clone is supertrait of Copy and we want to enforce all types to also implement clone in case we deal with generic functions where types are not known beforehand, and we also implement Debug trait to print out struct using {debug} </h2>
+            <h1>Clone Trait</h1>
+            <h2>Clone trait is generally applied for types that are store on heap and their size is not known at compile time.
 
+              we cannot make copies of data implicitly like with copy, we need to call the clone function on the variable to make a (deep)copy.</h2>
+            <h2>Example:</h2>
+
+            <div className={styles.code_background}>
+              <h2>{code_6}</h2>
+            </div>
+            <h2>when Heap allocated data types are passed on to the function, we dont make a copy. to make a copy we can call clone method</h2>
+            <div className={styles.code_background}>
+              <h2>{code_7}</h2>
+            </div>
+            <h2>Implementing Clone trait for a struct</h2>
+            <div className={styles.code_background}>
+              <h2>{code_8}</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -110,6 +126,36 @@ fn main() {
  let y = x;
  println!("{:?} {:?}",x,y);
 
+}`;
+
+const code_6 = `fn main() {
+  let x: String = "hello".to_string();
+  let y = x.clone();
+  println!("{} {}", x, y);
+}`;
+const code_7 = `
+fn show(s:String){
+    println!("{}",s);
+}
+
+fn main() {
+    let x: String = "hello".to_string();
+    show(x.clone());
+    println!("{}", x);
+}`;
+const code_8 = `#[derive(Debug, Clone)]
+struct Data {
+    name: String,
+    age: u32,
+}
+
+fn main() {
+    let x = Data {
+        name: String::from("somename"),
+        age: 33,
+    };
+    let y = x.clone();
+    println!("{:?} {:?}", x, y);
 }`;
 
 const debug = `{:?}`;
