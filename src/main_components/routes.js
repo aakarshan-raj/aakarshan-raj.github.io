@@ -23,6 +23,8 @@ import { ShowBooks } from '../pages/books/books'
 import { ShowMain } from '../pages/main/ShowMain';
 import { NotFound } from "./404";
 
+import { ShowAssembly } from "../pages/more/Assembly/assembly";
+import { ShowOneAssembly } from "../pages/more/Assembly/articles/one/one";
 
 export const DeclareRoutes = () =>{
     return(
@@ -43,7 +45,7 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/four' element ={<ShowFourRust />}/>
 <Route path='/rust/five' element ={<ShowFiveRust />}/>
 
-
+<Route path='/assembly/one' element={<ShowOneAssembly/>}/>
 
 <Route path='/' element ={<ShowMain />}/>
 <Route path='/rust' element ={<ShowRust />}/>
@@ -51,6 +53,7 @@ export const DeclareRoutes = () =>{
 <Route path='/cpp' element ={<ShowCpp />}/>
 <Route path='/books' element ={<ShowBooks />}/>
 <Route path='/nodejs' element ={<ShowNodejs />}/>
+<Route path='/assembly' element={<ShowAssembly/>} />
 
 </Routes>
 </div>

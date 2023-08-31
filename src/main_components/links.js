@@ -10,6 +10,7 @@ export const ShowLinks = (props) =>{
         <div className="drawer">
         <ul className="drawer-list">
           <li><Link to={"/nodejs"} className="drawer-item">NodeJS </Link></li>
+          <Link to={"/react"} className="navbar-item">REACT</Link>
           <li><Link to={"/alu"} className="drawer-item">ALU </Link></li>
           <li><Link to={"/ram16k"} className="drawer-item">RAM16K </Link></li>
 
@@ -19,8 +20,8 @@ export const ShowLinks = (props) =>{
       </Drawer>
       
       <Link to={"/rust"} className="navbar-item">RUST</Link>
-      <Link to={"/react"}className="navbar-item">REACT</Link>
-      <Link to={"/cpp"}className="navbar-item">C++</Link>
+      <Link to={"/assembly"} className="navbar-item">ASSEMBLY</Link>
+      <Link to={"/cpp"} className="navbar-item">C++</Link>
       <Link to={"/books"} className="navbar-item">BOOKS</Link>
       <Link className="navbar-item" onClick={props.stateFunction}>MORE</Link>
 
