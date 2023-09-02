@@ -50,3 +50,13 @@ white-space: pre-wrap;
 font-size: 10px;
 color: greenyellow;
 }
+
+
+.code_background_pink {
+  background-color:#171414;
+  padding: 10px; 
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 10px;
+  color: #fa7ea8;
+  }
