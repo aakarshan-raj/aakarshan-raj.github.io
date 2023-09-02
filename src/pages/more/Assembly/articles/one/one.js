@@ -1,5 +1,6 @@
 import styles from "./styles.module.css"
 import stack_one from './imgs/stack_one.png'
+import stack_two from './imgs/stack_two.png'
 
 export const ShowOneAssembly = () => {
   return (
@@ -84,40 +85,49 @@ export const ShowOneAssembly = () => {
               {more_range}
             </h2>
           </div>
-<h2>we can notice that the stack is be increased everytime there is a function call.</h2>
-<h2>According to microsoft:"The stack will always be maintained 16-byte aligned, except within the prolog"</h2>
-       
-<h2>whenver a function is called 8 byte of data is being pushed onto the stack, that's why in every function whenever we sub the rsp, there is always +8h, to make the stack 16 byte aligned.</h2>
-<h2>RET address+8byte = 16 byte</h2>
+          <h2>we can notice that the stack is be increased everytime there is a function call.</h2>
+          <h2>According to microsoft:"The stack will always be maintained 16-byte aligned, except within the prolog"</h2>
 
-<h2>in this example we can see the disassembly of func3() it subs the stack by 18h,
-8 of it for 16 byte alligment and in the function we have a variable, so 10h for that, why 10h? cause that's the least it can sub because 10h is 16 in decimal, that can point to 16 byte worth of data, which is maintained by the stack.
-<h2>if in any case the localvariable takes more than 16 byte, say 20 byte the stack will be subbed 28h instead, 8 for stack allignment, leaving 20h, 20h can point 32 byte, for 5 int's worth of 20 byte that , that will leave 12 byte, meaning if we can allocate 8 int(32 byte) and if we allocate more than that, the rsp will be subbed more in multiple of 10h(16 in decimal) as the stack needs be to 16 byte alligned so it will be subbed by 38h, giving 16 byte more.</h2>
-<h2>also in cases where we are just calling another function, the call to function will put 8 byte worth of data on to the stack too, and we will still allocate some extra for local variable like in case of func()</h2>
+          <h2>whenver a function is called 8 byte of data is being pushed onto the stack, that's why in every function whenever we sub the rsp, there is always +8h, to make the stack 16 byte aligned.</h2>
+          <h2>RET address+8byte = 16 byte</h2>
+
+          <h2>in this example we can see the disassembly of func3() it subs the stack by 18h,
+            8 of it for 16 byte alignment and in the function we have a variable, so 10h for that, why 10h?
+            cause that's the least it can sub because 10h is 16 in decimal, that can point to 16 byte worth of data, which is maintained by the stack.
+          </h2>
+          <h2>if in any case the localvariable takes more than 16 byte, say 20 byte the stack will be subbed 28h instead, 8 for stack alignment,
+            leaving 20h, 20h can point 32 byte, for 5 int's worth of 20 byte that , that will leave 12 byte, meaning if we can allocate 8 int(32 byte)
+            and if we allocate more than that, the rsp will be subbed more in multiple of 10h(16 in decimal) as the stack needs be to 16 byte alignment
+            so it will be subbed by 38h, giving 16 byte more.
+          </h2>
+          <h2>also in cases where we are just calling another function, the call to function will put 8 byte worth of data on to the stack too,
+            and we will still allocate some extra for local variable like in case of func()</h2>
+
+          <hr />
+
+          <h2>Another example</h2>
+
+
+          <div className={styles.code_background_pink}>
+            <h2>
+              {code_5}
+            </h2>
+          </div>
+
+          <div className={styles.code_background_pink}>
+            <h2>
+              {disass_5}
+            </h2>
+          </div>
+          <h2>The stack diagram is as following:</h2>
+          <div className={styles.img_container}>
+            <img src={stack_two}></img>
+          </div>
+<h2>
+In this disassembly and Stack diagram we can observe that main calls a function, putting 8 byte on to the stack, the rsp is subbed by 28h, 8 of it for stack alignment, 8 for the next instruction that is pushed on stack, that leaves us with
+18h(24 in decimal), with that we get into func, where rsp is subbed by 28h, +8h of it to align the stack, then we allocate the variables in it.
 </h2>
-          <hr/>
-
-
-
-
-          <div className={styles.code_background_pink}>
-            <h2>
-
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-
-            </h2>
-          </div>
-
+<hr/>
         </div>
       </div>
     </div>
@@ -238,11 +248,37 @@ func3
 000000014000100E  add         rsp,18h  
 0000000140001012  ret  `;
 
-const code_5 = ``;
-const disass_5 = ``;
+const code_5 = `
+int func() {
+    long long i = 0xf01dab1ef007ba11;
+    long long j = 0x0b57ac1e5;
+    long long k = 0x57abbadabad00;
+    return i + j;
+}
+int main() {
+    return func();
+}`;
+const disass_5 = `main
+0000000140001050  sub         rsp,28h  
+0000000140001054  call        func (0140001000h)  
+0000000140001059  add         rsp,28h  
+000000014000105D  ret
 
-const code_ = ``;
-const disass_ = ``;
+func
+0000000140001000  sub         rsp,28h  
+0000000140001004  mov         rax,0F01DAB1EF007BA11h  
+000000014000100E  mov         qword ptr [i],rax  
+0000000140001013  mov         eax,0B57AC1E5h  
+0000000140001018  mov         qword ptr [rsp],rax  
+000000014000101C  mov         rax,57ABBADABAD00h  
+0000000140001026  mov         qword ptr [k],rax  
+000000014000102B  mov         rax,qword ptr [rsp]  
+000000014000102F  mov         rcx,qword ptr [i]  
+0000000140001034  add         rcx,rax  
+0000000140001037  mov         rax,rcx  
+000000014000103A  add         rsp,28h  
+000000014000103E  ret  `;
+
 
 const range = `0x0000000000000000
 0xFFFFFFFFFFFFFFFF`;
