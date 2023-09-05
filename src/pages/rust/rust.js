@@ -14,6 +14,7 @@ export const ShowRust = ()=>{
             <h1><Link to="/rust/three">3. Traits in Rust </Link></h1>
             <h1><Link to="/rust/four">4. Chat Server in Rust(tokio) </Link></h1>
             <h1><Link to="/rust/five">4. Clone and Copy Traits</Link></h1>
+            <h1><Link to="/rust/six">5. Making GUI application with ICED in Rust</Link></h1>
 
             
             </div>
