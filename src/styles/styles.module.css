@@ -68,3 +68,11 @@
     font-size: 10px;
     color: hsl(0, 84%, 51%);
     }
+
+    .center_it {
+
+      font-family: monospace;
+      text-align: center;
+      overflow: auto;
+  
+    }
