@@ -17,7 +17,7 @@
   
    
   .title {
-    font-size: 90px;
+    font-size: 60px;
     color: white;
     font-family: monospace;
     text-align: center;
@@ -50,3 +50,21 @@
   font-size: 10px;
   color: greenyellow;
 }
+
+.code_background_pink {
+  background-color:#171414;
+  padding: 10px; 
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 10px;
+  color: #fa7ea8;
+  }
+
+  .code_background_red {
+    background-color:#171414;
+    padding: 10px; 
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 10px;
+    color: hsl(0, 84%, 51%);
+    }
