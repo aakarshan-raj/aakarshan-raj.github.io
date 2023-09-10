@@ -12,8 +12,8 @@ export const ShowAssembly = ()=>{
        
             <hr></hr>
             <h1>1.<Link to={"/Assembly/one"}>SUB RSP,0xh</Link></h1>
-         
-            
+            <h1>1.<Link to={"/Assembly/two"}>Instruction Set</Link></h1>
+
             </div>
           </div>
         </div>

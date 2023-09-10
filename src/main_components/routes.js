@@ -15,6 +15,8 @@ import { ShowTwoRust } from "../pages/rust/articles/two/two";
 import { ShowThreeRust } from "../pages/rust/articles/three/three";
 import { ShowFourRust } from "../pages/rust/articles/four/four";
 import { ShowFiveRust } from "../pages/rust/articles/five/five";
+import { ShowSixRust } from "../pages/rust/articles/six/five";
+
 
 import { ShowAlu } from "../pages/more/ALU/alu";
 import { ShowRam } from "../pages/more/RAM16K/ram";
@@ -25,7 +27,7 @@ import { NotFound } from "./404";
 
 import { ShowAssembly } from "../pages/more/Assembly/assembly";
 import { ShowOneAssembly } from "../pages/more/Assembly/articles/one/one";
-import { ShowSixRust } from "../pages/rust/articles/six/five";
+import { ShowTwoAssembly } from "../pages/more/Assembly/articles/two/two";
 
 export const DeclareRoutes = () =>{
     return(
@@ -48,6 +50,8 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/six' element ={<ShowSixRust />}/>
 
 <Route path='/assembly/one' element={<ShowOneAssembly/>}/>
+<Route path='/assembly/two' element={<ShowTwoAssembly/>}/>
+
 
 <Route path='/' element ={<ShowMain />}/>
 <Route path='/rust' element ={<ShowRust />}/>
