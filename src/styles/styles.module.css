@@ -1,50 +1,52 @@
 .book_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    flex-direction: column;
-  }
-  
-  .book {
-    border: 1px solid red;
-    padding: 20px;
-    width: 90%;
-    height: 100%;
-    background-color: #171414;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-   
-  .title {
-    font-size: 60px;
-    color: white;
-    font-family: monospace;
-    text-align: center;
-    overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+}
 
-  }
-  
-  .book_content {
-    font-size: 10px;
-    color: white;
-    text-align: left;
-    font-family: monospace;
-  }
-  .logo {
-    width: 450px;
-    height: 200px;
-  }
-.img_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-}  
+.book {
+  border: 1px solid red;
+  padding: 20px;
+  width: 90%;
+  height: 100%;
+  background-color: #171414;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.title {
+  font-size: 60px;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  overflow: auto;
+
+}
+
+.book_content {
+  font-size: 10px;
+  color: white;
+  text-align: left;
+  font-family: monospace;
+}
+
+.logo {
+  width: 450px;
+  height: 200px;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 .code_background {
-  background-color:#171414;
-  padding: 10px; 
+  background-color: #171414;
+  padding: 10px;
   font-family: monospace;
   white-space: pre-wrap;
   font-size: 10px;
@@ -52,27 +54,32 @@
 }
 
 .code_background_pink {
-  background-color:#171414;
-  padding: 10px; 
+  background-color: #171414;
+  padding: 10px;
   font-family: monospace;
   white-space: pre-wrap;
   font-size: 10px;
   color: #fa7ea8;
-  }
+}
 
-  .code_background_red {
-    background-color:#171414;
-    padding: 10px; 
-    font-family: monospace;
-    white-space: pre-wrap;
-    font-size: 10px;
-    color: hsl(0, 84%, 51%);
-    }
+.code_background_red {
+  background-color: #171414;
+  padding: 10px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 10px;
+  color: hsl(0, 84%, 51%);
+}
 
-    .center_it {
+.center_it {
 
-      font-family: monospace;
-      text-align: center;
-      overflow: auto;
-  
-    }
+  font-family: monospace;
+  text-align: center;
+  overflow: auto;
+
+}
+
+.instruction{
+  color: rgb(255, 53, 164);
+  font-family: monospace;
+}
