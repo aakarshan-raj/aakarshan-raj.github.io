@@ -80,6 +80,7 @@
 }
 
 .instruction{
-  color: rgb(255, 53, 164);
-  font-family: monospace;
+  color: rgb(240, 50, 50);
+  font-size: large;
+  font-family: Courier;
 }
