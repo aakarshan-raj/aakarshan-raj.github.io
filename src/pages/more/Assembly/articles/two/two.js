@@ -127,6 +127,16 @@ export const ShowTwoAssembly = () => {
           </div>
           <hr />
 
+
+          <h2 className={styles.instruction}>LEA </h2>
+          <h2>Load effective memory</h2>
+          <h2>[] here doesn't mean that we will load memory of the value passed.</h2>
+          <h2>used for pointer arithmetic such as calulating addres of element of a array.</h2>
+          <div className={styles.code_background}>
+            <h2>{code_10}</h2>
+          </div>
+          <hr />
+
         </div>
       </div>
     </div >
@@ -194,3 +204,7 @@ const code_8 = `moving value in CX(16 bit) into RAX(64 bit), if the value in CX 
 movsx rax, cx`;
 
 const code_9 = `movsxd rax, edx`;
+
+const code_10 = `rax = rdx+rbx*8+5
+lea rax,[rdx+rbx*8+5]
+`;
