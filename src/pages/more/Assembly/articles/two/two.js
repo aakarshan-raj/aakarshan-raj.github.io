@@ -137,6 +137,14 @@ export const ShowTwoAssembly = () => {
           </div>
           <hr />
 
+
+          <h2 className={styles.instruction}>JMP </h2>
+          <h2>unconditional jump</h2>
+          <div className={styles.code_background}>
+            <h2>{code_11}</h2>
+          </div>
+          <hr />
+
         </div>
       </div>
     </div >
@@ -208,3 +216,17 @@ const code_9 = `movsxd rax, edx`;
 const code_10 = `rax = rdx+rbx*8+5
 lea rax,[rdx+rbx*8+5]
 `;
+
+const code_11 = `short relative 
+jmp rel8 // RIP = RIP+1 byte
+if RIP = 0x000013
+then after jmp 0x0C RIP = 0x000015+0x0C =>0x000021
+
+jmp -2 //infinite loop
+
+
+near relative
+jmp rel32 // RIP = RIP+4 byte
+
+far absolute
+jmp r/m64 // RIP = r/m63`;
