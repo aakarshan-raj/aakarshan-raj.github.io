@@ -139,11 +139,46 @@ export const ShowTwoAssembly = () => {
 
 
           <h2 className={styles.instruction}>JMP </h2>
-          <h2>unconditional jump</h2>
+          <h2>unconditional jump, changes RIP (goto, functions, interrupts)</h2>
           <div className={styles.code_background}>
             <h2>{code_11}</h2>
           </div>
           <hr />
+
+          <h2 className={styles.instruction}>CMP </h2>
+          <h2>cmp operand1, operand2</h2>
+          <h2>substract operand2 from operand1 and sets the appropriate flags.</h2>
+          <h2>different flags:</h2>
+          <h2>1. ZF: zero Flag, set when the result of operation is zero (7th bit in RFLAGS)</h2>
+          <h2>2. SF: sign flag, set when MSB of result is set to 1 (8th bit in RFLAGS)</h2>
+          <h2>3. OF: overflow flag, set if the result overflows</h2>
+          <h2>4. CF: carry flag, set if the operation used carry bit</h2>
+
+          <div className={styles.code_background}>
+            <h2>{code_15}</h2>
+          </div>
+          <hr />
+
+          <h2 className={styles.instruction}>Conditioanl Jump instructions </h2>
+          <h2>Mnemonic Translations:</h2>
+          <div className={styles.code_background}>
+            <h2>{code_12}</h2>
+          </div>
+          <h2>instructions:</h2>
+          <div className={styles.code_background}>
+            <h2>{code_13}</h2>
+          </div>
+          <h2>if the flags are set that is checked for the jump, the RIP will change</h2>
+          <h2>For unsigned variables JA and JB is used, the operands in cmp before signed jump checks are in two's compliment, so if MSB is 1, its negative value.</h2>
+          <h2>Another way to calculate the jump when reading disassembly is put the jump instruction between the call operand (ONLY for intel syntax).</h2>
+         <h2>example:</h2>
+         <div className={styles.code_background}>
+            <h2>{code_14}</h2>
+          </div>
+          <h2>we can see it as: cmp 0x13 {equal_less} 0x12</h2>
+          <h2>which is true so jump to 0x000014 will occur</h2>
+          <hr />
+
 
         </div>
       </div>
@@ -230,3 +265,25 @@ jmp rel32 // RIP = RIP+4 byte
 
 far absolute
 jmp r/m64 // RIP = r/m63`;
+
+const code_12 =
+  `A: Above(greater), unsigned >
+B: Below(less), unsigned    <
+G: Greater, signed          > 
+L: Less, signed             <
+E: Equal(also Z )           =
+N: Not                      !`;
+const code_13 =
+  `JZ/JE   location, ZF == 1
+JNZ/JNE location, ZF == 0 
+JLE/JNG location, ZF == 1 || SF !== OF
+JGE/JNL location, SF == OF
+JBE/JNA location, CF == 1 || ZF == 1 
+JB      location, CF == 1`;
+const code_14 = `cmp 0x13, 0x12
+jle 0x000014`;
+
+const code_15 = `cmp 0x10,0x10 // will set zf 
+cmp dword ptr [rsp+4], eax // sub 4 byte from memory location [rsp+4] by what eax holds.
+`;
+const equal_less = `<=`;
