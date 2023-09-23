@@ -360,7 +360,9 @@ JNZ/JNE location, ZF == 0
 JLE/JNG location, ZF == 1 || SF !== OF
 JGE/JNL location, SF == OF
 JBE/JNA location, CF == 1 || ZF == 1 
-JB      location, CF == 1`;
+JB      location, CF == 1
+JS      location, SF == 1
+JNS     location, SF == 0   `;
 const code_14 = `cmp 0x13, 0x12
 jle 0x000014`;
 
