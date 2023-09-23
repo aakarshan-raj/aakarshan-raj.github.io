@@ -245,6 +245,21 @@ export const ShowTwoAssembly = () => {
           <h2>in optimised code , compiler removes DEC</h2>
           <hr />
 
+          <h2 className={styles.instruction}>TEST</h2>
+          <h2>test operand_1, operand_2</h2>
+          <h2>perform and operation on operand_1 and operand_2, change flags , discard the values </h2>
+          <div className={styles.code_background}>
+            <h2>{code_22}</h2>
+          </div>
+          <h2>in less optimised code we will see if we are anding two values</h2>
+          <div className={styles.code_background}>
+            <h2>{code_23}</h2>
+          </div>
+          <h2>which does basically same thing, after we peform AND operation and store the result in eax, then we test the value to test if the value is zero or not, performing AND operation on a register with itself gives same value. </h2>
+          <h2>same pattern can be seen when performing OR operation and checking the result</h2>
+          <hr />
+
+
 
         </div>
       </div>
@@ -371,3 +386,10 @@ const code_19 = `not rcx // rcx = ~rcx`;
 
 const code_20 = `inc rax // rax = rax + 1`;
 const code_21 = `dec rax // rax = rax - 1`;
+
+const code_22 = `test eax,ecx // perform eax & ecx and set flags`;
+const code_23 = `and ecx,eax
+
+mov eax,ecx
+
+test eax,eax`;
