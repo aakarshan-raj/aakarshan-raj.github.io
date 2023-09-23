@@ -222,6 +222,29 @@ export const ShowTwoAssembly = () => {
           </div>
           <hr />
 
+          <h2 className={styles.instruction}>INC</h2>
+          <h2>inc operand</h2>
+          <h2>the operand is in r/mX </h2>
+          <h2>increases the operand by 1.</h2>
+          <h2>can set OF SF ZF AF PF CF</h2>
+          <div className={styles.code_background}>
+            <h2>{code_20}</h2>
+          </div>
+          <h2>in optimised code , compiler removes INC</h2>
+          <hr />
+
+
+          <h2 className={styles.instruction}>DEC</h2>
+          <h2>dec operand</h2>
+          <h2>the operand is in r/mX </h2>
+          <h2>decreases the operand by 1.</h2>
+          <h2>can set OF SF ZF AF PF CF</h2>
+          <div className={styles.code_background}>
+            <h2>{code_21}</h2>
+          </div>
+          <h2>in optimised code , compiler removes DEC</h2>
+          <hr />
+
 
         </div>
       </div>
@@ -345,3 +368,6 @@ xor rcx, 0x123ff              // rcx = rcx ^ 0x123ff
 xor [memory_address], 0x3434  // [memory_address] = [memory_address] ^ 0x3434`;
 
 const code_19 = `not rcx // rcx = ~rcx`;
+
+const code_20 = `inc rax // rax = rax + 1`;
+const code_21 = `dec rax // rax = rax - 1`;
