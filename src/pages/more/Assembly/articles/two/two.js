@@ -171,12 +171,55 @@ export const ShowTwoAssembly = () => {
           <h2>if the flags are set that is checked for the jump, the RIP will change</h2>
           <h2>For unsigned variables JA and JB is used, the operands in cmp before signed jump checks are in two's compliment, so if MSB is 1, its negative value.</h2>
           <h2>Another way to calculate the jump when reading disassembly is put the jump instruction between the call operand (ONLY for intel syntax).</h2>
-         <h2>example:</h2>
-         <div className={styles.code_background}>
+          <h2>example:</h2>
+          <div className={styles.code_background}>
             <h2>{code_14}</h2>
           </div>
           <h2>we can see it as: cmp 0x13 {equal_less} 0x12</h2>
           <h2>which is true so jump to 0x000014 will occur</h2>
+          <hr />
+
+
+          <h2 className={styles.instruction}>AND - BITWISE AND </h2>
+          <h2>and destination, source</h2>
+          <h2>the form can be r/mX or register</h2>
+          <h2>and operation can set SF and ZF</h2>
+          <div className={styles.code_background}>
+            <h2>{code_16}</h2>
+          </div>
+          <hr />
+
+
+
+          <h2 className={styles.instruction}>OR - BITWISE OR</h2>
+          <h2>or destination, source</h2>
+          <h2>the form can be r/mX or register</h2>
+          <h2>or operation can set SF and ZF</h2>
+          <div className={styles.code_background}>
+            <h2>{code_17}</h2>
+          </div>
+          <hr />
+
+
+
+          <h2 className={styles.instruction}>XOR - BITWISE XOR </h2>
+          <h2>xor destination, source</h2>
+          <h2>the form can be r/mX or register</h2>
+          <h2>xor operation can set SF and ZF</h2>
+          <h2>used to zero out register cause of its nature (1^1 = 0, 0^0 = 0)</h2>
+          <div className={styles.code_background}>
+            <h2>{code_18}</h2>
+          </div>
+          <hr />
+
+
+          <h2 className={styles.instruction}>NOT - BITWISE NOT(one's compliment)</h2>
+          <h2>not operand</h2>
+          <h2>the operand is in r/mX </h2>
+          <h2>not operation can set SF and ZF</h2>
+          <div className={styles.code_background}>
+            <h2>{code_19}</h2>
+          </div>
           <hr />
 
 
@@ -287,3 +330,18 @@ const code_15 = `cmp 0x10,0x10 // will set zf
 cmp dword ptr [rsp+4], eax // sub 4 byte from memory location [rsp+4] by what eax holds.
 `;
 const equal_less = `<=`;
+
+const code_16 = `and rcx,rax                   // rcx = rcx & rax
+and rcx, 0x123ff              // rcx = rcx & 0x123ff
+and [memory_address], 0x3434  // [memory_address] = [memory_address] & 0x3434`;
+
+const code_17 = `or rcx,rax                  // rcx = rcx | rax
+or rcx, 0x123ff             // rcx = rcx | 0x123ff
+or [memory_address], 0x3434 // [memory_address] = [memory_address] | 0x3434`;
+
+const code_18 = `xor rax,rax                   // zero out rax, rax = rax ^ rax
+xor rcx,rax                   // rcx = rcx ^ rax
+xor rcx, 0x123ff              // rcx = rcx ^ 0x123ff
+xor [memory_address], 0x3434  // [memory_address] = [memory_address] ^ 0x3434`;
+
+const code_19 = `not rcx // rcx = ~rcx`;
