@@ -259,6 +259,48 @@ export const ShowTwoAssembly = () => {
           <h2>same pattern can be seen when performing OR operation and checking the result</h2>
           <hr />
 
+          <h2 className={styles.instruction}>SHL - SHIFT LOGICAL LEFT({left})</h2>
+          <h2>shl operand1 operand2</h2>
+          <h2>operand1 is in of form r/mX</h2>
+          <h2>operant2 is 1 byte long, or cl register.</h2>
+          <h2>shift the bits by n bits left, which leads to new value that is multiplied by 2 n types, n is the 2nd operand which is 1 byte long</h2>
+          <h2 className={styles.itatic_pink}>the LSB's after shifting n bits left are filled by 0's</h2>
+          <div className={styles.code_background}>
+            <h2>{code_24}</h2>
+          </div>
+          <hr />
+
+          <h2 className={styles.instruction}>SHR - SHIFT LOGICAL RIGHT({right})</h2>
+          <h2>shr operand1 operand2</h2>
+          <h2>operand1 is in of form r/mX</h2>
+          <h2>operant2 is 1 byte long, or cl register.</h2>
+          <h2>shift the bits by n bits right, which leads to new value that is divided by 2 n types, n is the 2nd operand which is 1 byte long.</h2>
+          <h2 className={styles.itatic_pink}>the MSB's after shifting n bits right are filled by 0's</h2>
+          <div className={styles.code_background}>
+            <h2>{code_25}</h2>
+          </div>
+          <hr />
+
+
+          <h2 className={styles.instruction}>SAR - SHIFT ARITHMETIC RIGHT ({right})</h2>
+          <h2>sar operand1 operand2</h2>
+          <h2>operand1 is in of form r/mX</h2>
+          <h2>operant2 is 1 byte long, or cl register.</h2>
+          <h2>the only difference between SHR and SAR is that the MSB's that are moved are filled with the original MSB value, if MSB was 1 all the shifted bit would be filled as 1 else 0.</h2>
+          <div className={styles.code_background}>
+            <h2>{code_26}</h2>
+          </div>
+          <hr />
+
+
+          <h2 className={styles.instruction}>SAL - SHIFT ARITHMETIC LEFT ({left})</h2>
+          <h2>sal operand1 operand2</h2>
+          <h2>operand1 is in of form r/mX</h2>
+          <h2>operant2 is 1 byte long, or cl register.</h2>
+          <h2>sal is same as shl</h2>
+          <hr />
+
+
 
 
         </div>
@@ -266,7 +308,9 @@ export const ShowTwoAssembly = () => {
     </div >
   );
 }
-
+const equal_less = `<=`;
+const left = `<<`;
+const right = `>>`;
 
 const code_1 = `Address    Value   
 0x1000      0xff 
@@ -369,7 +413,6 @@ jle 0x000014`;
 const code_15 = `cmp 0x10,0x10 // will set zf 
 cmp dword ptr [rsp+4], eax // sub 4 byte from memory location [rsp+4] by what eax holds.
 `;
-const equal_less = `<=`;
 
 const code_16 = `and rcx,rax                   // rcx = rcx & rax
 and rcx, 0x123ff              // rcx = rcx & 0x123ff
@@ -395,3 +438,15 @@ const code_23 = `and ecx,eax
 mov eax,ecx
 
 test eax,eax`;
+
+const code_24 = `eax = 0x12deff99
+shl eax,2
+eax = 0x4B7BFE64`;
+
+const code_25 = `eax = 0x4B7BFE64
+shr eax,2
+eax = 0x12deff99`;
+
+const code_26 = `eax = 0x9135abc2, base 2 = 10010001001101011010101111000010
+sar eax,2                   
+eax = 0xe44d6af0, base 2 = 11100100010011010110101011110000`;
