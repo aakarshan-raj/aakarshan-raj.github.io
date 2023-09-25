@@ -264,7 +264,7 @@ export const ShowTwoAssembly = () => {
           <h2>operand1 is in of form r/mX</h2>
           <h2>operant2 is 1 byte long, or cl register.</h2>
           <h2>shift the bits by n bits left, which leads to new value that is multiplied by 2 n types, n is the 2nd operand which is 1 byte long</h2>
-          <h2 className={styles.itatic_pink}>the LSB's after shifting n bits left are filled by 0's</h2>
+          <h2 className={styles.itatic_pink}>the LSB's after shifting n bits left are filled by 0's, used for multiplication in optimised code</h2>
           <div className={styles.code_background}>
             <h2>{code_24}</h2>
           </div>
@@ -275,7 +275,7 @@ export const ShowTwoAssembly = () => {
           <h2>operand1 is in of form r/mX</h2>
           <h2>operant2 is 1 byte long, or cl register.</h2>
           <h2>shift the bits by n bits right, which leads to new value that is divided by 2 n types, n is the 2nd operand which is 1 byte long.</h2>
-          <h2 className={styles.itatic_pink}>the MSB's after shifting n bits right are filled by 0's</h2>
+          <h2 className={styles.itatic_pink}>the MSB's after shifting n bits right are filled by 0's, used for division in optimised code</h2>
           <div className={styles.code_background}>
             <h2>{code_25}</h2>
           </div>
@@ -287,6 +287,7 @@ export const ShowTwoAssembly = () => {
           <h2>operand1 is in of form r/mX</h2>
           <h2>operant2 is 1 byte long, or cl register.</h2>
           <h2>the only difference between SHR and SAR is that the MSB's that are moved are filled with the original MSB value, if MSB was 1 all the shifted bit would be filled as 1 else 0.</h2>
+          <h2 className={styles.itatic_pink}>used when there is division of signed int</h2>
           <div className={styles.code_background}>
             <h2>{code_26}</h2>
           </div>
