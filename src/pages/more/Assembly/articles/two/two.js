@@ -302,6 +302,31 @@ export const ShowTwoAssembly = () => {
           <hr />
 
 
+          <h2 className={styles.instruction}>REP STOS - REPEAT STORE STRING</h2>
+          <h2>used for storing data in memory in repetitive manner.</h2>
+          <h2>RCX: acts as a counter</h2>
+          <h2>RAX: source</h2>
+          <h2>RDI: destination</h2>
+          <h2>we will copy data from RAX/AL register to location pointed by RDI, and RCX will contain how many times this will repeat, with each copying, RCX will decrement.
+            when RCX == 0, RIP will increment.</h2>
+          <h2>c code:</h2>
+          <div className={styles.code_background}>
+            <h2>{code_27}</h2>
+          </div>
+
+          <h2>disassembly:</h2>
+          <div className={styles.code_background}>
+            <h2>{code_28}</h2>
+          </div>
+
+<h2>short is 2 byte, 64 short is 128 byte which is 80 in hexadecimal, we sub that much from stack to make space for the array.</h2>
+<h2>then we mov the memory from where array `a` is starting from into rax, then we mov the memory address into rdi.</h2>
+<h2>eax is set to 0 by xor.</h2>
+<h2>we set the counter to 128 by moving 80h into ecx</h2>
+<h2>rep stos byte ptr [rdi] will copy 0 from eax 128 times into consecutive address starting from rdi.</h2>
+          <hr />
+
+
 
 
         </div>
@@ -451,3 +476,13 @@ eax = 0x12deff99`;
 const code_26 = `eax = 0x9135abc2, base 2 = 10010001001101011010101111000010
 sar eax,2                   
 eax = 0xe44d6af0, base 2 = 11100100010011010110101011110000`;
+
+const code_27 = `short a[64] = {0};`;
+
+const code_28 = `push rdi
+sub rsp,80h
+lea rax,[rsp]
+mov rdi,rax
+xor eax,eax
+mov ecx,80h
+rep stos byte ptr [rdi]`;
