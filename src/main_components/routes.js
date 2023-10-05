@@ -28,6 +28,7 @@ import { NotFound } from "./404";
 import { ShowAssembly } from "../pages/more/Assembly/assembly";
 import { ShowOneAssembly } from "../pages/more/Assembly/articles/one/one";
 import { ShowTwoAssembly } from "../pages/more/Assembly/articles/two/two";
+import { ShowThreeAssembly } from "../pages/more/Assembly/articles/three/three";
 
 export const DeclareRoutes = () =>{
     return(
@@ -51,6 +52,7 @@ export const DeclareRoutes = () =>{
 
 <Route path='/assembly/one' element={<ShowOneAssembly/>}/>
 <Route path='/assembly/two' element={<ShowTwoAssembly/>}/>
+<Route path='/assembly/three' element={<ShowThreeAssembly/>}/>
 
 
 <Route path='/' element ={<ShowMain />}/>

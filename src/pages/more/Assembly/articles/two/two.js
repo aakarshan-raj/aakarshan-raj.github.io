@@ -319,11 +319,12 @@ export const ShowTwoAssembly = () => {
             <h2>{code_28}</h2>
           </div>
 
-<h2>short is 2 byte, 64 short is 128 byte which is 80 in hexadecimal, we sub that much from stack to make space for the array.</h2>
-<h2>then we mov the memory from where array `a` is starting from into rax, then we mov the memory address into rdi.</h2>
-<h2>eax is set to 0 by xor.</h2>
-<h2>we set the counter to 128 by moving 80h into ecx</h2>
-<h2>rep stos byte ptr [rdi] will copy 0 from eax 128 times into consecutive address starting from rdi.</h2>
+          <h2>short is 2 byte, 64 short is 128 byte which is 80 in hexadecimal, we sub that much from stack to make space for the array.</h2>
+          <h2>then we mov the memory from where array `a` is starting from into rax, then we mov the memory address into rdi.</h2>
+          <h2>eax is set to 0 by xor.</h2>
+          <h2>we set the counter to 128 by moving 80h into ecx</h2>
+          <h2>rep stos byte ptr [rdi] will copy 0 from eax 128 times into consecutive address starting from rdi.</h2>
+          <h2>ALSO USED FOR RUNTIME CHECK TO CHECK FOR BUFFER OVERFLOW(NOT IN PRODUCTION CODE).</h2>
           <hr />
 
 

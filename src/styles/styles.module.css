@@ -25,6 +25,16 @@
 
 }
 
+.sub_title{
+    font-size: 40px;
+    color: rgb(59, 58, 128);
+    font-family: monospace;
+    text-align: center;
+    overflow: auto;
+    font-style: italic;
+    text-decoration: underline;
+}
+
 .book_content {
   font-size: 10px;
   color: white;
@@ -86,6 +96,6 @@
 }
 
 .itatic_pink{
-  color: #ff11b8;
+  color: #fa7ea8;
   font-style: italic;
 }
