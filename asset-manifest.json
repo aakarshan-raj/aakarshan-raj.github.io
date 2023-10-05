@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a7fd44ee.css",
-    "main.js": "/static/js/main.7dc5dbbd.js",
+    "main.css": "/static/css/main.96ec7f74.css",
+    "main.js": "/static/js/main.1849b09c.js",
     "static/media/book1.jpg": "/static/media/book1.48fce549ce5c8eb4b78e.jpg",
     "static/media/404.png": "/static/media/404.fce863aa4cbefab52f24.png",
     "static/media/seven.png": "/static/media/seven.4b1972349a8c3cf04382.png",
     "static/media/six.png": "/static/media/six.4ec27b2817f8c84b11a0.png",
     "static/media/five.png": "/static/media/five.d5cdd11e6568439a45af.png",
     "static/media/eight.png": "/static/media/eight.da26f7ad8287d6dc2ef2.png",
-    "static/media/table.png": "/static/media/table.dbb449caec65fd2f1cca.png",
+    "static/media/table.png": "/static/media/table.9af9434d4e9fab7e3ffa.png",
     "static/media/book2.jpg": "/static/media/book2.6128706c581770022ce7.jpg",
     "static/media/four.png": "/static/media/four.59faf1801b7cbc154b18.png",
     "static/media/img1.jpg": "/static/media/img1.03bc2a6c972e5c41ae03.jpg",
@@ -20,11 +20,11 @@
     "static/media/ALU.png": "/static/media/ALU.955a14b35e235f8c2f72.png",
     "static/media/logo.png": "/static/media/logo.788427cc292d2478b21d.png",
     "index.html": "/index.html",
-    "main.a7fd44ee.css.map": "/static/css/main.a7fd44ee.css.map",
-    "main.7dc5dbbd.js.map": "/static/js/main.7dc5dbbd.js.map"
+    "main.96ec7f74.css.map": "/static/css/main.96ec7f74.css.map",
+    "main.1849b09c.js.map": "/static/js/main.1849b09c.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7fd44ee.css",
-    "static/js/main.7dc5dbbd.js"
+    "static/css/main.96ec7f74.css",
+    "static/js/main.1849b09c.js"
   ]
 }
