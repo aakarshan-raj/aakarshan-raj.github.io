@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from '../../styles/styles.module.css';
 import ImgBook1 from './assets/book1.jpg'
 import ImgBook2 from './assets/book2.jpg'
 
@@ -12,8 +12,8 @@ export const ShowBooks = ()=>{
            
             <hr></hr>
 
-           <div className={styles.individual}>
-                <img src={ImgBook1} className={styles.img}/>
+           <div className={styles.individual_book}>
+                <img src={ImgBook1} className={styles.book_img}/>
                 <div>
                 <h1>  Practical Binary Analysis</h1>
                 </div>
@@ -24,8 +24,8 @@ export const ShowBooks = ()=>{
           </div>       
           <hr></hr>  
 
-          <div className={styles.individual}>
-                <img src={ImgBook2} className={styles.img}/>
+          <div className={styles.individual_book}>
+                <img src={ImgBook2} className={styles.book_img}/>
                 <div>
                 <h1>  Rust Atmoic and Locks</h1>
                 </div>

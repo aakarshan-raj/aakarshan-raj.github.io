@@ -1,26 +1,26 @@
-import styles from './styles.module.css';
+import styles from '../../styles/styles.module.css';
 
 
 
-export const ShowMain = ()=>{
-    return (
-        <div className={styles.book_container}>
-          <div className={styles.book}>
-            <div className={styles.book_content}>
-            <h2 className={styles.title}>RSA key for any communication</h2>
-   <div className={styles.centered_container}>    
-<div className={styles.code_background}>
-  <h2>{keys}</h2>
-</div>         
-            </div>
+export const ShowMain = () => {
+  return (
+    <div className={styles.book_container}>
+      <div className={styles.book}>
+        <div className={styles.book_content}>
+          <h2 className={styles.title}>RSA key for any communication</h2>
+          <div className={styles.centered_container}>
+            <div className={styles.code_background_rsa}>
+              <h2>{keys}</h2>
             </div>
           </div>
         </div>
-      );
+      </div>
+    </div>
+  );
 }
 
-const keys = 
-`-----BEGIN PGP PUBLIC KEY BLOCK-----
+const keys =
+  `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGTOlPMBDADSwUyyCzHgWMLqay16GfRZhOIpt04I8xPUBumVVHR+xAbFDUby
 p63iA349WJcwJMY/JYfRtQVsa1Ki1kamPnxtPK0BL5DHwNeH7z1UPxQVwvOS/t8D

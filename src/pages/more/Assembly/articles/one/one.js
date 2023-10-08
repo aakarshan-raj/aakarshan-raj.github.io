@@ -1,4 +1,4 @@
-import styles from "./styles.module.css"
+import styles from "../../../../../styles/styles.module.css"
 import stack_one from './imgs/stack_one.png'
 import stack_two from './imgs/stack_two.png'
 
