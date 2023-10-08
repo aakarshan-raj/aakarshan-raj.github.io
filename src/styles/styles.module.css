@@ -54,6 +54,12 @@
 
 }
 
+.img_container img {
+  max-width: 100%; 
+  height: auto;    
+}
+
+
 .code_background {
   background-color: #171414;
   padding: 10px;

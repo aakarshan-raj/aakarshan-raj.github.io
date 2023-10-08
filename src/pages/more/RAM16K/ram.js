@@ -8,144 +8,144 @@ import six from './img/six.png'
 import seven from './img/seven.png'
 import eight from './img/eight.png'
 
-export const ShowRam = ()=>{
-    return (
-      <div className={styles.book_container}>
+export const ShowRam = () => {
+  return (
+    <div className={styles.book_container}>
       <div className={styles.book}>
         <div className={styles.book_content}>
-        <h1 className={styles.title}>RAM from scrach</h1>
-       
-       
-            <hr></hr>
-            <div className={styles.book_content}></div>
-            <h1><u>Making 16k RAM(NandToTetris)</u></h1>
-           <h2>D Flip Flop is building block of RAM.
-D Flip Flop can remember one bit at a time.</h2>
-<h2>here is the basic logic gate diagram of a DFF.</h2>
-<div className={styles.img_container}>
-          <img src={one}/>
-  </div>
-<h2>here is a DFF
+          <h1 className={styles.title}>RAM from scrach</h1>
 
-whenever the clock is high, the input at D is recored at Q and doesn't change unless D changes.
 
-instead of a clock we can use a load bit, so the output only changes when we want to load something through load bit.
-
-here is the circuit diagram:
-</h2>
+          <hr></hr>
+          <div className={styles.book_content}></div>
+          <h1><u>Making 16k RAM(NandToTetris)</u></h1>
+          <h2>D Flip Flop is building block of RAM.
+            D Flip Flop can remember one bit at a time.</h2>
+          <h2>here is the basic logic gate diagram of a DFF.</h2>
           <div className={styles.img_container}>
-          <img src={two}/>
-  </div>
-  <h2>whenver the load is on, we take input from D and when load is Off, Q is stays same no matter what.
-</h2>
- <h2>In the course the DFF we are provided with is the first one, the one with clock, to make a one-bit register we have to add a Mux to it, we are not using the second example with load bit as we are making changes to existing DFF internally in it.</h2>
-           <h2>here is the Mux (2:1) that we will integrate into existing circuit to make a one bit Register.</h2>
-           <div className={styles.img_container}>
-          <img src={three}/>
-  </div>  
-  <h2>and here is the on-bit register</h2>
-  <div className={styles.img_container}>
-          <img src={four}/>
-  </div>
-  <h2>The HDL of is is:</h2>
-  <div className={styles.code_background}>
-  {code_1}
-</div>
+            <img src={one} />
+          </div>
+          <h2>here is a DFF
+
+            whenever the clock is high, the input at D is recored at Q and doesn't change unless D changes.
+
+            instead of a clock we can use a load bit, so the output only changes when we want to load something through load bit.
+
+            here is the circuit diagram:
+          </h2>
+          <div className={styles.img_container}>
+            <img src={two} />
+          </div>
+          <h2>whenver the load is on, we take input from D and when load is Off, Q is stays same no matter what.
+          </h2>
+          <h2>In the course the DFF we are provided with is the first one, the one with clock, to make a one-bit register we have to add a Mux to it, we are not using the second example with load bit as we are making changes to existing DFF internally in it.</h2>
+          <h2>here is the Mux (2:1) that we will integrate into existing circuit to make a one bit Register.</h2>
+          <div className={styles.img_container}>
+            <img src={three} />
+          </div>
+          <h2>and here is the on-bit register</h2>
+          <div className={styles.img_container}>
+            <img src={four} />
+          </div>
+          <h2>The HDL of is is:</h2>
+          <div className={styles.code_background}>
+            {code_1}
+          </div>
 
 
-<h2>Now building a 16 bit register.
+          <h2>Now building a 16 bit register.
 
-we can use 16 of these one bit d flip flops to build one 16 bit register.
+            we can use 16 of these one bit d flip flops to build one 16 bit register.
 
-the HDL code:</h2>
-<div className={styles.code_background}>
-   {code_2}
-</div>
-<h2>bit here is the one bit register we made, we pass same load to each one bit dff and same load to each. and we get a 16 bit register.
-here is logic gate diagram</h2>
-<div className={styles.img_container}>
-          <img src={five}/>
-  </div>
-  <br></br>
-  <div className={styles.img_container}>
-          <img src={six}/>
-  </div>
-  <br></br>
-  <div className={styles.img_container}>
-          <img src={seven}/>
-  </div>
-  <br></br>
- <h2>
- Now we have a 16 bit register, we can start on to build RAM.
-we will start with RAM8(8 register)
+            the HDL code:</h2>
+          <div className={styles.code_background}>
+            {code_2}
+          </div>
+          <h2>bit here is the one bit register we made, we pass same load to each one bit dff and same load to each. and we get a 16 bit register.
+            here is logic gate diagram</h2>
+          <div className={styles.img_container}>
+            <img src={five} />
+          </div>
+          <br></br>
+          <div className={styles.img_container}>
+            <img src={six} />
+          </div>
+          <br></br>
+          <div className={styles.img_container}>
+            <img src={seven} />
+          </div>
+          <br></br>
+          <h2>
+            Now we have a 16 bit register, we can start on to build RAM.
+            we will start with RAM8(8 register)
 
-A 16 register ram will consist of 8 16 bit register, one load bit for reading and writing operation, and a address line(k) where k will be log2(n), where n is number of register, in our case k = 3(3 address line to select the register)
+            A 16 register ram will consist of 8 16 bit register, one load bit for reading and writing operation, and a address line(k) where k will be log2(n), where n is number of register, in our case k = 3(3 address line to select the register)
 
-here is the diagram of the ram
- </h2>
- <div className={styles.img_container}>
-          <img src={eight}/>
-  </div>
-  <h2>now with basic gates and components we can build this, first using a demux we can pass on the load bit to the appropriate register, then using a mux we can pass the output.</h2>
-       <ol>
-        <h2><li>Demux to pass the load bit</li></h2>
-        <h2><li>Mux to pass the output</li></h2>
-       </ol>    
-       <h2>
-       the input of each register will be cconnected to the input we get, only that register will write which as load bit through Demux, and only that register will be output that we select using Mux.
-here is the HDL code for it.
-       </h2>
-       <div className={styles.code_background}>
-   {code_3}
-</div>
-<h2>Now we need to scale this to a RAM with 64 Register, that means we need more registers and Dmux and Mux with larger output and input pins, or we can use the ram we build earlier, 8 of them.
+            here is the diagram of the ram
+          </h2>
+          <div className={styles.img_container}>
+            <img src={eight} />
+          </div>
+          <h2>now with basic gates and components we can build this, first using a demux we can pass on the load bit to the appropriate register, then using a mux we can pass the output.</h2>
+          <ol>
+            <h2><li>Demux to pass the load bit</li></h2>
+            <h2><li>Mux to pass the output</li></h2>
+          </ol>
+          <h2>
+            the input of each register will be cconnected to the input we get, only that register will write which as load bit through Demux, and only that register will be output that we select using Mux.
+            here is the HDL code for it.
+          </h2>
+          <div className={styles.code_background}>
+            {code_3}
+          </div>
+          <h2>Now we need to scale this to a RAM with 64 Register, that means we need more registers and Dmux and Mux with larger output and input pins, or we can use the ram we build earlier, 8 of them.
 
-using properties of binary maths we can easily do this.
-we can stack 8 RAM 8 and connect there input to a DeMux(8:1) the select pins will be 3 and they will take address from 3 to 5th bit, why?</h2>
-        <h2>For 0th to 7th register, the output from demux will always be first RAM then in the ram we will pass adress from 0th to 2nd bit, 2 bits can cover 3 combination that can be used to select 8 registers.
-</h2>  
+            using properties of binary maths we can easily do this.
+            we can stack 8 RAM 8 and connect there input to a DeMux(8:1) the select pins will be 3 and they will take address from 3 to 5th bit, why?</h2>
+          <h2>For 0th to 7th register, the output from demux will always be first RAM then in the ram we will pass adress from 0th to 2nd bit, 2 bits can cover 3 combination that can be used to select 8 registers.
+          </h2>
           <h2>For 8th to 15th register, the output from deMux will always be second RAM, as the 3th bit will always be 1, and then in the RAM8 the address line will be function of 0th to 2nd bit from address line, which would help select one of the 8 register.</h2>
           <h2>and same way other specific register can be selected.
 
-after that we can use a mux(8) to get output from one of the RAM8.
+            after that we can use a mux(8) to get output from one of the RAM8.
 
-HDL code for that:</h2>
-<div className={styles.code_background}>
-   {code_4}
-</div>
-<h2>
-Now to build RAM512 we can use 8 RAM64.
-RAM512 has 9 select pins and RAM64 has 6 select pins.
-we can stack 8 RAM64 to build a RAM512 and build RAM512 with on top of RAM64
-</h2>
-<div className={styles.code_background}>
-   {code_5}
-</div>
-<h2>the bits 6th to 8th help us select the individual RAM64 from 8 of them, then bits 0th to 5th in there address line help us select the individual RAM16 and then 0th to 2nd bit is used to select the individual register.
-</h2>
-<h2>RAM4k(4096)</h2>
-<h2>same way like we did before, we can use 8 RAM512
-for a RAM4k we have 12 select bits.
-hdl code for RAM4k:</h2>
-<div className={styles.code_background}>
-   {code_6}
-</div>
-<h2>using 9th to 11th bit we select the one of eight RAM512 and then we pass the 0th to 8th bit to narrow down the register that we want to select, just like we did before.</h2>
-          <h2>Now at last RAM16k
-using 4 RAM4k we can make this,
-the number of select pins will be log2(16384) = 14.</h2>
-          <h2>we need to use dmux(4:1) and Mux(1:4 , 16 bit) and 4 RAM4K and configure the select pins.
-here is the code </h2>
-<div className={styles.code_background}>
-   {code_7}
-</div>
-<h2>
-using 12th to 12th bit(2 bits) we can select one of the four RAM4k and we pass 0th to 11th bit to narrow down the register that we want to select.
-</h2>
-            </div>
+            HDL code for that:</h2>
+          <div className={styles.code_background}>
+            {code_4}
           </div>
+          <h2>
+            Now to build RAM512 we can use 8 RAM64.
+            RAM512 has 9 select pins and RAM64 has 6 select pins.
+            we can stack 8 RAM64 to build a RAM512 and build RAM512 with on top of RAM64
+          </h2>
+          <div className={styles.code_background}>
+            {code_5}
+          </div>
+          <h2>the bits 6th to 8th help us select the individual RAM64 from 8 of them, then bits 0th to 5th in there address line help us select the individual RAM16 and then 0th to 2nd bit is used to select the individual register.
+          </h2>
+          <h2>RAM4k(4096)</h2>
+          <h2>same way like we did before, we can use 8 RAM512
+            for a RAM4k we have 12 select bits.
+            hdl code for RAM4k:</h2>
+          <div className={styles.code_background}>
+            {code_6}
+          </div>
+          <h2>using 9th to 11th bit we select the one of eight RAM512 and then we pass the 0th to 8th bit to narrow down the register that we want to select, just like we did before.</h2>
+          <h2>Now at last RAM16k
+            using 4 RAM4k we can make this,
+            the number of select pins will be log2(16384) = 14.</h2>
+          <h2>we need to use dmux(4:1) and Mux(1:4 , 16 bit) and 4 RAM4K and configure the select pins.
+            here is the code </h2>
+          <div className={styles.code_background}>
+            {code_7}
+          </div>
+          <h2>
+            using 12th to 12th bit(2 bits) we can select one of the four RAM4k and we pass 0th to 11th bit to narrow down the register that we want to select.
+          </h2>
         </div>
-      );
+      </div>
+    </div>
+  );
 }
 
 
