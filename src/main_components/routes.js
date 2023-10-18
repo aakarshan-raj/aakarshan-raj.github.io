@@ -31,6 +31,14 @@ import { ShowTwoAssembly } from "../pages/more/Assembly/articles/two/two";
 import { ShowThreeAssembly } from "../pages/more/Assembly/articles/three/three";
 import { ShowFourAssembly } from "../pages/more/Assembly/articles/four/four";
 
+import { LabOne } from "../pages/more/Assembly/articles/four/lab_1/Lab"; 
+import { LabTwo } from "../pages/more/Assembly/articles/four/lab_2/Lab"; 
+import { LabThree } from "../pages/more/Assembly/articles/four/lab_3/Lab"; 
+import { LabFour } from "../pages/more/Assembly/articles/four/lab_4/Lab"; 
+import { LabFive } from "../pages/more/Assembly/articles/four/lab_5/Lab"; 
+import { LabSix } from "../pages/more/Assembly/articles/four/lab_6/Lab"; 
+
+
 export const DeclareRoutes = () =>{
     return(
 <div>
@@ -55,6 +63,12 @@ export const DeclareRoutes = () =>{
 <Route path='/assembly/two' element={<ShowTwoAssembly/>}/>
 <Route path='/assembly/three' element={<ShowThreeAssembly/>}/>
 <Route path='/assembly/four' element={<ShowFourAssembly/>}/>
+<Route path='/assembly/four/phase_1' element={<LabOne/>}/>
+<Route path='/assembly/four/phase_2' element={<LabTwo/>}/>
+<Route path='/assembly/four/phase_3' element={<LabThree/>}/>
+<Route path='/assembly/four/phase_4' element={<LabFour/>}/>
+<Route path='/assembly/four/phase_5' element={<LabFive/>}/>
+<Route path='/assembly/four/phase_6' element={<LabSix/>}/>
 
 
 <Route path='/' element ={<ShowMain />}/>
