@@ -9,13 +9,13 @@ export const ShowRust = ()=>{
         <h1 className={styles.title}>Rust</h1>
        
             <hr></hr>
-            <h1><Link to="/rust/one">1. Ownership concept in Rust</Link></h1>
-            <h1><Link to="/rust/two">2. Borrowing concept in Rust</Link></h1>
-            <h1><Link to="/rust/three">3. Traits in Rust </Link></h1>
-            <h1><Link to="/rust/four">4. Chat Server in Rust(tokio) </Link></h1>
-            <h1><Link to="/rust/five">5. Clone and Copy Traits</Link></h1>
-            <h1><Link to="/rust/six">6. Making GUI application with ICED in Rust</Link></h1>
-            <h1><Link to="/rust/seven">7. Threads in Rust</Link></h1>
+            <h1>1. <Link to="/rust/one">Ownership concept in Rust</Link></h1>
+            <h1>2. <Link to="/rust/two">Borrowing concept in Rust</Link></h1>
+            <h1>3. <Link to="/rust/three">Traits in Rust </Link></h1>
+            <h1>4. <Link to="/rust/four">Chat Server in Rust(tokio) </Link></h1>
+            <h1>5. <Link to="/rust/five">Clone and Copy Traits</Link></h1>
+            <h1>6. <Link to="/rust/six">Making GUI application with ICED in Rust</Link></h1>
+            <h1>7. <Link to="/rust/seven">Threads in Rust</Link></h1>
 
             
             </div>
