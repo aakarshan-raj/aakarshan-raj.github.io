@@ -83,6 +83,19 @@ export const ShowSevenRust = () => {
             <h2>once out of thread the x is dropped automatcially, so does the lock and the mutex can be used.
             </h2>
             <h2>now we will see how using channels we can pass values and recieve values from the thread.</h2>
+            <h2>module we are gonna use : mpsc(multiple producer, single consumer)[FIFO].</h2>
+            <h2>we will look at asynchronous channel first.</h2>
+            <h2>every channel has two ends, receiver and transmitter. for a mpsc channel we can have multiple transmitters but only one reciever. </h2>
+            <div className={styles.code_background}> <h2>{code_10}</h2> </div>
+            <h2>this will create a transmitter(tx) and a receiver(rx) that can be used to send data type of u32 across the channel.</h2>
+            <h2>the transmitter and receiver both implements sync trait so they can be passed across threads.</h2>
+            <h2>but we will look at the simplest example first.</h2>
+            <div className={styles.code_background}> <h2>{code_11}</h2> </div>
+
+
+            <h2>in this example, we create a channel, then we clone the transmitter(multiple transmitters).</h2>
+            <h2>using .send function we send data throught the channel.</h2>
+            <h2>in the loop we are continuosly receiving data that is being sent, the data is queud in FIFO manner, using .recv we get the data from the queue, please note .recv block the thread until it gets the data, alternative to it is .try_recv which doesn't block the thread</h2>
 
 
           </div>
@@ -148,4 +161,19 @@ const code_9 = `fn main() {
   .unwrap();
 
   println!("{}", pointer.lock().unwrap());
+}`;
+
+const code_10 = `let (tx,rx) = std::sync::mpsc::channel::<u32>();`;
+const code_11 = `
+fn main() {
+   
+   let (tx,rx) =  std::sync::mpsc::channel::<u32>();
+   tx.send(4).unwrap();
+   let txx = tx.clone();
+   txx.send(5).unwrap();
+   loop{
+   let data = rx.recv().unwrap();
+   println!("{}",data);
+   }
+
 }`;
