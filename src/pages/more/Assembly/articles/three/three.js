@@ -1,3 +1,4 @@
+import IssueBanner from "../../../../../main_components/issue_banner";
 import styles from "../../../../../styles/styles.module.css"
 import instruction_table from "../three/imgs/table.png"
 
@@ -8,14 +9,8 @@ export const ShowThreeAssembly = () => {
         <div className={styles.book_content}>
           <h1 className={styles.title}>Getting started with winDbg and intel manual</h1>
           <hr />
-
-
-
-
           <h2>what is winDBg</h2>
-
           <h2>WinDbg, short for Windows Debugger, is a powerful debugging tool provided by Microsoft for debugging and analyzing Windows operating system and application code.</h2>
-
           <h2>if you are debugging binaries for x64, use winDbg(x64)</h2>
           <h2>opening a binary in GUI interface of winDbg: File -&gt; Open Executable</h2>
 
@@ -136,6 +131,7 @@ export const ShowThreeAssembly = () => {
 
         </div>
       </div>
+      <IssueBanner />
     </div >
   );
 }

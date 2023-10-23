@@ -1,3 +1,4 @@
+import IssueBanner from "../../../../main_components/issue_banner";
 import styles from "../../../../styles/styles.module.css"
 
 
@@ -60,6 +61,7 @@ export const ShowThreeRust = () => {
           </div>
         </div>
       </div>
+      <IssueBanner />
     </div>
   );
 }

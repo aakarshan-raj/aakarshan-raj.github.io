@@ -7,6 +7,7 @@ import five from './img/five.png'
 import six from './img/six.png'
 import seven from './img/seven.png'
 import eight from './img/eight.png'
+import IssueBanner from '../../../main_components/issue_banner';
 
 export const ShowRam = () => {
   return (
@@ -96,7 +97,7 @@ export const ShowRam = () => {
             here is the HDL code for it.
           </h2>
           <div className={styles.code_background}>
-           <h2>{code_3}</h2>
+            <h2>{code_3}</h2>
           </div>
           <h2>Now we need to scale this to a RAM with 64 Register, that means we need more registers and Dmux and Mux with larger output and input pins, or we can use the ram we build earlier, 8 of them.
 
@@ -119,7 +120,7 @@ export const ShowRam = () => {
             we can stack 8 RAM64 to build a RAM512 and build RAM512 with on top of RAM64
           </h2>
           <div className={styles.code_background}>
-          <h2>{code_5}</h2>
+            <h2>{code_5}</h2>
           </div>
           <h2>the bits 6th to 8th help us select the individual RAM64 from 8 of them, then bits 0th to 5th in there address line help us select the individual RAM16 and then 0th to 2nd bit is used to select the individual register.
           </h2>
@@ -128,7 +129,7 @@ export const ShowRam = () => {
             for a RAM4k we have 12 select bits.
             hdl code for RAM4k:</h2>
           <div className={styles.code_background}>
-          <h2>{code_6}</h2>
+            <h2>{code_6}</h2>
           </div>
           <h2>using 9th to 11th bit we select the one of eight RAM512 and then we pass the 0th to 8th bit to narrow down the register that we want to select, just like we did before.</h2>
           <h2>Now at last RAM16k
@@ -137,13 +138,14 @@ export const ShowRam = () => {
           <h2>we need to use dmux(4:1) and Mux(1:4 , 16 bit) and 4 RAM4K and configure the select pins.
             here is the code </h2>
           <div className={styles.code_background}>
-          <h2>{code_7}</h2>
+            <h2>{code_7}</h2>
           </div>
           <h2>
             using 12th to 12th bit(2 bits) we can select one of the four RAM4k and we pass 0th to 11th bit to narrow down the register that we want to select.
           </h2>
         </div>
       </div>
+      <IssueBanner />
     </div>
   );
 }

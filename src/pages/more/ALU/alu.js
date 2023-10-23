@@ -1,3 +1,4 @@
+import IssueBanner from '../../../main_components/issue_banner';
 import styles from '../../../styles/styles.module.css';
 import ALU from './img/ALU.png';
 import table from './img/table.png';
@@ -70,6 +71,7 @@ export const ShowAlu = () => {
           </h2>
         </div>
       </div>
+      <IssueBanner/>
     </div>
   );
 }

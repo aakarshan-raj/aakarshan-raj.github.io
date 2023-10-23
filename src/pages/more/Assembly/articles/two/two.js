@@ -1,3 +1,4 @@
+import IssueBanner from "../../../../../main_components/issue_banner";
 import styles from "../../../../../styles/styles.module.css"
 
 
@@ -332,6 +333,7 @@ export const ShowTwoAssembly = () => {
 
         </div>
       </div>
+      <IssueBanner />
     </div >
   );
 }

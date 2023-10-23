@@ -1,3 +1,4 @@
+import IssueBanner from "../../../../../main_components/issue_banner";
 import styles from "../../../../../styles/styles.module.css"
 import stack_one from './imgs/stack_one.png'
 import stack_two from './imgs/stack_two.png'
@@ -123,13 +124,14 @@ export const ShowOneAssembly = () => {
           <div className={styles.img_container}>
             <img src={stack_two}></img>
           </div>
-<h2>
-In this disassembly and Stack diagram we can observe that main calls a function, putting 8 byte on to the stack, the rsp is subbed by 28h, 8 of it for stack alignment, 8 for the next instruction that is pushed on stack, that leaves us with
-18h(24 in decimal), with that we get into func, where rsp is subbed by 28h, +8h of it to align the stack, then we allocate the variables in it.
-</h2>
-<hr/>
+          <h2>
+            In this disassembly and Stack diagram we can observe that main calls a function, putting 8 byte on to the stack, the rsp is subbed by 28h, 8 of it for stack alignment, 8 for the next instruction that is pushed on stack, that leaves us with
+            18h(24 in decimal), with that we get into func, where rsp is subbed by 28h, +8h of it to align the stack, then we allocate the variables in it.
+          </h2>
+          <hr />
         </div>
       </div>
+      <IssueBanner/>
     </div>
   );
 }

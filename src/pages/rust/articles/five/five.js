@@ -1,3 +1,4 @@
+import IssueBanner from "../../../../main_components/issue_banner";
 import styles from "../../../../styles/styles.module.css"
 
 
@@ -45,7 +46,7 @@ export const ShowFiveRust = () => {
               <h2>{code_5}</h2>
             </div>
             <h2>Notice we also implemented Clone trait, this is because Clone is supertrait of Copy and we want to enforce all types to also implement clone in case we deal with generic functions where types are not known beforehand, and we also implement Debug trait to print out struct using {debug} </h2>
-            <h1 style={{textAlign:"center"}}>Clone Trait</h1>
+            <h1 style={{ textAlign: "center" }}>Clone Trait</h1>
             <h2>Clone trait is generally applied for types that are store on heap and their size is not known at compile time.
 
               we cannot make copies of data implicitly like with copy, we need to call the clone function on the variable to make a (deep)copy.</h2>
@@ -65,6 +66,7 @@ export const ShowFiveRust = () => {
           </div>
         </div>
       </div>
+      <IssueBanner />
     </div>
   );
 }

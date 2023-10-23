@@ -1,5 +1,5 @@
 import styles from '../../styles/styles.module.css';
-
+import IssueBanner from '../../main_components/issue_banner'
 
 
 export const ShowMain = () => {
@@ -15,6 +15,7 @@ export const ShowMain = () => {
           </div>
         </div>
       </div>
+      <IssueBanner/>
     </div>
   );
 }
