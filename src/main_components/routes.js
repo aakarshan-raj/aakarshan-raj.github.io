@@ -15,7 +15,7 @@ import { ShowTwoRust } from "../pages/rust/articles/two/two";
 import { ShowThreeRust } from "../pages/rust/articles/three/three";
 import { ShowFourRust } from "../pages/rust/articles/four/four";
 import { ShowFiveRust } from "../pages/rust/articles/five/five";
-import { ShowSixRust } from "../pages/rust/articles/six/five";
+import { ShowSixRust } from "../pages/rust/articles/six/six";
 import { ShowSevenRust } from "../pages/rust/articles/seven/seven";
 
 
