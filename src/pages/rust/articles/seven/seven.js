@@ -116,8 +116,11 @@ export const ShowSevenRust = () => {
             <h2>in this example, we create a channel, then we clone the transmitter(multiple transmitters).</h2>
             <h2>using .send function we send data throught the channel.</h2>
             <h2>in the loop we are continuosly receiving data that is being sent, the data is queud in FIFO manner, using .recv we get the data from the queue, please note .recv block the thread until it gets the data, alternative to it is .try_recv which doesn't block the thread</h2>
-
-
+            <h2>Now lets use channels, Mutex, Arc with threads together.</h2>
+            <FormatCode
+              code={code_12}
+            />
+            <h2>we are sending a secret code to one thread, their it would be processed and using channel it would be sent throught the channel, in another thread we are using the reciever, after getting the data we print it.</h2>
           </div>
         </div>
       </div>
@@ -141,12 +144,12 @@ fn main() {
     handle.join().unwrap();
 }`;
 
-const code_3 = `    let y = 4;
+const code_3 = `let y = 4;
 let x = || y+1;
 let z = x();
 println!("{:?}",z);`;
 
-const code_4 = `    let mut y = String::from("hi");
+const code_4 = `let mut y = String::from("hi");
 let mut x = || y.push_str(" bye");
 x();
 println!("{}",y);`;
@@ -165,7 +168,7 @@ hi bye bye`;
 
 
 
-const code_8 = `    let mut y = String::from("hi");
+const code_8 = `let mut y = String::from("hi");
 let x = move || { y.push_str(" bye"); return y};
 let z = x();
 println!("{}",z);`;
@@ -196,4 +199,26 @@ fn main() {
    println!("{}",data);
    }
 
+}`;
+
+const code_12 = `use std::{thread, sync::{Arc, Mutex}, time::Duration};
+
+fn main() {
+   
+   let (tx,rx) = std::sync::mpsc::channel::<String>();
+
+   let code = Arc::new(Mutex::new(String::from("KLJFDSN3")));
+   let code_clone = code.clone();
+   let handle_1 = thread::spawn( move ||{
+      let mut x = code_clone.lock().unwrap();
+      x.push_str("password");
+      thread::sleep(Duration::from_secs(3));
+      tx.send(x.to_string())
+   });
+   let handle_2 = thread::spawn( move ||{
+      let y = rx.recv().unwrap();
+      println!("{}",y);
+   });
+   handle_1.join().unwrap();
+   handle_2.join().unwrap();
 }`;
