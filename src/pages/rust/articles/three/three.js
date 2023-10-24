@@ -1,3 +1,4 @@
+import FormatCode from "../../../../main_components/code_formatter";
 import IssueBanner from "../../../../main_components/issue_banner";
 import styles from "../../../../styles/styles.module.css"
 
@@ -45,7 +46,9 @@ export const ShowThreeRust = () => {
             <h2>we need to implment it now</h2>
             <div className={styles.code_background}> <h2>{code6}</h2> </div>
             <h2>now the function</h2>
-            <div className={styles.code_background}> <h2>{code7}</h2> </div>
+            <FormatCode
+              code={code7}
+            />
             <h2>we declare it to take a Genric `T` and T: DisplayShape specifies to only take genric that implements DisplayShape trait.</h2>
             <h2>The reason to declare a length function is cause we cannot directly access the length property from Sqaure struct objecct due to lack of dynamic dispatch and static type checking. Also it won't make sense cause what if the other genric doesn't have length property.
             </h2>
