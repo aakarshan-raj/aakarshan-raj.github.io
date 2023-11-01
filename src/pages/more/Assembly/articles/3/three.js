@@ -1,6 +1,6 @@
 import IssueBanner from "../../../../../main_components/issue_banner";
 import styles from "../../../../../styles/styles.module.css"
-import instruction_table from "../three/imgs/table.png"
+import instruction_table from "../3/imgs/table.png"
 
 export const ShowThreeAssembly = () => {
   return (
