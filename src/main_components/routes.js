@@ -17,6 +17,7 @@ import { ShowFourRust } from "../pages/rust/articles/4/four";
 import { ShowFiveRust } from "../pages/rust/articles/5/five";
 import { ShowSixRust } from "../pages/rust/articles/6/six";
 import { ShowSevenRust } from "../pages/rust/articles/7/seven";
+import { ShowEightRust } from "../pages/rust/articles/8/eight";
 
 
 import { ShowAlu } from "../pages/more/ALU/alu";
@@ -60,7 +61,7 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/five' element ={<ShowFiveRust />}/>
 <Route path='/rust/six' element ={<ShowSixRust />}/>
 <Route path='/rust/seven' element ={<ShowSevenRust />}/>
-
+<Route path='/rust/eight' element ={<ShowEightRust />}/>
 
 <Route path='/assembly/one' element={<ShowOneAssembly/>}/>
 <Route path='/assembly/two' element={<ShowTwoAssembly/>}/>
