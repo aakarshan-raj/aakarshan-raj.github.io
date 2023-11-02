@@ -9,7 +9,6 @@ export const ShowSevenRust = () => {
         <div className={styles.book_content}>
           <h1 className={styles.title}>Threads in Rust</h1>
           <hr></hr>
-          <div className={styles.content}>
             <h2>A rust program starts with a single thread(main), using standard
               implementation provided to use we can create multiple threads in our
               rust program, more threads means we can perform tasks faster for example
@@ -123,7 +122,6 @@ export const ShowSevenRust = () => {
             <h2>we are sending a secret code to one thread, their it would be processed and using channel it would be sent throught the channel, in another thread we are using the reciever, after getting the data we print it.</h2>
           </div>
         </div>
-      </div>
       <IssueBanner />
     </div>
   );
