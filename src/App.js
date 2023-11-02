@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
-import { HashRouter as Router} from 'react-router-dom';
-
-
+import React, { useState } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import { DeclareRoutes } from './main_components/routes';
 import { ShowLinks } from './main_components/links';
 
@@ -14,12 +12,10 @@ function App() {
 
   return (
     <Router>
-    <div className="App">
-
-      <ShowLinks state={isDrawerOpen} stateFunction={toggleDrawer} />
-      
-      <DeclareRoutes />
-    </div>
+      <div className="App">
+        <ShowLinks state={isDrawerOpen} stateFunction={toggleDrawer} />
+        <DeclareRoutes />
+      </div>
     </Router>
   );
 }
