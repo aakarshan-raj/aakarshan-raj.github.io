@@ -39,6 +39,7 @@ import { LabThree } from "../pages/more/Assembly/articles/4/lab_3/Lab";
 import { LabFour } from "../pages/more/Assembly/articles/4/lab_4/Lab"; 
 import { LabFive } from "../pages/more/Assembly/articles/4/lab_5/Lab"; 
 import { LabSix } from "../pages/more/Assembly/articles/4/lab_6/Lab"; 
+import { ShowNineRust } from "../pages/rust/articles/9/nine";
 
 
 export const DeclareRoutes = () =>{
@@ -62,6 +63,7 @@ export const DeclareRoutes = () =>{
 <Route path='/rust/six' element ={<ShowSixRust />}/>
 <Route path='/rust/seven' element ={<ShowSevenRust />}/>
 <Route path='/rust/eight' element ={<ShowEightRust />}/>
+<Route path='/rust/nine' element ={<ShowNineRust />}/>
 
 <Route path='/assembly/one' element={<ShowOneAssembly/>}/>
 <Route path='/assembly/two' element={<ShowTwoAssembly/>}/>
