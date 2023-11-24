@@ -19,6 +19,7 @@ export const ShowRust = () => {
           <h1>7. <Link to="/rust/seven">Threads in Rust</Link></h1>
           <h1>8. <Link to="/rust/eight">Function parameter matching</Link></h1>
           <h1>9. <Link to="/rust/nine">Debugging Rust Binary</Link></h1>
+          <h1>9. <Link to="/rust/ten">Rustlings Solution and Explaination</Link></h1>
 
 
           <IssueBanner />
