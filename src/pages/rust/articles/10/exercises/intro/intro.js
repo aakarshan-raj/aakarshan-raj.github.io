@@ -9,6 +9,9 @@ export const Intro = () => {
         <div className={styles.book_content}>
           <h1 className={styles.title}>Intro</h1>
           <hr></hr>
+          <div className={styles.sub_heading}>Problem code</div>
+          <div className={styles.sub_heading}>Solution code</div>
+          <div className={styles.sub_heading}>Explaination</div>
         </div>
       </div>
       <IssueBanner />
