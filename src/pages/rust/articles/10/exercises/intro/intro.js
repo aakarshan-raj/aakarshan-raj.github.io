@@ -1,4 +1,5 @@
 import IssueBanner from "../../../../../../main_components/issue_banner";
+import SubHeading from "../../../../../../main_components/sub_heading";
 import styles from "../../../../../../styles/styles.module.css"
 import FormatCode from "../../../../../../main_components/code_formatter"
 
@@ -9,15 +10,21 @@ export const Intro = () => {
         <div className={styles.book_content}>
           <h1 className={styles.title}>Intro</h1>
           <hr></hr>
-          <div className={styles.sub_heading}>Problem code</div>
+          <SubHeading
+            text="Problem code"
+          />
           <FormatCode
             code={code_1}
           />
-          <div className={styles.sub_heading}>Solution code</div>
+          <SubHeading
+            text="Solution code"
+          />
           <FormatCode
             code={code_2}
           />
-          <div className={styles.sub_heading}>Explaination</div>
+          <SubHeading
+            text="Explaination"
+          />
           <h2>There is no function such as printline, to print output buffer to console we have println or print.</h2>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import styles from '../../styles/styles.module.css';
 import IssueBanner from '../../main_components/issue_banner'
+import SubHeading from '../../main_components/sub_heading'
 
 
 export const ShowMain = () => {
@@ -7,7 +8,9 @@ export const ShowMain = () => {
     <div className={styles.book_container}>
       <div className={styles.book}>
         <div className={styles.book_content}>
-          <h2 className={styles.title}>RSA key for any communication</h2>
+          <h2 className={styles.title}>
+          <SubHeading text="RSA key for any communication"/>
+          </h2>
           <div className={styles.centered_container}>
             <div className={styles.code_background_rsa}>
               <h2>{keys}</h2>
