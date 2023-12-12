@@ -11,7 +11,7 @@ export const Functions = () => {
           <h1 className={styles.title}>Functions</h1>
           <hr></hr>
           <SubHeading
-            text="Problem code: functioon.rs"
+            text="Problem code: function1.rs"
           />
           <FormatCode
             code={code_1}
@@ -29,7 +29,7 @@ export const Functions = () => {
           <hr></hr>
 
           <SubHeading
-            text="Problem code: functioon.rs"
+            text="Problem code: function2.rs"
           />
           <FormatCode
             code={code_3}
@@ -49,7 +49,7 @@ export const Functions = () => {
 
 
           <SubHeading
-            text="Problem code: functioon.rs"
+            text="Problem code: function3.rs"
           />
           <FormatCode
             code={code_5}
@@ -68,7 +68,7 @@ export const Functions = () => {
 
 
           <SubHeading
-            text="Problem code: functioon.rs"
+            text="Problem code: function4.rs"
           />
           <FormatCode
             code={code_7}
@@ -88,7 +88,7 @@ export const Functions = () => {
 
 
           <SubHeading
-            text="Problem code: functioon.rs"
+            text="Problem code: function5.rs"
           />
           <FormatCode
             code={code_9}
