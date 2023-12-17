@@ -24,7 +24,7 @@ export const PrimitiveTypes = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>Created a bool that didn't existed but we were using it.</h2>
           <hr></hr>
@@ -42,7 +42,7 @@ export const PrimitiveTypes = () => {
             code={code_4}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>we are using a variable `your_character` that hasn't need created, its a char so we assign it a value of a char.</h2>
           <hr></hr>
@@ -60,7 +60,7 @@ export const PrimitiveTypes = () => {
             code={code_6}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>variable `a` is a array and in order for it to not panic we need to create 100 elements in it using the above syntax we create 100 elements in array that are of value 3.</h2>
           <hr></hr>
@@ -78,7 +78,7 @@ export const PrimitiveTypes = () => {
             code={code_8}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>To take a slice of a array we use lower_bound..upper_bound , both lower and upper bound are included.</h2>
           <hr></hr>
@@ -97,7 +97,7 @@ export const PrimitiveTypes = () => {
             code={code_10}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>cat variable is a tuple which can be distructured into two variables, using (name,age) expression we extract &str and a float value from cat tuple.</h2>
           <hr></hr>
@@ -116,7 +116,7 @@ export const PrimitiveTypes = () => {
             code={code_12}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>In Rust to index a tuple we use dot(.) operator and then the index.</h2>
           <hr></hr>

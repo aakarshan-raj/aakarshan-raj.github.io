@@ -25,12 +25,12 @@ export const Vecs = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
-         <h2></h2>
+          <h2>Variable `a` is a slice and we have to create a vector. we can create a vector using `vec!` marco or using `Vec::new()` function, then push the elements in it.</h2>
 
 
-         <SubHeading
+          <SubHeading
             text="Problem code: vec2.rs"
           />
           <FormatCode
@@ -43,9 +43,10 @@ export const Vecs = () => {
             code={code_4}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
-         <h2></h2>
+          <h2>Using `iter_mut()` we can get iterator for each element in vector, then we dereference it and multiply each element by 2.
+when using `map()` we provide a anonymous function which operates on each element, again we dereference it and multiply it, using `collect()` we get those elements.</h2>
 
         </div>
       </div>
@@ -61,7 +62,12 @@ const code_1 = `fn array_and_vec() -> ([i32; 4], Vec<i32>) {
 
   (a, v)
 }`;
-const code_2 = ``;
+const code_2 = `fn array_and_vec() -> ([i32; 4], Vec<i32>) {
+  let a = [10, 20, 30, 40]; // a plain array
+  let v = vec![10,20,30,40];// TODO: declare your vector here with the macro for vectors
+
+  (a, v)
+}`;
 const code_3 = `fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
   for element in v.iter_mut() {
       ???
@@ -72,9 +78,19 @@ const code_3 = `fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
 
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
   v.iter().map(|element| {
-      // TODO: Do the same thing as above - but instead of mutating the
-      // Vec, you can just return the new number!
       ???
   }).collect()
 }`;
-const code_4 = ``;
+const code_4 = `fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
+  for element in v.iter_mut() {
+      *element = (*element)*2;
+  }
+
+  v
+}
+
+fn vec_map(v: &Vec<i32>) -> Vec<i32> {
+  v.iter().map(|element| {
+      *element*2
+  }).collect()
+}`;

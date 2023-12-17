@@ -23,7 +23,7 @@ export const Intro = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>There is no function such as printline, to print output buffer to console we have println or print.</h2>
         </div>

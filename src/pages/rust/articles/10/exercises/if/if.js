@@ -23,7 +23,7 @@ export const If = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>Compare a is greater than b and return a if true, else return b. </h2>
           <hr></hr>
@@ -41,7 +41,7 @@ export const If = () => {
             code={code_4}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>The return type needs to be same (&str), and the condition depends on the tests. </h2>
           <hr></hr>
@@ -59,7 +59,7 @@ export const If = () => {
             code={code_6}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2> We are making use of 'if let' to determine value for variable `identifier`, the type of identifier can only be one and its determined by compiler as we are not explicitly writing it, the return type needs to be same but its of 3 types: integer,float,&str. Making it same solves this.</h2>
           <hr></hr>

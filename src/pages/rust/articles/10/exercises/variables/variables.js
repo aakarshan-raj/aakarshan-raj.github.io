@@ -22,7 +22,7 @@ export const Variables = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>let keyword is used whenever we declare a variable and bind it to a value, NOTE: in rust declaration and binding of
             variable can happen one after another the variable is binded to a type and value.</h2>
@@ -41,7 +41,7 @@ export const Variables = () => {
             code={code_4}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>We can declare a variable without initializing it at that time, but we have to initialize it to a value before we use it.</h2>
 
@@ -60,7 +60,7 @@ export const Variables = () => {
             code={code_6}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>Here also the variable was not intialised before we used it.</h2>
 
@@ -78,7 +78,7 @@ export const Variables = () => {
             code={code_8}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>In rust all variables are immutable by default after initialisation. In order to reassign a new value to a variable we need to make it mutable using mut keyword</h2>
 
@@ -97,7 +97,7 @@ export const Variables = () => {
             code={code_10}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>When 'number' is declared for the first time, its type is '&str'. Later, attempting to assign it an integer breaks many rules. Firstly, 'number' is not mutable, and it's already bound to a '&str' type. We can use 'let' when assigning '3' to 'number'; this shadows the old variable, allowing us to reuse the name with a different type</h2>
 
@@ -116,7 +116,7 @@ export const Variables = () => {
             code={code_12}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>Constants in Rust are required to explicitly declare their type, as they are not meant to ever change.
           </h2>

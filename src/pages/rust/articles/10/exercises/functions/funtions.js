@@ -23,7 +23,7 @@ export const Functions = () => {
             code={code_2}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>we were calling a function that didn't existed, This function took no parameters. So we created one function that takes no argument and returns nothing. In rust the declaration and defination of user-defined function can take anywhere(after main or before) we dont need to specify that a function exists like in C/C++</h2>
           <hr></hr>
@@ -41,7 +41,7 @@ export const Functions = () => {
             code={code_4}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>we main we are calling the function `call_me` and passing a integer as argument, in the defination of function we haven't specified what type of paramter call_me takes.
             In rust this can be done in function defination as: (name_of_variable:type,...)</h2>
@@ -61,7 +61,7 @@ export const Functions = () => {
             code={code_6}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>No argument was passed when invoking call_me</h2>
           <hr></hr>
@@ -80,7 +80,7 @@ export const Functions = () => {
             code={code_8}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>`sale_price` was returning a number but in its defination the return type was empty, we can use i32(signed 32 integer) as a return type here.
           </h2>
@@ -100,7 +100,7 @@ export const Functions = () => {
             code={code_10}
           />
           <SubHeading
-            text="Explaination"
+            text="Explanation"
           />
           <h2>In rust functions we can either use `return` keyword or not use `;` at the end of expression when we want to return something, expressions always produce values and without semicolon we can return it.
           </h2>
