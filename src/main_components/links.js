@@ -13,6 +13,8 @@ export const ShowLinks = (props) => {
                 <li><Link to={"/react"} className="navbar-item">REACT</Link></li>
                 <li><Link to={"/alu"} className="drawer-item">ALU </Link></li>
                 <li><Link to={"/ram16k"} className="drawer-item">RAM16K </Link></li>
+                <li><Link to={"/cpu"} className="drawer-item">CPU </Link></li>
+
               </ol>
             </div>
 

@@ -66,6 +66,7 @@ import { LabThree } from "../pages/more/Assembly/articles/4/lab_3/Lab";
 import { LabFour } from "../pages/more/Assembly/articles/4/lab_4/Lab";
 import { LabFive } from "../pages/more/Assembly/articles/4/lab_5/Lab";
 import { LabSix } from "../pages/more/Assembly/articles/4/lab_6/Lab";
+import { ShowCPU } from "../pages/more/CPU/cpu";
 
 
 export const DeclareRoutes = () => {
@@ -77,8 +78,9 @@ export const DeclareRoutes = () => {
                 <Route path='/nodejs/two' element={<ShowTwoNodejs />} />
                 <Route path='/alu' element={<ShowAlu />} />
                 <Route path='/ram16k' element={<ShowRam />} />
+                <Route path='/cpu' element={<ShowCPU />} />
 
-
+                
                 <Route path='/react/one' element={<ShowOneReact />} />
 
                 <Route path='/rust/one' element={<ShowOneRust />} />
