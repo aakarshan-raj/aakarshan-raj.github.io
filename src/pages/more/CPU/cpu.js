@@ -399,7 +399,7 @@ export const ShowCPU = () => {
             <img src={dregister} />
           </div>
 
-          <h2>Connect d2 bit of instruction bit to load bit of D Register</h2>
+          <h2>We will load in D Register if the type of instruction is C and d2 bit is set, using And gate we can make the logic:</h2>
           <h2>HDL Code:</h2>
 
           <FormatCode
@@ -690,7 +690,8 @@ Mux16(a=inM,b=ARegOut,sel=MorA,out=forAlu);`;
 const code_3 = `Not(in=instruction[15],out=typeA);
 Or(a=typeA,b=instruction[5],out=AregControl);`;
 const code_4 = `ARegister(in=forAreg,load=AregControl,out=ARegOut,out[0..14]=addressM);`;
-const code_5 = `DRegister(in=toD,load=instruction[4],out=DRegOut);`;
+const code_5 = `And(a=instruction[4],b=instruction[15],out=writeD);
+DRegister(in=toD,load=writeD,out=DRegOut);`;
 const code_6 = `And(a=instruction[3],b=instruction[15],out=writeM);          `;
 const code_7 = `CHIP Mux8 {
   IN a, b, c, d,
@@ -738,46 +739,48 @@ Mux8(a=false, b=JGT, c=zrOut, d=notNgOut, e=ngOut, f=notZrOut, g=JLE, h=true, se
 const code_18 = `And(a=instruction[15],b=muxLoad,out=pcLoad);
 PC(in=ARegOut,load=pcLoad,inc=true,reset=reset,out[0..14]=pc);`;
 
-const code_19 = `CHIP CPU {
+const code_19 = `
+CHIP CPU {
 
-  IN  inM[16],         // M value input  (M = contents of RAM[A])
-      instruction[16], // Instruction for execution
-      reset;           // Signals whether to re-start the current
-                       // program (reset==1) or continue executing
-                       // the current program (reset==0).
+    IN  inM[16],         // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset==1) or continue executing
+                         // the current program (reset==0).
 
-  OUT outM[16],        // M value output
-      writeM,          // Write to M? 
-      addressM[15],    // Address in data memory (of M)
-      pc[15];          // address of next instruction
+    OUT outM[16],        // M value output
+        writeM,          // Write to M? 
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instruction
 
-  PARTS:
-  Not(in=instruction[15],out=typeA);
-  Or(a=typeA,b=instruction[5],out=AregControl);
+    PARTS:
+    Not(in=instruction[15],out=typeA);              // Check for Type A instruction
+    Or(a=typeA,b=instruction[5],out=AregControl);   // Check if Destination is D Register
 
-  And(a=instruction[3],b=instruction[15],out=writeM);            
-  And(a=instruction[5],b=instruction[15],out=firstMux);          
+    And(a=instruction[3],b=instruction[15],out=writeM);      // Write To Memory if d3(M) is set and Its Type C instruction      
+    And(a=instruction[5],b=instruction[15],out=firstMux);    // Write To A Register if Type C instruction and d1(A) bit is set      
+    And(a=instruction[4],b=instruction[15],out=writeD);      // Write To D REgister if Type C instruction and d2(D) but is set
 
-  Mux16(a=instruction,b=fx,sel=firstMux,out=forAreg);
+    Mux16(a=instruction,b=fx,sel=firstMux,out=forAreg);
 
-  ARegister(in=forAreg,load=AregControl,out=ARegOut,out[0..14]=addressM);
+    ARegister(in=forAreg,load=AregControl,out=ARegOut,out[0..14]=addressM);
 
-  Not(in=instruction[12],out=MorA);
-  
-  Mux16(a=inM,b=ARegOut,sel=MorA,out=forAlu);
+    Not(in=instruction[12],out=MorA);
+    
+    Mux16(a=inM,b=ARegOut,sel=MorA,out=forAlu);
 
-  DRegister(in=toD,load=instruction[4],out=DRegOut);
+    DRegister(in=toD,load=writeD,out=DRegOut);   
+    ALU(x=DRegOut,y=forAlu,zx=instruction[11],nx=instruction[10],zy=instruction[9],ny=instruction[8],
+        f=instruction[7],no=instruction[6],out=outM,out=toD,out=fx,zr=zrOut,ng=ngOut);
 
-  ALU(x=DRegOut,y=forAlu,zx=instruction[11],nx=instruction[10],zy=instruction[9],ny=instruction[8],
-      f=instruction[7],no=instruction[6],out=outM,out=toD,out=fx,zr=zrOut,ng=ngOut);
+    Not(in=zrOut,out=notZrOut);
+    Not(in=ngOut,out=notNgOut);
+    And(a=notZrOut,b=notNgOut,out=JGT);
 
-  Not(in=zrOut,out=notZrOut);
-  Not(in=ngOut,out=notNgOut);
-  And(a=notZrOut,b=notNgOut,out=JGT);
-
-  Or(a=zrOut,b=ngOut,out=JLE);
-  Mux8(a=false, b=JGT, c=zrOut, d=notNgOut, e=ngOut, f=notZrOut, g=JLE, h=true, sel=instruction[0..2], out=muxLoad);
-  And(a=instruction[15],b=muxLoad,out=pcLoad);
-  
-  PC(in=ARegOut,load=pcLoad,inc=true,reset=reset,out[0..14]=pc);
-}`;
+    Or(a=zrOut,b=ngOut,out=JLE);
+    Mux8(a=false, b=JGT, c=zrOut, d=notNgOut, e=ngOut, f=notZrOut, g=JLE, h=true, sel=instruction[0..2], out=muxLoad);
+    And(a=instruction[15],b=muxLoad,out=pcLoad);
+    
+    PC(in=ARegOut,load=pcLoad,inc=true,reset=reset,out[0..14]=pc);
+}
+`;
