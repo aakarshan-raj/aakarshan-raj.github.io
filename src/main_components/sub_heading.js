@@ -6,6 +6,7 @@ const SubHeading = (props) => {
         backgroundClip: 'text',
         color: 'transparent',
         display: 'inline-block',
+        WebkitBackgroundClip: 'text',
         fontSize: (props.size)? `${props.size}px` : '30px'
     };
 
