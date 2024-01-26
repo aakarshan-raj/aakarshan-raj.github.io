@@ -3,7 +3,15 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-
+  ::-moz-selection {
+    background: #ff2b48;
+  }
+  ::-webkit-selection {
+    background: #ff2b48;
+  }
+  ::selection {
+    background: #ff2b48;
+  }
 }
 
 .book {
