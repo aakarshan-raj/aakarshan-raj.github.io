@@ -4,6 +4,9 @@ import { ShowReact } from '../pages/react/react';
 import { ShowOneReact } from "../pages/react/articles/1/one";
 
 import { ShowCpp } from '../pages/cpp/cpp';
+import { ShowOneCpp } from "../pages/cpp/articles/1/one";
+import { ShowTwoCpp } from "../pages/cpp/articles/2/two"
+import { ShowThreeCpp } from "../pages/cpp/articles/3/three";
 
 import { ShowNodejs } from '../pages/nodejs/nodejs';
 import { ShowOneNodejs } from '../pages/nodejs/articles/1/one';
@@ -67,6 +70,7 @@ import { LabFour } from "../pages/more/Assembly/articles/4/lab_4/Lab";
 import { LabFive } from "../pages/more/Assembly/articles/4/lab_5/Lab";
 import { LabSix } from "../pages/more/Assembly/articles/4/lab_6/Lab";
 import { ShowCPU } from "../pages/more/CPU/cpu";
+import { ShowComputer } from "../pages/more/Computer/computer";
 
 
 export const DeclareRoutes = () => {
@@ -79,8 +83,12 @@ export const DeclareRoutes = () => {
                 <Route path='/alu' element={<ShowAlu />} />
                 <Route path='/ram16k' element={<ShowRam />} />
                 <Route path='/cpu' element={<ShowCPU />} />
-
+                <Route path='/computer' element={<ShowComputer />} />
                 
+                <Route path='/cpp/one' element={<ShowOneCpp />} />
+                <Route path='/cpp/two' element={<ShowTwoCpp />} />
+                <Route path='/cpp/three' element={<ShowThreeCpp />} />
+
                 <Route path='/react/one' element={<ShowOneReact />} />
 
                 <Route path='/rust/one' element={<ShowOneRust />} />
@@ -93,8 +101,6 @@ export const DeclareRoutes = () => {
                 <Route path='/rust/eight' element={<ShowEightRust />} />
                 <Route path='/rust/nine' element={<ShowNineRust />} />
                 <Route path='/rust/ten' element={<ShowTenRust />} />
-
-
 
                 <Route path='/rust/ten/clippy' element={<Clippy />} />
                 <Route path='/rust/ten/conversations' element={<Conversations />} />

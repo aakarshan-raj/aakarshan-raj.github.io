@@ -1,6 +1,8 @@
 import styles from '../../styles/styles.module.css';
 import ImgBook1 from './assets/book1.jpg'
 import ImgBook2 from './assets/book2.jpg'
+import ImgBook3 from './assets/book3.jpeg'
+import ImgBook4 from './assets/book4.jpg'
 import IssueBanner from '../../../src/main_components/issue_banner'
 
 
@@ -33,6 +35,29 @@ export const ShowBooks = () => {
             </div>
           </div>
           <hr></hr>
+
+          <div className={styles.individual_book}>
+            <img src={ImgBook3} className={styles.book_img} />
+            <div>
+              <h1>Introduction to algorithms</h1>
+            </div>
+            <div>
+              <h2>Covers Introduction to algorithms in formal way, must read to understand things intuitively in CS</h2>
+            </div>
+          </div>
+          <hr></hr>
+
+          <div className={styles.individual_book}>
+            <img src={ImgBook4} className={styles.book_img} />
+            <div>
+              <h1>Hypermedia systems</h1>
+            </div>
+            <div>
+              <h2>Tired of SPA? This might be good place to start understanding Hypermedias and get to know the real REST(Its not JSON API's)</h2>
+            </div>
+          </div>
+          <hr></hr>
+
         </div>
       </div>
       <IssueBanner />
