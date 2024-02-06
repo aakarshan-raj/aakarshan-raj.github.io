@@ -72,6 +72,9 @@ import { LabSix } from "../pages/more/Assembly/articles/4/lab_6/Lab";
 import { ShowCPU } from "../pages/more/CPU/cpu";
 import { ShowComputer } from "../pages/more/Computer/computer";
 
+import { ShowGraph } from "../pages/more/Graphs/graphs";
+import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
+
 
 export const DeclareRoutes = () => {
     return (
@@ -148,6 +151,9 @@ export const DeclareRoutes = () => {
                 <Route path='/nodejs' element={<ShowNodejs />} />
                 <Route path='/assembly' element={<ShowAssembly />} />
 
+                <Route path='/graphs' element={<ShowGraph />} />
+                <Route path='/graph/one' element={<ShowOneGraph />} />
+                
             </Routes>
         </div>
     );
