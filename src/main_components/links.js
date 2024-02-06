@@ -9,13 +9,13 @@ export const ShowLinks = (props) => {
           <Drawer anchor="left" open={props.state} onClose={props.stateFunction}>
             <div className="drawer">
               <ol className="drawer-list">
-                <li><Link to={"/nodejs"} className="drawer-item">NodeJS </Link></li>
-                <li><Link to={"/react"} className="navbar-item">REACT</Link></li>
-                <li><Link to={"/alu"} className="drawer-item">ALU </Link></li>
-                <li><Link to={"/ram16k"} className="drawer-item">RAM16K </Link></li>
-                <li><Link to={"/cpu"} className="drawer-item">CPU </Link></li>
-                <li><Link to={"/computer"} className="drawer-item">COMPUTER </Link></li>
-                <li><Link to={"/graphs"} className="drawer-item">Graphs </Link></li>
+                <li><Link to={"/nodejs"}  onClick={props.stateFunction} className="drawer-item">NodeJS </Link></li>
+                <li><Link to={"/react"}  onClick={props.stateFunction} className="navbar-item">REACT</Link></li>
+                <li><Link to={"/alu"}  onClick={props.stateFunction} className="drawer-item">ALU </Link></li>
+                <li><Link to={"/ram16k"}  onClick={props.stateFunction}  className="drawer-item">RAM16K </Link></li>
+                <li><Link to={"/cpu"}  onClick={props.stateFunction} className="drawer-item">CPU </Link></li>
+                <li><Link to={"/computer"}  onClick={props.stateFunction}  className="drawer-item">COMPUTER </Link></li>
+                <li><Link to={"/graphs"}  onClick={props.stateFunction}  className="drawer-item">Graphs </Link></li>
 
               </ol>
             </div>
