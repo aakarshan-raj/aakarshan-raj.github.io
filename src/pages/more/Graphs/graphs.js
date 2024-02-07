@@ -12,7 +12,7 @@ export const ShowGraph = () => {
           <h1 className={styles.title}>ASSEMBLY</h1>
 
           <hr></hr>
-          <h1>1.<Link to={"/graph/one"}>Graphs one</Link></h1>
+          <h1>1.<Link to={"/graph/one"}>Path between two vertices</Link></h1>
 
         </div>
       </div>
