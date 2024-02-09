@@ -5,7 +5,7 @@ const FormatCode = (props) => {
         <h3>
             <CodeBlock
                 text={props.code}
-                language="rust"
+                language={(props?.lang) ? props.lang : "rust"}
                 showLineNumbers={true}
                 theme={androidstudio}
             />
