@@ -74,6 +74,7 @@ import { ShowComputer } from "../pages/more/Computer/computer";
 
 import { ShowGraph } from "../pages/more/Graphs/graphs";
 import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
+import { ShowTwoGraph } from "../pages/more/Graphs/articles/2/two";
 
 
 export const DeclareRoutes = () => {
@@ -153,7 +154,8 @@ export const DeclareRoutes = () => {
 
                 <Route path='/graphs' element={<ShowGraph />} />
                 <Route path='/graph/one' element={<ShowOneGraph />} />
-                
+                <Route path='/graph/two' element={<ShowTwoGraph />} />
+
             </Routes>
         </div>
     );

@@ -12,7 +12,7 @@ export const ShowNodejs = () => {
 
           <hr></hr>
           <h1>1.<Link to={"/nodejs/one"}>Setting up Mongoose with NodeJs</Link></h1>
-          <h1>1.<Link to={"/nodejs/two"}>Using Mongoose in NodeJs.</Link></h1>
+          <h1>2.<Link to={"/nodejs/two"}>Using Mongoose in NodeJs.</Link></h1>
 
 
         </div>
