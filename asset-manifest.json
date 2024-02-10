@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1f868381.css",
-    "main.js": "/static/js/main.6527e9a9.js",
+    "main.js": "/static/js/main.1aaf46f3.js",
     "react-syntax-highlighter/refractor-core-import.js": "/static/js/react-syntax-highlighter/refractor-core-import.8dac13ef.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/static/js/react-syntax-highlighter_languages_refractor_abap.cb10ac41.chunk.js",
     "react-syntax-highlighter_languages_refractor_abnf.js": "/static/js/react-syntax-highlighter_languages_refractor_abnf.9dd41e4a.chunk.js",
@@ -303,12 +303,19 @@
     "static/media/alu.png": "/static/media/alu.4c8edd53abb9e40313fe.png",
     "static/media/three.png": "/static/media/three.f07058707c44efb01cb4.png",
     "static/media/ALU.png": "/static/media/ALU.955a14b35e235f8c2f72.png",
+    "static/media/graph.drawio1.svg": "/static/media/graph.drawio1.463d7f088030d17f9145ec5244fe75e8.svg",
+    "static/media/graph.drawio2.svg": "/static/media/graph.drawio2.dd4a8b061ed01fc4e8e87a7b62fb393a.svg",
+    "static/media/graph.drawio3.svg": "/static/media/graph.drawio3.f90dd4e280af0f047dc1a7800c8b8be8.svg",
+    "static/media/graph.drawio4.svg": "/static/media/graph.drawio4.e318c90ea191fce9470886179ea383b0.svg",
+    "static/media/graph.drawio.svg": "/static/media/graph.drawio.8d92b0aa4639b74ef459821921818e53.svg",
+    "static/media/graph.drawio5.svg": "/static/media/graph.drawio5.9bcd55c31a851f71689668bffdd3ecf2.svg",
+    "static/media/graph.drawio6.svg": "/static/media/graph.drawio6.9b70569b80d45613de2137240d83e3b9.svg",
     "static/media/book3.jpeg": "/static/media/book3.74c61400735b5a3e5a62.jpeg",
     "static/media/logo.png": "/static/media/logo.788427cc292d2478b21d.png",
     "static/media/bits.png": "/static/media/bits.b65f85a7e1071b5ca617.png",
     "index.html": "/index.html",
     "main.1f868381.css.map": "/static/css/main.1f868381.css.map",
-    "main.6527e9a9.js.map": "/static/js/main.6527e9a9.js.map",
+    "main.1aaf46f3.js.map": "/static/js/main.1aaf46f3.js.map",
     "refractor-core-import.8dac13ef.chunk.js.map": "/static/js/react-syntax-highlighter/refractor-core-import.8dac13ef.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.cb10ac41.chunk.js.map": "/static/js/react-syntax-highlighter_languages_refractor_abap.cb10ac41.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abnf.9dd41e4a.chunk.js.map": "/static/js/react-syntax-highlighter_languages_refractor_abnf.9dd41e4a.chunk.js.map",
@@ -590,6 +597,6 @@
   },
   "entrypoints": [
     "static/css/main.1f868381.css",
-    "static/js/main.6527e9a9.js"
+    "static/js/main.1aaf46f3.js"
   ]
 }
