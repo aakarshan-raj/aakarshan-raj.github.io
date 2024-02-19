@@ -14,7 +14,8 @@ export const ShowGraph = () => {
           <hr></hr>
           <h1>1.<Link to={"/graph/one"}>Path between two vertices</Link></h1>
           <h1>2.<Link to={"/graph/two"}>Number of connected components in a Graph</Link></h1>
-
+          <h1>3.<Link to={"/graph/three"}>Directed acyclic graph(DAG)</Link></h1>
+          
         </div>
       </div>
       <IssueBanner />

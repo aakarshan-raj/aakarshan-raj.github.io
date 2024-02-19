@@ -75,6 +75,7 @@ import { ShowComputer } from "../pages/more/Computer/computer";
 import { ShowGraph } from "../pages/more/Graphs/graphs";
 import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
 import { ShowTwoGraph } from "../pages/more/Graphs/articles/2/two";
+import { ShowThreeGraph } from "../pages/more/Graphs/articles/3/three";
 
 
 export const DeclareRoutes = () => {
@@ -88,7 +89,7 @@ export const DeclareRoutes = () => {
                 <Route path='/ram16k' element={<ShowRam />} />
                 <Route path='/cpu' element={<ShowCPU />} />
                 <Route path='/computer' element={<ShowComputer />} />
-                
+
                 <Route path='/cpp/one' element={<ShowOneCpp />} />
                 <Route path='/cpp/two' element={<ShowTwoCpp />} />
                 <Route path='/cpp/three' element={<ShowThreeCpp />} />
@@ -155,6 +156,7 @@ export const DeclareRoutes = () => {
                 <Route path='/graphs' element={<ShowGraph />} />
                 <Route path='/graph/one' element={<ShowOneGraph />} />
                 <Route path='/graph/two' element={<ShowTwoGraph />} />
+                <Route path='/graph/three' element={<ShowThreeGraph />} />
 
             </Routes>
         </div>
