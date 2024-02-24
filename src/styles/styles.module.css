@@ -1,3 +1,8 @@
+@font-face {
+  font-family:Inconsolata;
+  src: url("./fonts/Inconsolata-Regular.ttf");
+}
+
 .book_container {
   display: flex;
   justify-content: center;
@@ -17,7 +22,7 @@
 .book {
   border: 1px solid red;
   padding: 20px;
-  width: 90%;
+  width: 60%;
   height: 100%;
   background-color: #171414;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
@@ -41,14 +46,14 @@
 .title {
   font-size: 40px;
   color: white;
-  font-family: monospace;
+  font-family: Inconsolata;
   text-align: center;
 }
 
 .sub_title {
   font-size: 40px;
   color: rgb(59, 58, 128);
-  font-family: monospace;
+  font-family: Inconsolata;
   text-align: center;
   overflow: auto;
   font-style: italic;
@@ -59,7 +64,7 @@
   font-size: 10px;
   color: white;
   text-align: left;
-  font-family: monospace;
+  font-family: Inconsolata;
 }
 
 .logo {
@@ -169,4 +174,10 @@ a {
 .anchorText {
   color: #fd0942;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .book {
+    width: 90%;
+  }
 }
