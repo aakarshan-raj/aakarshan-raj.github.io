@@ -13,6 +13,7 @@ export const ShowReact = () => {
 
           <hr></hr>
           <h1>1.<Link to={"/react/one"}>React in Depth</Link></h1>
+          <h1>2.<Link to={"/react/two"}>Migrating from Javascript to Typescript in react</Link></h1>
 
 
         </div>

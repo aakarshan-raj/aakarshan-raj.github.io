@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { ShowReact } from '../pages/react/react';
 import { ShowOneReact } from "../pages/react/articles/1/one";
+import { ShowTwoReact } from "../pages/react/articles/2/two";
 
 import { ShowCpp } from '../pages/cpp/cpp';
 import { ShowOneCpp } from "../pages/cpp/articles/1/one";
@@ -95,6 +96,7 @@ export const DeclareRoutes = () => {
                 <Route path='/cpp/three' element={<ShowThreeCpp />} />
 
                 <Route path='/react/one' element={<ShowOneReact />} />
+                <Route path='/react/two' element={<ShowTwoReact />} />
 
                 <Route path='/rust/one' element={<ShowOneRust />} />
                 <Route path='/rust/two' element={<ShowTwoRust />} />
