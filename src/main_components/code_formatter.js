@@ -1,4 +1,10 @@
-import { CodeBlock, androidstudio } from "react-code-blocks";
+import { CodeBlock } from "react-code-blocks";
+import {
+    arta,
+    hybrid, irBlack, monokai,
+    sunburst,
+    vs2015, xt256, zenburn
+} from "react-code-blocks"
 
 const FormatCode = (props) => {
     return (
@@ -7,7 +13,7 @@ const FormatCode = (props) => {
                 text={props.code}
                 language={(props?.lang) ? props.lang : "rust"}
                 showLineNumbers={true}
-                theme={androidstudio}
+                theme={monokai}
             />
         </h3>
     );
