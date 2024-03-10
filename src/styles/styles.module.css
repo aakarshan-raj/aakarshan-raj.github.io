@@ -181,3 +181,7 @@ a {
     width: 90%;
   }
 }
+
+.nav_link{
+  text-decoration: none;
+}
