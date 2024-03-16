@@ -1,16 +1,16 @@
 import FormatCode from "../../../../main_components/code_formatter";
-import IssueBanner from "../../../../main_components/issue_banner";
 import styles from "../../../../styles/styles.module.css"
+import { useEffect } from "react";
 
 
 
-
-export const ShowThreeRust = () => {
+export const ShowThreeRust = (props) => {
+  const title = "Traits in Rust";
+  useEffect(() => {
+    props.setTitle(title)
+  }, []);
   return (
-    <div className={styles.book_container}>
-      <div className={styles.book}>
-        <div className={styles.book_content}>
-          <h1 className={styles.title}>Traits in Rust</h1>
+      <>
           <hr></hr>
 
           <div>
@@ -60,10 +60,7 @@ export const ShowThreeRust = () => {
             the trait `DisplayShape` is implemented for `Square.</h2>
 
 
-        </div>
-      </div>
-      <IssueBanner />
-    </div>
+            </>
   );
 }
 

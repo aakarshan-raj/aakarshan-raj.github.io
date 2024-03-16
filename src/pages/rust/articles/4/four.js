@@ -1,12 +1,14 @@
-import IssueBanner from "../../../../main_components/issue_banner";
+import { useEffect } from "react";
 import styles from "../../../../styles/styles.module.css"
 import arch from './imgs/img1.jpg'
-export const ShowFourRust = () => {
+
+export const ShowFourRust = (props) => {
+  const title = "Making a Chat Server in Rust using Tokio";
+  useEffect(() => {
+    props.setTitle(title)
+  }, []);
   return (
-    <div className={styles.book_container}>
-      <div className={styles.book}>
-        <div className={styles.book_content}>
-          <h1 className={styles.title}>Making a Chat Server in Rust using Tokio</h1>
+    <>
           <hr></hr>
 
           <h1>TCP Chat server
@@ -152,10 +154,7 @@ export const ShowFourRust = () => {
             We can send the addr to in the broadcast and when we write the data, we can exclude it if the address is same in the broadcast when the send was called.
             here is the updated code</h2>
           <div className={styles.code_background}><h2>{code_12}</h2></div>
-        </div>
-      </div>
-      <IssueBanner />
-    </div>
+          </>
   );
 }
 

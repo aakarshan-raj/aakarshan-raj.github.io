@@ -1,21 +1,18 @@
-import IssueBanner from "../../../../../main_components/issue_banner";
 import FormatCode from "../../../../../main_components/code_formatter"
 import styles from "../../../../../styles/styles.module.css"
-import SubHeading from "../../../../../main_components/sub_heading";
+import { useEffect } from "react";
 
 
-export const ShowThreeGraph = () => {
+export const ShowThreeGraph = (props) => {
+    const title = "Directed acyclic graph(DAG)";
+    useEffect(() => {
+        props.setTitle(title)
+    }, []);
     return (
-        <div className={styles.book_container}>
-            <div className={styles.book}>
-                <div className={styles.book_content}>
-                    <h1 className={styles.title}>Directed acyclic graph(DAG)</h1>
-                    <hr></hr>
-
-                </div>
-            </div>
-            <IssueBanner />
-        </div>
+        <>
+            <h1 className={styles.title}></h1>
+            <hr></hr>
+        </>
     );
 }
 

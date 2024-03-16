@@ -84,12 +84,12 @@ export const DeclareRoutes = (props) => {
         <div>
             <Routes>
                 <Route path="*" element={<NotFound />} />
-                <Route path='/nodejs/one' element={<ShowOneNodejs />} />
-                <Route path='/nodejs/two' element={<ShowTwoNodejs />} />
-                <Route path='/alu' element={<ShowAlu />} />
-                <Route path='/ram16k' element={<ShowRam />} />
-                <Route path='/cpu' element={<ShowCPU />} />
-                <Route path='/computer' element={<ShowComputer />} />
+                <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle}  />} />
+                <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle}  />} />
+                <Route path='/alu' element={<ShowAlu setTitle={props.setTitle}/>}    />
+                <Route path='/ram16k' element={<ShowRam  setTitle={props.setTitle} />} />
+                <Route path='/cpu' element={<ShowCPU  setTitle={props.setTitle} />} />
+                <Route path='/computer' element={<ShowComputer setTitle={props.setTitle}  />} />
 
                 <Route path='/cpp/one' element={<ShowOneCpp />} />
                 <Route path='/cpp/two' element={<ShowTwoCpp />} />
@@ -98,16 +98,16 @@ export const DeclareRoutes = (props) => {
                 <Route path='/react/one' element={<ShowOneReact />} />
                 <Route path='/react/two' element={<ShowTwoReact />} />
 
-                <Route path='/rust/one' element={<ShowOneRust />} />
+                <Route path='/rust/one' element={<ShowOneRust setTitle={props.setTitle} />} />
                 <Route path='/rust/two' element={<ShowTwoRust setTitle={props.setTitle} />} />
-                <Route path='/rust/three' element={<ShowThreeRust />} />
-                <Route path='/rust/four' element={<ShowFourRust />} />
-                <Route path='/rust/five' element={<ShowFiveRust />} />
-                <Route path='/rust/six' element={<ShowSixRust />} />
-                <Route path='/rust/seven' element={<ShowSevenRust />} />
-                <Route path='/rust/eight' element={<ShowEightRust />} />
-                <Route path='/rust/nine' element={<ShowNineRust />} />
-                <Route path='/rust/ten' element={<ShowTenRust />} />
+                <Route path='/rust/three' element={<ShowThreeRust setTitle={props.setTitle} />} />
+                <Route path='/rust/four' element={<ShowFourRust setTitle={props.setTitle} />} />
+                <Route path='/rust/five' element={<ShowFiveRust setTitle={props.setTitle} />} />
+                <Route path='/rust/six' element={<ShowSixRust setTitle={props.setTitle} />} />
+                <Route path='/rust/seven' element={<ShowSevenRust setTitle={props.setTitle} />} />
+                <Route path='/rust/eight' element={<ShowEightRust setTitle={props.setTitle} />} />
+                <Route path='/rust/nine' element={<ShowNineRust setTitle={props.setTitle} />} />
+                <Route path='/rust/ten' element={<ShowTenRust setTitle={props.setTitle} />} />
 
                 <Route path='/rust/ten/clippy' element={<Clippy />} />
                 <Route path='/rust/ten/conversations' element={<Conversations />} />
@@ -147,18 +147,18 @@ export const DeclareRoutes = (props) => {
                 <Route path='/assembly/four/phase_6' element={<LabSix />} />
 
 
-                <Route path='/' element={<ShowMain />} />
-                <Route path='/rust' element={<ShowRust />} />
-                <Route path='/react' element={<ShowReact />} />
-                <Route path='/cpp' element={<ShowCpp />} />
-                <Route path='/books' element={<ShowBooks />} />
-                <Route path='/nodejs' element={<ShowNodejs />} />
-                <Route path='/assembly' element={<ShowAssembly />} />
+                <Route path='/' element={<ShowMain setTitle={props.setTitle} />} />
+                <Route path='/rust' element={<ShowRust setTitle={props.setTitle} />} />
+                <Route path='/react' element={<ShowReact setTitle={props.setTitle} />} />
+                <Route path='/cpp' element={<ShowCpp setTitle={props.setTitle}/>}  />
+                <Route path='/books' element={<ShowBooks setTitle={props.setTitle} />} />
+                <Route path='/nodejs' element={<ShowNodejs setTitle={props.setTitle} />} />
+                <Route path='/assembly' element={<ShowAssembly setTitle={props.setTitle} />} />
 
-                <Route path='/graphs' element={<ShowGraph />} />
-                <Route path='/graph/one' element={<ShowOneGraph />} />
-                <Route path='/graph/two' element={<ShowTwoGraph />} />
-                <Route path='/graph/three' element={<ShowThreeGraph />} />
+                <Route path='/graphs' element={<ShowGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/one' element={<ShowOneGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/two' element={<ShowTwoGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/three' element={<ShowThreeGraph setTitle={props.setTitle} />} />
 
             </Routes>
         </div>
