@@ -1,5 +1,5 @@
 @font-face {
-  font-family:Inconsolata;
+  font-family: Inconsolata;
   src: url("./fonts/Inconsolata-Regular.ttf");
 }
 
@@ -8,12 +8,15 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+
   ::-moz-selection {
     background: #ff2b48;
   }
+
   ::-webkit-selection {
     background: #ff2b48;
   }
+
   ::selection {
     background: #ff2b48;
   }
@@ -27,6 +30,16 @@
   background-color: #171414;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+.light_book {
+  border: 1px solid red;
+  padding: 20px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 .individual_book {
 
@@ -50,6 +63,13 @@
   text-align: center;
 }
 
+.light_title {
+  font-size: 40px;
+  color: black;
+  font-family: Inconsolata;
+  text-align: center;
+}
+
 .sub_title {
   font-size: 40px;
   color: rgb(59, 58, 128);
@@ -63,6 +83,13 @@
 .book_content {
   font-size: 10px;
   color: white;
+  text-align: left;
+  font-family: Inconsolata;
+}
+
+.light_book_content {
+  font-size: 10px;
+  color: black;
   text-align: left;
   font-family: Inconsolata;
 }
@@ -155,11 +182,12 @@ a {
 }
 
 
-.content{
+.content {
   color: white;
   font-family: monospace;
 
 }
+
 .issueBanner {
   font-size: 12px;
   position: fixed;
@@ -182,6 +210,6 @@ a {
   }
 }
 
-.nav_link{
+.nav_link {
   text-decoration: none;
 }

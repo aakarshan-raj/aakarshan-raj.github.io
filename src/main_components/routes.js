@@ -79,7 +79,7 @@ import { ShowTwoGraph } from "../pages/more/Graphs/articles/2/two";
 import { ShowThreeGraph } from "../pages/more/Graphs/articles/3/three";
 
 
-export const DeclareRoutes = () => {
+export const DeclareRoutes = (props) => {
     return (
         <div>
             <Routes>
@@ -99,7 +99,7 @@ export const DeclareRoutes = () => {
                 <Route path='/react/two' element={<ShowTwoReact />} />
 
                 <Route path='/rust/one' element={<ShowOneRust />} />
-                <Route path='/rust/two' element={<ShowTwoRust />} />
+                <Route path='/rust/two' element={<ShowTwoRust setTitle={props.setTitle} />} />
                 <Route path='/rust/three' element={<ShowThreeRust />} />
                 <Route path='/rust/four' element={<ShowFourRust />} />
                 <Route path='/rust/five' element={<ShowFiveRust />} />
