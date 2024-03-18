@@ -23,7 +23,7 @@ const Toggle = (props) => {
         padding: '0',
         position: 'relative',
         cursor: 'pointer',
-        backgroundColor: isToggled ? 'green' : 'red',
+        backgroundColor: isToggled ? '#39fa6d' : '#a31818',
     };
 
     const knobStyle = {
