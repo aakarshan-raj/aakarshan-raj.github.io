@@ -1,340 +1,334 @@
-import IssueBanner from "../../../../../main_components/issue_banner";
+import { useEffect } from "react";
 import styles from "../../../../../styles/styles.module.css"
 
 
-export const ShowTwoAssembly = () => {
+export const ShowTwoAssembly = (props) => {
+  const title = "x86_64 Instruction Set";
+  useEffect(() => {
+    props.setTitle(title)
+  }, []);
   return (
-    <div className={styles.book_container}>
-      <div className={styles.book}>
-        <div className={styles.book_content}>
-          <h1 className={styles.title}>x86_64 Instruction Set</h1>
-
-          <hr></hr>
-          <h2>Syntax: Intel</h2>
-          <h2>format: INSTRUCTION DESTINATION, SOURCE</h2>
-          <h2>the data is stored in little endian. meaning least significant byte is stored at the lowest memory address, and the most significant byte is stored at the highest memory address.</h2>
-          <h2>0x12345678abcdef00 would be stored as:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_1}</h2>
-          </div>
-          <hr></hr>
-          <h2>Instructions:</h2>
-          <hr />
-          <h2 className={styles.instruction}>NOP - no operation</h2>
-          <h2>Mnemonic for XCHG RAX,RAX - exchange RAX register</h2>
-          <h2>Used for padding and alignment or during debugging when we put a breakpoint.</h2>
-          <hr />
-
-          <h2 className={styles.instruction}>PUSH rax</h2>
-          <h2>push operand on stack and decrease the stack, operand can be a immediate value, register content, or memory content</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>POP rax</h2>
-          <h2>pops value from stack to rax register, operand can be memory location, register</h2>
-          <hr />
-
-
-
-          <h2 className={styles.instruction}>CALL sub</h2>
-          <h2>saves the address of the next instruction (the return address) onto the stack,
-            decreases the value of the stack pointer (`RSP`) to make room for the return address,
-            and changes the instruction pointer (`RIP`) to point to the address where the
-            subroutine begins, effectively transferring control to the subroutine.
-          </h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>RET</h2>
-          <h2>will pop the stack(popping the returned address that was put by call) and load it into RIP.</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>MOV</h2>
-          <h2>mov destination_register, source_register</h2>
-          <div className={styles.code_background}>
-            <h2>{code_2}</h2>
-          </div>
-          <h2>what mov cannot do is: mov [rax],[rbx]</h2>
-          <hr />
-
-
-
-
-          <h2 className={styles.instruction}>ADD</h2>
-          <h2>add destination source: adds source to destination and stores in destination</h2>
-          <div className={styles.code_background}>
-            <h2>{code_3}</h2>
-          </div>
-          <h2></h2>
-          <hr />
-
-
-
-          <h2 className={styles.instruction}>SUB</h2>
-          <h2>sub destination, source: substracts source from destination and result is stored in destination</h2>
-          <div className={styles.code_background}>
-            <h2>{code_4}</h2>
-          </div>
-          <h2></h2>
-          <hr />
-
-
-
-          <h2 className={styles.instruction}>IMUL</h2>
-          <h2>(prefered by msvc over mul)</h2>
-          <h2>signed integer multiplication</h2>
-          <h2>imul destination, source</h2>
-          <div className={styles.code_background}>
-            <h2>{code_5}</h2>
-          </div>
-          <h2>In both above examples truncation problems can arise.</h2>
-          <h2>The multiplication is signed so if the MSB of the operand is 1, it will 2's compliment it, do the operation, and again 2's compliment it.</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>MUL</h2>
-          <h2>used for unsigned multiplication</h2>
-          <div className={styles.code_background}>
-            <h2>{code_6}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>MOVZX - 1-4 byte operand(source)</h2>
-          <h2>move with zero extend</h2>
-          <h2>movzx destination, source</h2>
-          <h2>move source value into destination, zero extending source value to larger size in destination, used when casting smaller values to larger</h2>
-          <div className={styles.code_background}>
-            <h2>{code_7}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>MOXSX - 1-2 byte operand(source)</h2>
-          <h2>move with signed extend</h2>
-          <h2>movsx destination, source </h2>
-          <h2>Move the operand into destination, the source needs to be signed extended into destination meaning its original sign bit should reflect in the destination.</h2>
-          <div className={styles.code_background}>
-            <h2>{code_8}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>MOVSXD - 4-8 byte operand(source)</h2>
-          <h2>used for 32 to 64 bit operands for move with signed extended</h2>
-          <div className={styles.code_background}>
-            <h2>{code_9}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>LEA </h2>
-          <h2>Load effective memory</h2>
-          <h2>[] here doesn't mean that we will load memory of the value passed.</h2>
-          <h2>used for pointer arithmetic such as calulating addres of element of a array.</h2>
-          <div className={styles.code_background}>
-            <h2>{code_10}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>JMP </h2>
-          <h2>unconditional jump, changes RIP (goto, functions, interrupts)</h2>
-          <div className={styles.code_background}>
-            <h2>{code_11}</h2>
-          </div>
-          <hr />
-
-          <h2 className={styles.instruction}>CMP </h2>
-          <h2>cmp operand1, operand2</h2>
-          <h2>substract operand2 from operand1 and sets the appropriate flags.</h2>
-          <h2>different flags:</h2>
-          <h2>1. ZF: zero Flag, set when the result of operation is zero (7th bit in RFLAGS)</h2>
-          <h2>2. SF: sign flag, set when MSB of result is set to 1 (8th bit in RFLAGS)</h2>
-          <h2>3. OF: overflow flag, set if the result overflows</h2>
-          <h2>4. CF: carry flag, set if the operation used carry bit</h2>
-
-          <div className={styles.code_background}>
-            <h2>{code_15}</h2>
-          </div>
-          <hr />
-
-          <h2 className={styles.instruction}>Conditioanl Jump instructions </h2>
-          <h2>Mnemonic Translations:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_12}</h2>
-          </div>
-          <h2>instructions:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_13}</h2>
-          </div>
-          <h2>if the flags are set that is checked for the jump, the RIP will change</h2>
-          <h2>For unsigned variables JA and JB is used, the operands in cmp before signed jump checks are in two's compliment, so if MSB is 1, its negative value.</h2>
-          <h2>Another way to calculate the jump when reading disassembly is put the jump instruction between the call operand (ONLY for intel syntax).</h2>
-          <h2>example:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_14}</h2>
-          </div>
-          <h2>we can see it as: cmp 0x13 {equal_less} 0x12</h2>
-          <h2>which is true so jump to 0x000014 will occur</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>AND - BITWISE AND </h2>
-          <h2>and destination, source</h2>
-          <h2>the form can be r/mX or register</h2>
-          <h2>and operation can set SF and ZF</h2>
-          <div className={styles.code_background}>
-            <h2>{code_16}</h2>
-          </div>
-          <hr />
-
-
-
-          <h2 className={styles.instruction}>OR - BITWISE OR</h2>
-          <h2>or destination, source</h2>
-          <h2>the form can be r/mX or register</h2>
-          <h2>or operation can set SF and ZF</h2>
-          <div className={styles.code_background}>
-            <h2>{code_17}</h2>
-          </div>
-          <hr />
-
-
-
-          <h2 className={styles.instruction}>XOR - BITWISE XOR </h2>
-          <h2>xor destination, source</h2>
-          <h2>the form can be r/mX or register</h2>
-          <h2>xor operation can set SF and ZF</h2>
-          <h2>used to zero out register cause of its nature (1^1 = 0, 0^0 = 0)</h2>
-          <div className={styles.code_background}>
-            <h2>{code_18}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>NOT - BITWISE NOT(one's compliment)</h2>
-          <h2>not operand</h2>
-          <h2>the operand is in r/mX </h2>
-          <h2>not operation can set SF and ZF</h2>
-          <div className={styles.code_background}>
-            <h2>{code_19}</h2>
-          </div>
-          <hr />
-
-          <h2 className={styles.instruction}>INC</h2>
-          <h2>inc operand</h2>
-          <h2>the operand is in r/mX </h2>
-          <h2>increases the operand by 1.</h2>
-          <h2>can set OF SF ZF AF PF CF</h2>
-          <div className={styles.code_background}>
-            <h2>{code_20}</h2>
-          </div>
-          <h2>in optimised code , compiler removes INC</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>DEC</h2>
-          <h2>dec operand</h2>
-          <h2>the operand is in r/mX </h2>
-          <h2>decreases the operand by 1.</h2>
-          <h2>can set OF SF ZF AF PF CF</h2>
-          <div className={styles.code_background}>
-            <h2>{code_21}</h2>
-          </div>
-          <h2>in optimised code , compiler removes DEC</h2>
-          <hr />
-
-          <h2 className={styles.instruction}>TEST</h2>
-          <h2>test operand_1, operand_2</h2>
-          <h2>perform and operation on operand_1 and operand_2, change flags , discard the values </h2>
-          <div className={styles.code_background}>
-            <h2>{code_22}</h2>
-          </div>
-          <h2>in less optimised code we will see if we are anding two values</h2>
-          <div className={styles.code_background}>
-            <h2>{code_23}</h2>
-          </div>
-          <h2>which does basically same thing, after we peform AND operation and store the result in eax, then we test the value to test if the value is zero or not, performing AND operation on a register with itself gives same value. </h2>
-          <h2>same pattern can be seen when performing OR operation and checking the result</h2>
-          <hr />
-
-          <h2 className={styles.instruction}>SHL - SHIFT LOGICAL LEFT({left})</h2>
-          <h2>shl operand1 operand2</h2>
-          <h2>operand1 is in of form r/mX</h2>
-          <h2>operant2 is 1 byte long, or cl register.</h2>
-          <h2>shift the bits by n bits left, which leads to new value that is multiplied by 2 n types, n is the 2nd operand which is 1 byte long</h2>
-          <h2 className={styles.itatic_pink}>the LSB's after shifting n bits left are filled by 0's, used for multiplication in optimised code</h2>
-          <div className={styles.code_background}>
-            <h2>{code_24}</h2>
-          </div>
-          <hr />
-
-          <h2 className={styles.instruction}>SHR - SHIFT LOGICAL RIGHT({right})</h2>
-          <h2>shr operand1 operand2</h2>
-          <h2>operand1 is in of form r/mX</h2>
-          <h2>operant2 is 1 byte long, or cl register.</h2>
-          <h2>shift the bits by n bits right, which leads to new value that is divided by 2 n types, n is the 2nd operand which is 1 byte long.</h2>
-          <h2 className={styles.itatic_pink}>the MSB's after shifting n bits right are filled by 0's, used for division in optimised code</h2>
-          <div className={styles.code_background}>
-            <h2>{code_25}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>SAR - SHIFT ARITHMETIC RIGHT ({right})</h2>
-          <h2>sar operand1 operand2</h2>
-          <h2>operand1 is in of form r/mX</h2>
-          <h2>operant2 is 1 byte long, or cl register.</h2>
-          <h2>the only difference between SHR and SAR is that the MSB's that are moved are filled with the original MSB value, if MSB was 1 all the shifted bit would be filled as 1 else 0.</h2>
-          <h2 className={styles.itatic_pink}>used when there is division of signed int</h2>
-          <div className={styles.code_background}>
-            <h2>{code_26}</h2>
-          </div>
-          <hr />
-
-
-          <h2 className={styles.instruction}>SAL - SHIFT ARITHMETIC LEFT ({left})</h2>
-          <h2>sal operand1 operand2</h2>
-          <h2>operand1 is in of form r/mX</h2>
-          <h2>operant2 is 1 byte long, or cl register.</h2>
-          <h2>sal is same as shl</h2>
-          <hr />
-
-
-          <h2 className={styles.instruction}>REP STOS - REPEAT STORE STRING</h2>
-          <h2>used for storing data in memory in repetitive manner.</h2>
-          <h2>RCX: acts as a counter</h2>
-          <h2>RAX: source</h2>
-          <h2>RDI: destination</h2>
-          <h2>we will copy data from RAX/AL register to location pointed by RDI, and RCX will contain how many times this will repeat, with each copying, RCX will decrement.
-            when RCX == 0, RIP will increment.</h2>
-          <h2>c code:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_27}</h2>
-          </div>
-
-          <h2>disassembly:</h2>
-          <div className={styles.code_background}>
-            <h2>{code_28}</h2>
-          </div>
-
-          <h2>short is 2 byte, 64 short is 128 byte which is 80 in hexadecimal, we sub that much from stack to make space for the array.</h2>
-          <h2>then we mov the memory from where array `a` is starting from into rax, then we mov the memory address into rdi.</h2>
-          <h2>eax is set to 0 by xor.</h2>
-          <h2>we set the counter to 128 by moving 80h into ecx</h2>
-          <h2>rep stos byte ptr [rdi] will copy 0 from eax 128 times into consecutive address starting from rdi.</h2>
-          <h2>ALSO USED FOR RUNTIME CHECK TO CHECK FOR BUFFER OVERFLOW(NOT IN PRODUCTION CODE).</h2>
-          <hr />
-
-
-
-
-        </div>
+    <>
+
+      <hr></hr>
+      <h2>Syntax: Intel</h2>
+      <h2>format: INSTRUCTION DESTINATION, SOURCE</h2>
+      <h2>the data is stored in little endian. meaning least significant byte is stored at the lowest memory address, and the most significant byte is stored at the highest memory address.</h2>
+      <h2>0x12345678abcdef00 would be stored as:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_1}</h2>
       </div>
-      <IssueBanner />
-    </div >
+      <hr></hr>
+      <h2>Instructions:</h2>
+      <hr />
+      <h2 className={styles.instruction}>NOP - no operation</h2>
+      <h2>Mnemonic for XCHG RAX,RAX - exchange RAX register</h2>
+      <h2>Used for padding and alignment or during debugging when we put a breakpoint.</h2>
+      <hr />
+
+      <h2 className={styles.instruction}>PUSH rax</h2>
+      <h2>push operand on stack and decrease the stack, operand can be a immediate value, register content, or memory content</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>POP rax</h2>
+      <h2>pops value from stack to rax register, operand can be memory location, register</h2>
+      <hr />
+
+
+
+      <h2 className={styles.instruction}>CALL sub</h2>
+      <h2>saves the address of the next instruction (the return address) onto the stack,
+        decreases the value of the stack pointer (`RSP`) to make room for the return address,
+        and changes the instruction pointer (`RIP`) to point to the address where the
+        subroutine begins, effectively transferring control to the subroutine.
+      </h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>RET</h2>
+      <h2>will pop the stack(popping the returned address that was put by call) and load it into RIP.</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>MOV</h2>
+      <h2>mov destination_register, source_register</h2>
+      <div className={styles.code_background}>
+        <h2>{code_2}</h2>
+      </div>
+      <h2>what mov cannot do is: mov [rax],[rbx]</h2>
+      <hr />
+
+
+
+
+      <h2 className={styles.instruction}>ADD</h2>
+      <h2>add destination source: adds source to destination and stores in destination</h2>
+      <div className={styles.code_background}>
+        <h2>{code_3}</h2>
+      </div>
+      <h2></h2>
+      <hr />
+
+
+
+      <h2 className={styles.instruction}>SUB</h2>
+      <h2>sub destination, source: substracts source from destination and result is stored in destination</h2>
+      <div className={styles.code_background}>
+        <h2>{code_4}</h2>
+      </div>
+      <h2></h2>
+      <hr />
+
+
+
+      <h2 className={styles.instruction}>IMUL</h2>
+      <h2>(prefered by msvc over mul)</h2>
+      <h2>signed integer multiplication</h2>
+      <h2>imul destination, source</h2>
+      <div className={styles.code_background}>
+        <h2>{code_5}</h2>
+      </div>
+      <h2>In both above examples truncation problems can arise.</h2>
+      <h2>The multiplication is signed so if the MSB of the operand is 1, it will 2's compliment it, do the operation, and again 2's compliment it.</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>MUL</h2>
+      <h2>used for unsigned multiplication</h2>
+      <div className={styles.code_background}>
+        <h2>{code_6}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>MOVZX - 1-4 byte operand(source)</h2>
+      <h2>move with zero extend</h2>
+      <h2>movzx destination, source</h2>
+      <h2>move source value into destination, zero extending source value to larger size in destination, used when casting smaller values to larger</h2>
+      <div className={styles.code_background}>
+        <h2>{code_7}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>MOXSX - 1-2 byte operand(source)</h2>
+      <h2>move with signed extend</h2>
+      <h2>movsx destination, source </h2>
+      <h2>Move the operand into destination, the source needs to be signed extended into destination meaning its original sign bit should reflect in the destination.</h2>
+      <div className={styles.code_background}>
+        <h2>{code_8}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>MOVSXD - 4-8 byte operand(source)</h2>
+      <h2>used for 32 to 64 bit operands for move with signed extended</h2>
+      <div className={styles.code_background}>
+        <h2>{code_9}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>LEA </h2>
+      <h2>Load effective memory</h2>
+      <h2>[] here doesn't mean that we will load memory of the value passed.</h2>
+      <h2>used for pointer arithmetic such as calulating addres of element of a array.</h2>
+      <div className={styles.code_background}>
+        <h2>{code_10}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>JMP </h2>
+      <h2>unconditional jump, changes RIP (goto, functions, interrupts)</h2>
+      <div className={styles.code_background}>
+        <h2>{code_11}</h2>
+      </div>
+      <hr />
+
+      <h2 className={styles.instruction}>CMP </h2>
+      <h2>cmp operand1, operand2</h2>
+      <h2>substract operand2 from operand1 and sets the appropriate flags.</h2>
+      <h2>different flags:</h2>
+      <h2>1. ZF: zero Flag, set when the result of operation is zero (7th bit in RFLAGS)</h2>
+      <h2>2. SF: sign flag, set when MSB of result is set to 1 (8th bit in RFLAGS)</h2>
+      <h2>3. OF: overflow flag, set if the result overflows</h2>
+      <h2>4. CF: carry flag, set if the operation used carry bit</h2>
+
+      <div className={styles.code_background}>
+        <h2>{code_15}</h2>
+      </div>
+      <hr />
+
+      <h2 className={styles.instruction}>Conditioanl Jump instructions </h2>
+      <h2>Mnemonic Translations:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_12}</h2>
+      </div>
+      <h2>instructions:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_13}</h2>
+      </div>
+      <h2>if the flags are set that is checked for the jump, the RIP will change</h2>
+      <h2>For unsigned variables JA and JB is used, the operands in cmp before signed jump checks are in two's compliment, so if MSB is 1, its negative value.</h2>
+      <h2>Another way to calculate the jump when reading disassembly is put the jump instruction between the call operand (ONLY for intel syntax).</h2>
+      <h2>example:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_14}</h2>
+      </div>
+      <h2>we can see it as: cmp 0x13 {equal_less} 0x12</h2>
+      <h2>which is true so jump to 0x000014 will occur</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>AND - BITWISE AND </h2>
+      <h2>and destination, source</h2>
+      <h2>the form can be r/mX or register</h2>
+      <h2>and operation can set SF and ZF</h2>
+      <div className={styles.code_background}>
+        <h2>{code_16}</h2>
+      </div>
+      <hr />
+
+
+
+      <h2 className={styles.instruction}>OR - BITWISE OR</h2>
+      <h2>or destination, source</h2>
+      <h2>the form can be r/mX or register</h2>
+      <h2>or operation can set SF and ZF</h2>
+      <div className={styles.code_background}>
+        <h2>{code_17}</h2>
+      </div>
+      <hr />
+
+
+
+      <h2 className={styles.instruction}>XOR - BITWISE XOR </h2>
+      <h2>xor destination, source</h2>
+      <h2>the form can be r/mX or register</h2>
+      <h2>xor operation can set SF and ZF</h2>
+      <h2>used to zero out register cause of its nature (1^1 = 0, 0^0 = 0)</h2>
+      <div className={styles.code_background}>
+        <h2>{code_18}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>NOT - BITWISE NOT(one's compliment)</h2>
+      <h2>not operand</h2>
+      <h2>the operand is in r/mX </h2>
+      <h2>not operation can set SF and ZF</h2>
+      <div className={styles.code_background}>
+        <h2>{code_19}</h2>
+      </div>
+      <hr />
+
+      <h2 className={styles.instruction}>INC</h2>
+      <h2>inc operand</h2>
+      <h2>the operand is in r/mX </h2>
+      <h2>increases the operand by 1.</h2>
+      <h2>can set OF SF ZF AF PF CF</h2>
+      <div className={styles.code_background}>
+        <h2>{code_20}</h2>
+      </div>
+      <h2>in optimised code , compiler removes INC</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>DEC</h2>
+      <h2>dec operand</h2>
+      <h2>the operand is in r/mX </h2>
+      <h2>decreases the operand by 1.</h2>
+      <h2>can set OF SF ZF AF PF CF</h2>
+      <div className={styles.code_background}>
+        <h2>{code_21}</h2>
+      </div>
+      <h2>in optimised code , compiler removes DEC</h2>
+      <hr />
+
+      <h2 className={styles.instruction}>TEST</h2>
+      <h2>test operand_1, operand_2</h2>
+      <h2>perform and operation on operand_1 and operand_2, change flags , discard the values </h2>
+      <div className={styles.code_background}>
+        <h2>{code_22}</h2>
+      </div>
+      <h2>in less optimised code we will see if we are anding two values</h2>
+      <div className={styles.code_background}>
+        <h2>{code_23}</h2>
+      </div>
+      <h2>which does basically same thing, after we peform AND operation and store the result in eax, then we test the value to test if the value is zero or not, performing AND operation on a register with itself gives same value. </h2>
+      <h2>same pattern can be seen when performing OR operation and checking the result</h2>
+      <hr />
+
+      <h2 className={styles.instruction}>SHL - SHIFT LOGICAL LEFT({left})</h2>
+      <h2>shl operand1 operand2</h2>
+      <h2>operand1 is in of form r/mX</h2>
+      <h2>operant2 is 1 byte long, or cl register.</h2>
+      <h2>shift the bits by n bits left, which leads to new value that is multiplied by 2 n types, n is the 2nd operand which is 1 byte long</h2>
+      <h2 className={styles.itatic_pink}>the LSB's after shifting n bits left are filled by 0's, used for multiplication in optimised code</h2>
+      <div className={styles.code_background}>
+        <h2>{code_24}</h2>
+      </div>
+      <hr />
+
+      <h2 className={styles.instruction}>SHR - SHIFT LOGICAL RIGHT({right})</h2>
+      <h2>shr operand1 operand2</h2>
+      <h2>operand1 is in of form r/mX</h2>
+      <h2>operant2 is 1 byte long, or cl register.</h2>
+      <h2>shift the bits by n bits right, which leads to new value that is divided by 2 n types, n is the 2nd operand which is 1 byte long.</h2>
+      <h2 className={styles.itatic_pink}>the MSB's after shifting n bits right are filled by 0's, used for division in optimised code</h2>
+      <div className={styles.code_background}>
+        <h2>{code_25}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>SAR - SHIFT ARITHMETIC RIGHT ({right})</h2>
+      <h2>sar operand1 operand2</h2>
+      <h2>operand1 is in of form r/mX</h2>
+      <h2>operant2 is 1 byte long, or cl register.</h2>
+      <h2>the only difference between SHR and SAR is that the MSB's that are moved are filled with the original MSB value, if MSB was 1 all the shifted bit would be filled as 1 else 0.</h2>
+      <h2 className={styles.itatic_pink}>used when there is division of signed int</h2>
+      <div className={styles.code_background}>
+        <h2>{code_26}</h2>
+      </div>
+      <hr />
+
+
+      <h2 className={styles.instruction}>SAL - SHIFT ARITHMETIC LEFT ({left})</h2>
+      <h2>sal operand1 operand2</h2>
+      <h2>operand1 is in of form r/mX</h2>
+      <h2>operant2 is 1 byte long, or cl register.</h2>
+      <h2>sal is same as shl</h2>
+      <hr />
+
+
+      <h2 className={styles.instruction}>REP STOS - REPEAT STORE STRING</h2>
+      <h2>used for storing data in memory in repetitive manner.</h2>
+      <h2>RCX: acts as a counter</h2>
+      <h2>RAX: source</h2>
+      <h2>RDI: destination</h2>
+      <h2>we will copy data from RAX/AL register to location pointed by RDI, and RCX will contain how many times this will repeat, with each copying, RCX will decrement.
+        when RCX == 0, RIP will increment.</h2>
+      <h2>c code:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_27}</h2>
+      </div>
+
+      <h2>disassembly:</h2>
+      <div className={styles.code_background}>
+        <h2>{code_28}</h2>
+      </div>
+
+      <h2>short is 2 byte, 64 short is 128 byte which is 80 in hexadecimal, we sub that much from stack to make space for the array.</h2>
+      <h2>then we mov the memory from where array `a` is starting from into rax, then we mov the memory address into rdi.</h2>
+      <h2>eax is set to 0 by xor.</h2>
+      <h2>we set the counter to 128 by moving 80h into ecx</h2>
+      <h2>rep stos byte ptr [rdi] will copy 0 from eax 128 times into consecutive address starting from rdi.</h2>
+      <h2>ALSO USED FOR RUNTIME CHECK TO CHECK FOR BUFFER OVERFLOW(NOT IN PRODUCTION CODE).</h2>
+      <hr />
+    </>
   );
 }
 const equal_less = `<=`;

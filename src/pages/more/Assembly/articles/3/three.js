@@ -1,13 +1,14 @@
-import IssueBanner from "../../../../../main_components/issue_banner";
+import { useEffect } from "react";
 import styles from "../../../../../styles/styles.module.css"
 import instruction_table from "../3/imgs/table.png"
 
-export const ShowThreeAssembly = () => {
+export const ShowThreeAssembly =(props) => {
+  const title = "Getting started with winDbg and intel manual";
+  useEffect(() => {
+    props.setTitle(title)
+  }, []);
   return (
-    <div className={styles.book_container}>
-      <div className={styles.book}>
-        <div className={styles.book_content}>
-          <h1 className={styles.title}>Getting started with winDbg and intel manual</h1>
+    <>
           <hr />
           <h2>what is winDBg</h2>
           <h2>WinDbg, short for Windows Debugger, is a powerful debugging tool provided by Microsoft for debugging and analyzing Windows operating system and application code.</h2>
@@ -128,11 +129,7 @@ export const ShowThreeAssembly = () => {
             <img src={instruction_table}></img>
           </div>
 
-
-        </div>
-      </div>
-      <IssueBanner />
-    </div >
+</>
   );
 }
 

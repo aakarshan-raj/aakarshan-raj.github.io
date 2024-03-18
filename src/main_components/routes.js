@@ -83,7 +83,7 @@ export const DeclareRoutes = (props) => {
     return (
         <div>
             <Routes>
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<NotFound setTitle={props.setTitle} />} />
                 <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle}  />} />
                 <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle}  />} />
                 <Route path='/alu' element={<ShowAlu setTitle={props.setTitle}/>}    />
@@ -91,12 +91,12 @@ export const DeclareRoutes = (props) => {
                 <Route path='/cpu' element={<ShowCPU  setTitle={props.setTitle} />} />
                 <Route path='/computer' element={<ShowComputer setTitle={props.setTitle}  />} />
 
-                <Route path='/cpp/one' element={<ShowOneCpp />} />
-                <Route path='/cpp/two' element={<ShowTwoCpp />} />
-                <Route path='/cpp/three' element={<ShowThreeCpp />} />
+                <Route path='/cpp/one' element={<ShowOneCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/two' element={<ShowTwoCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/three' element={<ShowThreeCpp setTitle={props.setTitle} />} />
 
-                <Route path='/react/one' element={<ShowOneReact />} />
-                <Route path='/react/two' element={<ShowTwoReact />} />
+                <Route path='/react/one' element={<ShowOneReact setTitle={props.setTitle} />} />
+                <Route path='/react/two' element={<ShowTwoReact setTitle={props.setTitle} />} />
 
                 <Route path='/rust/one' element={<ShowOneRust setTitle={props.setTitle} />} />
                 <Route path='/rust/two' element={<ShowTwoRust setTitle={props.setTitle} />} />
@@ -135,10 +135,10 @@ export const DeclareRoutes = (props) => {
                 <Route path='/rust/ten/vecs' element={<Vecs />} />
 
 
-                <Route path='/assembly/one' element={<ShowOneAssembly />} />
-                <Route path='/assembly/two' element={<ShowTwoAssembly />} />
-                <Route path='/assembly/three' element={<ShowThreeAssembly />} />
-                <Route path='/assembly/four' element={<ShowFourAssembly />} />
+                <Route path='/assembly/one' element={<ShowOneAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/two' element={<ShowTwoAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/three' element={<ShowThreeAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/four' element={<ShowFourAssembly setTitle={props.setTitle} />} />
                 <Route path='/assembly/four/phase_1' element={<LabOne />} />
                 <Route path='/assembly/four/phase_2' element={<LabTwo />} />
                 <Route path='/assembly/four/phase_3' element={<LabThree />} />

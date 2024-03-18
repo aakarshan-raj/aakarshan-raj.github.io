@@ -1,138 +1,136 @@
-import IssueBanner from "../../../../../main_components/issue_banner";
+import { useEffect } from "react";
 import styles from "../../../../../styles/styles.module.css"
 import stack_one from './imgs/stack_one.png'
 import stack_two from './imgs/stack_two.png'
 
-export const ShowOneAssembly = () => {
+export const ShowOneAssembly = (props) => {
+  const title = "why do we sub the stack at start of each function?";
+  useEffect(() => {
+    props.setTitle(title)
+  }, []);
   return (
-    <div className={styles.book_container}>
-      <div className={styles.book}>
-        <div className={styles.book_content}>
-          <h1 className={styles.title}>why do we sub the stack at start of each function?</h1>
+    <>
 
-          <hr></hr>
-          <h1>Some examples</h1>
-          <hr />
+      <hr></hr>
+      <h1>Some examples</h1>
+      <hr />
 
-          <div className={styles.code_background_pink}>
-            <h2>
-              {code_1}
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {disass_1}
-            </h2>
-          </div>
-          <hr />
-          <div className={styles.code_background_pink}>
-            <h2>
-              {code_2}
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {disass_2}
-            </h2>
-          </div>
-          <hr />
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {code_3}
-            </h2>
-          </div>
-
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {disass_3}
-            </h2>
-          </div>
-          <hr />
-
-          <h2>As we can see we decrease the rsp everytime at the start of function , that increases the stack. but why?</h2>
-          <h2>Lets understand throught this program</h2>
-          <div className={styles.code_background_pink}>
-            <h2>
-              {code_4}
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {disass_4}
-            </h2>
-          </div>
-
-          <h2>now lets looks at the stack diagram of this program:</h2>
-          <div className={styles.img_container}>
-            <img src={stack_one}></img>
-          </div>
-          <h2>Things to note: each memory address point to one byte. the address line is 8 byte long, so the range will be from :</h2>
-          <div className={styles.code_background_pink}>
-            <h2>
-              {range}
-            </h2>
-          </div>
-
-          <h2>in the stack diagram drawn above i have ommited the preceding zeros.</h2>
-          <h2>Each hex values points to one byte, meaning
-            if we have a stack like this:</h2>
-          <div className={styles.code_background_pink}>
-            <h2>
-              {more_range}
-            </h2>
-          </div>
-          <h2>we can notice that the stack is be increased everytime there is a function call.</h2>
-          <h2>According to microsoft:"The stack will always be maintained 16-byte aligned, except within the prolog"</h2>
-
-          <h2>whenver a function is called 8 byte of data is being pushed onto the stack, that's why in every function whenever we sub the rsp, there is always +8h, to make the stack 16 byte aligned.</h2>
-          <h2>RET address+8byte = 16 byte</h2>
-
-          <h2>in this example we can see the disassembly of func3() it subs the stack by 18h,
-            8 of it for 16 byte alignment and in the function we have a variable, so 10h for that, why 10h?
-            cause that's the least it can sub because 10h is 16 in decimal, that can point to 16 byte worth of data, which is maintained by the stack.
-          </h2>
-          <h2>if in any case the localvariable takes more than 16 byte, say 20 byte the stack will be subbed 28h instead, 8 for stack alignment,
-            leaving 20h, 20h can point 32 byte, for 5 int's worth of 20 byte that , that will leave 12 byte, meaning if we can allocate 8 int(32 byte)
-            and if we allocate more than that, the rsp will be subbed more in multiple of 10h(16 in decimal) as the stack needs be to 16 byte alignment
-            so it will be subbed by 38h, giving 16 byte more.
-          </h2>
-          <h2>also in cases where we are just calling another function, the call to function will put 8 byte worth of data on to the stack too,
-            and we will still allocate some extra for local variable like in case of func()</h2>
-
-          <hr />
-
-          <h2>Another example</h2>
-
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {code_5}
-            </h2>
-          </div>
-
-          <div className={styles.code_background_pink}>
-            <h2>
-              {disass_5}
-            </h2>
-          </div>
-          <h2>The stack diagram is as following:</h2>
-          <div className={styles.img_container}>
-            <img src={stack_two}></img>
-          </div>
-          <h2>
-            In this disassembly and Stack diagram we can observe that main calls a function, putting 8 byte on to the stack, the rsp is subbed by 28h, 8 of it for stack alignment, 8 for the next instruction that is pushed on stack, that leaves us with
-            18h(24 in decimal), with that we get into func, where rsp is subbed by 28h, +8h of it to align the stack, then we allocate the variables in it.
-          </h2>
-          <hr />
-        </div>
+      <div className={styles.code_background_pink}>
+        <h2>
+          {code_1}
+        </h2>
       </div>
-      <IssueBanner/>
-    </div>
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {disass_1}
+        </h2>
+      </div>
+      <hr />
+      <div className={styles.code_background_pink}>
+        <h2>
+          {code_2}
+        </h2>
+      </div>
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {disass_2}
+        </h2>
+      </div>
+      <hr />
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {code_3}
+        </h2>
+      </div>
+
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {disass_3}
+        </h2>
+      </div>
+      <hr />
+
+      <h2>As we can see we decrease the rsp everytime at the start of function , that increases the stack. but why?</h2>
+      <h2>Lets understand throught this program</h2>
+      <div className={styles.code_background_pink}>
+        <h2>
+          {code_4}
+        </h2>
+      </div>
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {disass_4}
+        </h2>
+      </div>
+
+      <h2>now lets looks at the stack diagram of this program:</h2>
+      <div className={styles.img_container}>
+        <img src={stack_one}></img>
+      </div>
+      <h2>Things to note: each memory address point to one byte. the address line is 8 byte long, so the range will be from :</h2>
+      <div className={styles.code_background_pink}>
+        <h2>
+          {range}
+        </h2>
+      </div>
+
+      <h2>in the stack diagram drawn above i have ommited the preceding zeros.</h2>
+      <h2>Each hex values points to one byte, meaning
+        if we have a stack like this:</h2>
+      <div className={styles.code_background_pink}>
+        <h2>
+          {more_range}
+        </h2>
+      </div>
+      <h2>we can notice that the stack is be increased everytime there is a function call.</h2>
+      <h2>According to microsoft:"The stack will always be maintained 16-byte aligned, except within the prolog"</h2>
+
+      <h2>whenver a function is called 8 byte of data is being pushed onto the stack, that's why in every function whenever we sub the rsp, there is always +8h, to make the stack 16 byte aligned.</h2>
+      <h2>RET address+8byte = 16 byte</h2>
+
+      <h2>in this example we can see the disassembly of func3() it subs the stack by 18h,
+        8 of it for 16 byte alignment and in the function we have a variable, so 10h for that, why 10h?
+        cause that's the least it can sub because 10h is 16 in decimal, that can point to 16 byte worth of data, which is maintained by the stack.
+      </h2>
+      <h2>if in any case the localvariable takes more than 16 byte, say 20 byte the stack will be subbed 28h instead, 8 for stack alignment,
+        leaving 20h, 20h can point 32 byte, for 5 int's worth of 20 byte that , that will leave 12 byte, meaning if we can allocate 8 int(32 byte)
+        and if we allocate more than that, the rsp will be subbed more in multiple of 10h(16 in decimal) as the stack needs be to 16 byte alignment
+        so it will be subbed by 38h, giving 16 byte more.
+      </h2>
+      <h2>also in cases where we are just calling another function, the call to function will put 8 byte worth of data on to the stack too,
+        and we will still allocate some extra for local variable like in case of func()</h2>
+
+      <hr />
+
+      <h2>Another example</h2>
+
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {code_5}
+        </h2>
+      </div>
+
+      <div className={styles.code_background_pink}>
+        <h2>
+          {disass_5}
+        </h2>
+      </div>
+      <h2>The stack diagram is as following:</h2>
+      <div className={styles.img_container}>
+        <img src={stack_two}></img>
+      </div>
+      <h2>
+        In this disassembly and Stack diagram we can observe that main calls a function, putting 8 byte on to the stack, the rsp is subbed by 28h, 8 of it for stack alignment, 8 for the next instruction that is pushed on stack, that leaves us with
+        18h(24 in decimal), with that we get into func, where rsp is subbed by 28h, +8h of it to align the stack, then we allocate the variables in it.
+      </h2>
+      <hr />
+    </>
   );
 }
 
