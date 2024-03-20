@@ -12,8 +12,16 @@
 .cat_logo{
     display: flex;
 
-    width: 700px;
-    height: 800px;
+    width: 60vw;
+    height: 80vh;
     border-radius: 30px;
     
+}
+
+@media only screen and (max-width: 767px) {
+   .cat_logo{
+
+    height: 20vh;
+    
+}
 }
