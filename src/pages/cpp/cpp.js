@@ -12,7 +12,8 @@ export const ShowCpp = (props) => {
       <hr></hr>
       <h1>1. <Link to="/cpp/one">Shared Pointers in C++</Link></h1>
       <h1>2. <Link to="/cpp/two">ECS Design Pattern</Link></h1>
-      <h1>3. <Link to="/cpp/three">Making Chess with SFML and ECS Design Pattern</Link></h1>
+      <h1>3. <Link to="/cpp/three">Multi-Level Games with ECS</Link></h1>
+      <h1>3. <Link to="/cpp/four">Making Chess with SFML and ECS Design Pattern</Link></h1>
 
     </>
   );

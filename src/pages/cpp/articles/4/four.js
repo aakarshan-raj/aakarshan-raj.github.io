@@ -2,8 +2,8 @@ import styles from "../../../../styles/styles.module.css"
 import FormatCode from "../../../../main_components/code_formatter"
 import { useEffect } from "react";
 
-export const ShowThreeCpp = (props) => {
-  const title = "Multi-Level Games with ECS";
+export const ShowFourCpp = (props) => {
+  const title = "Chess";
   useEffect(() => {
     props.setTitle(title)
   }, []);
