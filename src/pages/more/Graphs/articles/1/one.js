@@ -1,4 +1,3 @@
-import IssueBanner from "../../../../../main_components/issue_banner";
 import FormatCode from "../../../../../main_components/code_formatter"
 import styles from "../../../../../styles/styles.module.css"
 import one from "./imgs/one.svg"
