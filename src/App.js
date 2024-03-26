@@ -13,9 +13,17 @@ function App() {
   };
   const [lightMode, SetMode] = useState(false);
   const [title, setTitle] = useState("");
-
   return (
     <Router>
+    <style>
+      {
+        `
+        body{
+          background-color: ${lightMode?'#88AB8E':'black'};
+        }
+        `
+      }
+    </style>
       <div className="App">
         <ShowLinks state={isDrawerOpen} stateFunction={toggleDrawer} />
         <div className={styles.book_container}>
