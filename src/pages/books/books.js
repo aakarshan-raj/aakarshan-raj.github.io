@@ -3,7 +3,7 @@ import ImgBook1 from './assets/book1.jpg'
 import ImgBook2 from './assets/book2.jpg'
 import ImgBook3 from './assets/book3.jpeg'
 import ImgBook4 from './assets/book4.jpg'
-import ImgBook5 from './assets/book5.jpg'
+import ImgBook6 from './assets/book6.jpg'
 import { useEffect } from 'react';
 
 
@@ -16,9 +16,9 @@ export const ShowBooks = (props) => {
     <>
       <hr></hr>
       <div className={styles.individual_book}>
-        <img src={ImgBook5} className={styles.book_img} />
+        <img src={ImgBook6} className={styles.book_img} />
         <div>
-          <h1>Computer Systems: A Programmer's Perspective</h1>
+          <h1>Operating system three easy pieces</h1>
         </div>
         <div>
           <h2>(CURRENTLY READING)</h2>
