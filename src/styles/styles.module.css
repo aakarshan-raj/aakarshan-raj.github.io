@@ -208,6 +208,9 @@ a {
   .book {
     width: 90%;
   }
+  .light_book {
+    width: 90%;
+  }
 }
 
 .nav_link {
