@@ -79,18 +79,23 @@ import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
 import { ShowTwoGraph } from "../pages/more/Graphs/articles/2/two";
 import { ShowThreeGraph } from "../pages/more/Graphs/articles/3/three";
 
+import { ShowInterpreter } from "../pages/more/Interpreter/interpreter";
+import { ShowOs } from "../pages/more/Os/Os";
 
 export const DeclareRoutes = (props) => {
     return (
         <div>
             <Routes>
                 <Route path="*" element={<NotFound setTitle={props.setTitle} />} />
-                <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle}  />} />
-                <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle}  />} />
-                <Route path='/alu' element={<ShowAlu setTitle={props.setTitle}/>}    />
-                <Route path='/ram16k' element={<ShowRam  setTitle={props.setTitle} />} />
-                <Route path='/cpu' element={<ShowCPU  setTitle={props.setTitle} />} />
-                <Route path='/computer' element={<ShowComputer setTitle={props.setTitle}  />} />
+                <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle} />} />
+                <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle} />} />
+                <Route path='/alu' element={<ShowAlu setTitle={props.setTitle} />} />
+                <Route path='/ram16k' element={<ShowRam setTitle={props.setTitle} />} />
+                <Route path='/cpu' element={<ShowCPU setTitle={props.setTitle} />} />
+                <Route path='/computer' element={<ShowComputer setTitle={props.setTitle} />} />
+                <Route path='/os' element={<ShowOs setTitle={props.setTitle} />} />
+                <Route path='/interpreter' element={<ShowInterpreter setTitle={props.setTitle} />} />
+
 
                 <Route path='/cpp/one' element={<ShowOneCpp setTitle={props.setTitle} />} />
                 <Route path='/cpp/two' element={<ShowTwoCpp setTitle={props.setTitle} />} />
@@ -152,7 +157,7 @@ export const DeclareRoutes = (props) => {
                 <Route path='/' element={<ShowMain setTitle={props.setTitle} />} />
                 <Route path='/rust' element={<ShowRust setTitle={props.setTitle} />} />
                 <Route path='/react' element={<ShowReact setTitle={props.setTitle} />} />
-                <Route path='/cpp' element={<ShowCpp setTitle={props.setTitle}/>}  />
+                <Route path='/cpp' element={<ShowCpp setTitle={props.setTitle} />} />
                 <Route path='/books' element={<ShowBooks setTitle={props.setTitle} />} />
                 <Route path='/nodejs' element={<ShowNodejs setTitle={props.setTitle} />} />
                 <Route path='/assembly' element={<ShowAssembly setTitle={props.setTitle} />} />
