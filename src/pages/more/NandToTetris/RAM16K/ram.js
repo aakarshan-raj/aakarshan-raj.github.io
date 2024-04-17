@@ -1,4 +1,4 @@
-import styles from '../../../styles/styles.module.css';
+import styles from '../../../../styles/styles.module.css';
 import one from './img/one.png'
 import two from './img/two.png'
 import three from './img/three.png'
@@ -7,7 +7,7 @@ import five from './img/five.png'
 import six from './img/six.png'
 import seven from './img/seven.png'
 import eight from './img/eight.png'
-import IssueBanner from '../../../main_components/issue_banner';
+import IssueBanner from '../../../../main_components/issue_banner';
 import { useEffect } from 'react';
 
 export const ShowRam = (props) => {

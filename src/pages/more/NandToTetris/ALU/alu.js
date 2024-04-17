@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import IssueBanner from '../../../main_components/issue_banner';
-import styles from '../../../styles/styles.module.css';
+import IssueBanner from '../../../../main_components/issue_banner';
+import styles from '../../../../styles/styles.module.css';
 import ALU from './img/ALU.png';
 import table from './img/table.png';
 

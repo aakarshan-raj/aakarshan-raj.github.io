@@ -52,8 +52,7 @@ import { Traits } from "../pages/rust/articles/10/exercises/traits/traits";
 import { Variables } from "../pages/rust/articles/10/exercises/variables/variables";
 import { Vecs } from "../pages/rust/articles/10/exercises/vecs/vecs";
 
-import { ShowAlu } from "../pages/more/ALU/alu";
-import { ShowRam } from "../pages/more/RAM16K/ram";
+
 
 import { ShowBooks } from '../pages/books/books'
 import { ShowMain } from '../pages/main/ShowMain';
@@ -71,8 +70,7 @@ import { LabThree } from "../pages/more/Assembly/articles/4/lab_3/Lab";
 import { LabFour } from "../pages/more/Assembly/articles/4/lab_4/Lab";
 import { LabFive } from "../pages/more/Assembly/articles/4/lab_5/Lab";
 import { LabSix } from "../pages/more/Assembly/articles/4/lab_6/Lab";
-import { ShowCPU } from "../pages/more/CPU/cpu";
-import { ShowComputer } from "../pages/more/Computer/computer";
+
 
 import { ShowGraph } from "../pages/more/Graphs/graphs";
 import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
@@ -82,6 +80,13 @@ import { ShowThreeGraph } from "../pages/more/Graphs/articles/3/three";
 import { ShowInterpreter } from "../pages/more/Interpreter/interpreter";
 import { ShowOs } from "../pages/more/Os/Os";
 
+import { ShowNand } from "../pages/more/NandToTetris/Nand";
+
+import { ShowAlu } from "../pages/more/NandToTetris/ALU/alu";
+import { ShowRam } from "../pages/more/NandToTetris/RAM16K/ram";
+import { ShowCPU } from "../pages/more/NandToTetris/CPU/cpu";
+import { ShowComputer } from "../pages/more/NandToTetris/Computer/computer";
+
 export const DeclareRoutes = (props) => {
     return (
         <div>
@@ -89,12 +94,13 @@ export const DeclareRoutes = (props) => {
                 <Route path="*" element={<NotFound setTitle={props.setTitle} />} />
                 <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle} />} />
                 <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle} />} />
-                <Route path='/alu' element={<ShowAlu setTitle={props.setTitle} />} />
-                <Route path='/ram16k' element={<ShowRam setTitle={props.setTitle} />} />
-                <Route path='/cpu' element={<ShowCPU setTitle={props.setTitle} />} />
-                <Route path='/computer' element={<ShowComputer setTitle={props.setTitle} />} />
+                <Route path='/NandToTetris/alu' element={<ShowAlu setTitle={props.setTitle} />} />
+                <Route path='/NandToTetris/ram16k' element={<ShowRam setTitle={props.setTitle} />} />
+                <Route path='/NandToTetris/cpu' element={<ShowCPU setTitle={props.setTitle} />} />
+                <Route path='/NandToTetris/computer' element={<ShowComputer setTitle={props.setTitle} />} />
                 <Route path='/os' element={<ShowOs setTitle={props.setTitle} />} />
                 <Route path='/interpreter' element={<ShowInterpreter setTitle={props.setTitle} />} />
+                <Route path='/NandToTetris' element={<ShowNand setTitle={props.setTitle} />} />
 
 
                 <Route path='/cpp/one' element={<ShowOneCpp setTitle={props.setTitle} />} />

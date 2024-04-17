@@ -1,6 +1,6 @@
-import styles from '../../../styles/styles.module.css'
-import FormatCode from "../../../main_components/code_formatter"
-import SubHeading from "../../../main_components/sub_heading"
+import styles from '../../../../styles/styles.module.css'
+import FormatCode from "../../../../main_components/code_formatter"
+import SubHeading from "../../../../main_components/sub_heading"
 import { useEffect } from 'react';
 import Computer from "./imgs/computer.png"
 import CPU from "./imgs/cpu.png"

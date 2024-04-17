@@ -1,7 +1,7 @@
-import IssueBanner from '../../../main_components/issue_banner';
-import styles from '../../../styles/styles.module.css'
-import FormatCode from "../../../main_components/code_formatter"
-import SubHeading from "../../../main_components/sub_heading"
+import IssueBanner from '../../../../main_components/issue_banner';
+import styles from '../../../../styles/styles.module.css'
+import FormatCode from "../../../../main_components/code_formatter"
+import SubHeading from "../../../../main_components/sub_heading"
 
 import cpu from "../CPU/img/cpu.png"
 import alu from "../CPU/img/alu.png"
