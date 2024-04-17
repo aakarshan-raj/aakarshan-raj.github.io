@@ -208,6 +208,7 @@ a {
   .book {
     width: 90%;
   }
+
   .light_book {
     width: 90%;
   }
@@ -215,4 +216,8 @@ a {
 
 .nav_link {
   text-decoration: none;
+}
+
+h2 {
+  font-weight: normal;
 }
