@@ -9,6 +9,8 @@ import { ShowOneCpp } from "../pages/cpp/articles/1/one";
 import { ShowTwoCpp } from "../pages/cpp/articles/2/two"
 import { ShowThreeCpp } from "../pages/cpp/articles/3/three";
 import { ShowFourCpp } from "../pages/cpp/articles/4/four";
+import { ShowFiveCpp } from "../pages/cpp/articles/5/five";
+
 
 import { ShowNodejs } from '../pages/nodejs/nodejs';
 import { ShowOneNodejs } from '../pages/nodejs/articles/1/one';
@@ -96,7 +98,7 @@ export const DeclareRoutes = (props) => {
         <div>
             <Routes>
                 <Route path="*" element={<NotFound setTitle={props.setTitle} />} />
-               
+
                 <Route path='/nodejs' element={<ShowNodejs setTitle={props.setTitle} />} />
                 <Route path='/nodejs/one' element={<ShowOneNodejs setTitle={props.setTitle} />} />
                 <Route path='/nodejs/two' element={<ShowTwoNodejs setTitle={props.setTitle} />} />
@@ -128,6 +130,8 @@ export const DeclareRoutes = (props) => {
                 <Route path='/cpp/two' element={<ShowTwoCpp setTitle={props.setTitle} />} />
                 <Route path='/cpp/three' element={<ShowThreeCpp setTitle={props.setTitle} />} />
                 <Route path='/cpp/four' element={<ShowFourCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/five' element={<ShowFiveCpp setTitle={props.setTitle} />} />
+
 
                 <Route path='/react/one' element={<ShowOneReact setTitle={props.setTitle} />} />
                 <Route path='/react/two' element={<ShowTwoReact setTitle={props.setTitle} />} />
