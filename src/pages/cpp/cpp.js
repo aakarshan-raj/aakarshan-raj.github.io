@@ -10,11 +10,11 @@ export const ShowCpp = (props) => {
     <>
 
       <hr></hr>
-      <h1>1. <Link to="/cpp/one">Shared Pointers in C++</Link></h1>
-      <h1>2. <Link to="/cpp/two">ECS Design Pattern</Link></h1>
-      <h1>3. <Link to="/cpp/three">Multi-Level Games with ECS</Link></h1>
-      <h1>4. <Link to="/cpp/four">Collision Detection</Link></h1>
-      <h1>5. <Link to="/cpp/five">Making Chess with SFML and ECS Design Pattern</Link></h1>
+      <h1>1. <Link to="/cpp/shared-pointers">Shared Pointers in C++</Link></h1>
+      <h1>2. <Link to="/cpp/ecs">ECS Design Pattern</Link></h1>
+      <h1>3. <Link to="/cpp/multi-level-ecs">Multi-Level Games with ECS</Link></h1>
+      <h1>4. <Link to="/cpp/collision-detection-and-resolution">Collision Detection</Link></h1>
+      <h1>5. <Link to="/cpp/chess">Making Chess with SFML and ECS Design Pattern</Link></h1>
 
     </>
   );

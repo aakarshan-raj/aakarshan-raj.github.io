@@ -126,11 +126,11 @@ export const DeclareRoutes = (props) => {
                 <Route path='/os/persistence' element={<ShowPersistence setTitle={props.setTitle} />} />
 
                 <Route path='/cpp' element={<ShowCpp setTitle={props.setTitle} />} />
-                <Route path='/cpp/one' element={<ShowOneCpp setTitle={props.setTitle} />} />
-                <Route path='/cpp/two' element={<ShowTwoCpp setTitle={props.setTitle} />} />
-                <Route path='/cpp/three' element={<ShowThreeCpp setTitle={props.setTitle} />} />
-                <Route path='/cpp/four' element={<ShowFourCpp setTitle={props.setTitle} />} />
-                <Route path='/cpp/five' element={<ShowFiveCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/shared-pointers' element={<ShowOneCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/ecs' element={<ShowTwoCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/multi-level-ecs' element={<ShowThreeCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/collision-detection-and-resolution' element={<ShowFourCpp setTitle={props.setTitle} />} />
+                <Route path='/cpp/chess' element={<ShowFiveCpp setTitle={props.setTitle} />} />
 
 
                 <Route path='/react/one' element={<ShowOneReact setTitle={props.setTitle} />} />
@@ -173,9 +173,9 @@ export const DeclareRoutes = (props) => {
                 <Route path='/rust/ten/vecs' element={<Vecs />} />
 
                 <Route path='/assembly' element={<ShowAssembly setTitle={props.setTitle} />} />
-                <Route path='/assembly/one' element={<ShowOneAssembly setTitle={props.setTitle} />} />
-                <Route path='/assembly/two' element={<ShowTwoAssembly setTitle={props.setTitle} />} />
-                <Route path='/assembly/three' element={<ShowThreeAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/sub-rsp' element={<ShowOneAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/instruction-set' element={<ShowTwoAssembly setTitle={props.setTitle} />} />
+                <Route path='/assembly/winDbg-intel-manual' element={<ShowThreeAssembly setTitle={props.setTitle} />} />
                 <Route path='/assembly/four' element={<ShowFourAssembly setTitle={props.setTitle} />} />
                 <Route path='/assembly/four/phase_1' element={<LabOne />} />
                 <Route path='/assembly/four/phase_2' element={<LabTwo />} />
