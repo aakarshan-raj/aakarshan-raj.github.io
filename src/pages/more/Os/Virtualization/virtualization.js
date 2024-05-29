@@ -56,6 +56,12 @@ export const ShowVirtualization = (props) => {
           <li>A/C Unix security model only parent process can terminate child process. the first process is known as init</li>
           <li>An orphan process is adopted by init process(pid:1)</li>
 
+          <li>Illusion of Copying: When a child process is created with `fork()`, it initially shares the same memory pages (including variables) with the parent process, creating the illusion of variable copying.
+          </li>
+          <li>Shared Memory Pages: Both parent and child processes use the same memory pages until either process attempts to modify a shared page.</li>
+          <li>Copy-on-Write (COW): When a modification is attempted, the operating system creates a private copy of the memory page containing the modified data.
+          </li>
+
 
         </ol></h2>
       </div>
