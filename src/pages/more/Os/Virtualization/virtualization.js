@@ -62,8 +62,21 @@ export const ShowVirtualization = (props) => {
           <li>Copy-on-Write (COW): When a modification is attempted, the operating system creates a private copy of the memory page containing the modified data.
           </li>
 
+        </ol>
+        </h2>
+        <SubHeading
+          text={"Limited Direct Execution"}
+          size={""}
+          start_color={"#ff0f3f"}
+          end_color={"#51ed4c"}
+        />
+        <h2>
+          <ol>
+          </ol>
+        </h2>
+        <hr />
 
-        </ol></h2>
+
       </div>
 
     </>
