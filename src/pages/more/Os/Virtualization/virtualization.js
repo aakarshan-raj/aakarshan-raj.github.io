@@ -72,6 +72,51 @@ export const ShowVirtualization = (props) => {
         />
         <h2>
           <ol>
+            <li> CPU is shared with others jobs through time-sharing</li>
+            <li>Two main challenges:</li>
+            <ol>
+              <li>Performace overhead from sharing cpu </li>
+              <li>Retaining control over CPU while running different processes</li>
+            </ol>
+            <li>Direct execution involves:</li>
+            <h2>OS</h2>
+            <ol>
+              <li>Create entry for process list</li>
+              <li>Allocate memory for program</li>
+              <li>Load program into memory</li>
+              <li> Set up stack with argc/argv</li>
+              <li>Clear registers</li>
+              <h2>Program</h2>
+              <li>Run main()</li>
+              <li> Execute return from main </li>
+              <h2>OS</h2>
+              <li> Free memory of process</li>
+              <li>Remove from process list</li>
+            </ol>
+            <li>Two issues with this</li>
+            <ol>
+              <li>How to make sure the running program doesn't do something we dont want</li>
+              <ol>
+                <li>The kernel initialize trap table during boot up, which involves configuring hardware to handle interrupts and system calls. A system-call number is usually assigned to each system call.</li>
+                <li> user process is created ,the kernel sets up a kernel stack for the process, where it saves registers and other context information during system calls and interrupts.</li>
+                <li> User process needs privilege access -&gt; Calls system -&gt; Triggers trap -&gt; Kernel identifies request -&gt; Executes handler.</li>
+                <li> kernal identifies the system call by going into a predefined location known as trap handler and matches system call number provided by user to system calls in trap table.</li>
+                <li>After execution we restore user process registers and execute a Return from trap which takes us back in user privilege mode</li>
+              </ol>
+              <li>How do we switch a running process with other</li>
+              <ol>
+                <li>OS can give control and run a program on CPU easily, what it has to worry about is getting that control back. To make sure OS always get the control back their is a mechanism known as timer interrupt, it raises interrupt every some milliseconds, and stops the current running process and executes a handler that gives back control to OS.</li>
+                <li>At boot time the OS sets which code to run when a timer interrupt occurs</li>
+                <li> And at boot sequence OS starts the timer too.</li>
+                <li>OS also regains control if a Process is trying to do something illegal like trying to execute a piece of code that its not authorised too. since the process has to make a systemcall for that access and thats when OS regains control if that sys call is invalid</li>
+                <li>After OS regains control by a timer interrupt , scheduler decides to run a different process or the same process that was running before.</li>
+                <li>If it decides to run different process OS run context switch code which saves state of previous running process into kernal stack(same as simple stack but to be only used by kernal )</li>
+                <li>It also changes the value on stack so when Return from trap is executed we start to run different program and not the same one.</li>
+              </ol>
+            </ol>
+
+            <li> During one interrupt execution, OS disables raising of any other interrupts.</li>
+
           </ol>
         </h2>
         <hr />
