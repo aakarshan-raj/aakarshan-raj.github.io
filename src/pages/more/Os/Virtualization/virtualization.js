@@ -12,7 +12,6 @@ export const ShowVirtualization = (props) => {
     <>
 
       <hr></hr>
-      <div className={styles.book_content}>
         <SubHeading
           text={"The Process"}
           size={""}
@@ -120,9 +119,6 @@ export const ShowVirtualization = (props) => {
           </ol>
         </h2>
         <hr />
-
-
-      </div>
 
     </>
   );
