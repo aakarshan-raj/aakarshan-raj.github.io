@@ -17,6 +17,7 @@ export const ShowLinks = (props) => {
                 <li><Link to={"/os"}  onClick={props.stateFunction} className={`${styles.nav_link} navbar-item`}>+OS</Link></li>
                 <li><Link to={"/Interpreter"}  onClick={props.stateFunction} className={`${styles.nav_link} navbar-item`}>+Interpreter </Link></li>
                 <li><Link to={"/NandToTetris"}  onClick={props.stateFunction} className={`${styles.nav_link} navbar-item`}>+NandToTetris </Link></li>
+                <li><Link to={"/database"}  onClick={props.stateFunction} className={`${styles.nav_link} navbar-item`}>+Database </Link></li>
               </ol>
             </div>
           </Drawer>

@@ -93,6 +93,9 @@ import { ShowVirtualization } from "../pages/more/Os/Virtualization/virtualizati
 import { ShowConcurrency } from "../pages/more/Os/Concurrency/concurrency";
 import { ShowPersistence } from "../pages/more/Os/Persistence/persistence";
 
+import { ShowDatabase } from "../pages/more/Database/database";
+import { ShowOneDatabase } from "../pages/more/Database/articles/1/one";
+
 export const DeclareRoutes = (props) => {
     return (
         <div>
@@ -118,6 +121,9 @@ export const DeclareRoutes = (props) => {
                 <Route path='/NandToTetris/ram16k' element={<ShowRam setTitle={props.setTitle} />} />
                 <Route path='/NandToTetris/cpu' element={<ShowCPU setTitle={props.setTitle} />} />
                 <Route path='/NandToTetris/computer' element={<ShowComputer setTitle={props.setTitle} />} />
+
+                <Route path='/database' element={<ShowDatabase setTitle={props.setTitle} />} />
+                <Route path='/database/trie' element={<ShowOneDatabase setTitle={props.setTitle} />} />
 
 
                 <Route path='/os' element={<ShowOs setTitle={props.setTitle} />} />
