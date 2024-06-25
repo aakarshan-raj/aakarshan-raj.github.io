@@ -4,6 +4,8 @@ import ImgBook2 from './assets/book2.jpg'
 import ImgBook3 from './assets/book3.jpeg'
 import ImgBook4 from './assets/book4.jpg'
 import ImgBook6 from './assets/book6.jpg'
+import ImgBook7 from './assets/book7.jpg'
+
 import { useEffect } from 'react';
 
 
@@ -19,6 +21,17 @@ export const ShowBooks = (props) => {
         <img src={ImgBook6} className={styles.book_img} />
         <div>
           <h1>Operating system three easy pieces</h1>
+        </div>
+        <div>
+          <h2>(CURRENTLY READING)</h2>
+        </div>
+
+      </div>
+      <hr></hr>
+      <div className={styles.individual_book}>
+        <img src={ImgBook7} className={styles.book_img} />
+        <div>
+          <h1>Reinforcement Learning: An Introduction</h1>
         </div>
         <div>
           <h2>(CURRENTLY READING)</h2>
@@ -66,7 +79,6 @@ export const ShowBooks = (props) => {
           <h1>Hypermedia systems</h1>
         </div>
         <div>
-          <h2>Tired of SPA? This might be good place to start understanding Hypermedias and get to know the real REST(Its not JSON API's)</h2>
         </div>
       </div>
       <hr></hr>
