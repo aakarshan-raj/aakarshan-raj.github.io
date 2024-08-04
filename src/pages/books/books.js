@@ -6,6 +6,7 @@ import ImgBook4 from './assets/book4.jpg'
 import ImgBook6 from './assets/book6.jpg'
 import ImgBook7 from './assets/book7.jpg'
 import ImgBook8 from './assets/book8.jpg'
+import ImgBook9 from './assets/book9.jpeg'
 
 import { useEffect } from 'react';
 
@@ -17,6 +18,18 @@ export const ShowBooks = (props) => {
   }, []);
   return (
     <>
+
+      <hr></hr>
+      <div className={styles.individual_book}>
+        <img src={ImgBook9} className={styles.book_img} />
+        <div>
+          <h1>Learn Concurrent Programming with Go</h1>
+        </div>
+        <div>
+          <h2>(CURRENTLY READING)</h2>
+        </div>
+
+      </div>
       <hr></hr>
       <div className={styles.individual_book}>
         <img src={ImgBook6} className={styles.book_img} />
