@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from '../../styles/styles.module.css';
 import { useEffect } from "react";
 
@@ -12,8 +13,7 @@ export const ShowArticles = (props) => {
             <h2 className={styles.title}>
             </h2>
             <hr />
-            <div className={styles.centered_container}>
-            </div>
+            <h1>1. <Link to="/articles/go-lessons">Lessons learnt from "Learn concurrent programming with go" </Link></h1>
         </>
 
     );
