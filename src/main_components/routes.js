@@ -95,6 +95,7 @@ import { ShowPersistence } from "../pages/more/Os/Persistence/persistence";
 
 import { ShowDatabase } from "../pages/more/Database/database";
 import { ShowOneDatabase } from "../pages/more/Database/articles/1/one";
+import { ShowArticles } from "../pages/articles/articles";
 
 export const DeclareRoutes = (props) => {
     return (
@@ -193,6 +194,9 @@ export const DeclareRoutes = (props) => {
 
                 <Route path='/' element={<ShowMain setTitle={props.setTitle} />} />
                 <Route path='/rust' element={<ShowRust setTitle={props.setTitle} />} />
+
+                <Route path='/articles' element={<ShowArticles setTitle={props.setTitle} />} />
+
 
 
             </Routes>
