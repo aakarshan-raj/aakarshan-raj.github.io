@@ -10,6 +10,7 @@ export const ShowDatabase = (props) => {
     <>
       <hr></hr>
       <h1>1.<Link to={"/database/trie"}>Trie data structures</Link></h1>
+      <h1>1.<Link to={"/database/LRUK"}>LRUK</Link></h1>
     </>
   );
 }

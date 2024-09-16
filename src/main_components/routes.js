@@ -97,6 +97,7 @@ import { ShowDatabase } from "../pages/more/Database/database";
 import { ShowOneDatabase } from "../pages/more/Database/articles/1/one";
 import { ShowArticles } from "../pages/articles/articles";
 import { Article1 } from "../pages/articles/article1";
+import { ShowTwoDatabase } from "../pages/more/Database/articles/2/two";
 
 export const DeclareRoutes = (props) => {
     return (
@@ -126,6 +127,7 @@ export const DeclareRoutes = (props) => {
 
                 <Route path='/database' element={<ShowDatabase setTitle={props.setTitle} />} />
                 <Route path='/database/trie' element={<ShowOneDatabase setTitle={props.setTitle} />} />
+                <Route path='/database/LRUK' element={<ShowTwoDatabase setTitle={props.setTitle} />} />
 
 
                 <Route path='/os' element={<ShowOs setTitle={props.setTitle} />} />
