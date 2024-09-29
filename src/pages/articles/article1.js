@@ -39,12 +39,17 @@ export const Article1 = (props) => {
                     <li>atomic operation: instructions that cannot be interuppted</li>
                     <li>A race condition occurs when two or more threads (go routines) try to access the same critical section concurrently, and at least one of them is trying to modify shared data.</li>
                     <li>mutex locks other threads from executing code that is locked by another thread, only after the first thread is done the suspending mutex can access the code</li>
+                    <li>A reader-preferred lock ensures that all read locks are released before a write lock can be acquired. This design allows multiple readers to access the resource simultaneously but requires that no readers are active before a writer can proceed.</li>
                     <li>condition variables come in. Condition variables work togetherwith mutexes and give us the ability to block the current execution until we have a signal that a particular condition has changed.</li>
                     <li> using cond we can make one go routine wait for a condition to be true and start its execution</li>
                     <li> Calling Wait() Unlocks the mutex and suspends a go routine and using Signal() from another goroutine starts it again, This is called monitor pattern using mutex and conditional variables, it can be used to order the execution of the program. Ex: 5.7 (Calling signal between Mutex Lock and Unlock in a go routine will only be executed if Wait releases the lock)</li>
                     <li>To execute wait and signal we need to call Lock() before.</li>
                     <li> Broadcast unlike signal which only resumes one of the suspended go routine, broadcast resumes all suspended go routines, after suspended go routine resume it starts its execution after the line where Wait() was called.</li>
-
+                    <li>
+                        write preferred lock gives writer part of mutex control first before reader gets it.
+                    </li>
+                    Semaphore are like mutex but it can allow N number of go routines access to a resource and can be implemented with a counter and Cond
+                    <li></li>
                 </ol>
             </h2>
 
