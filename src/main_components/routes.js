@@ -127,7 +127,7 @@ export const DeclareRoutes = (props) => {
 
                 <Route path='/database' element={<ShowDatabase setTitle={props.setTitle} />} />
                 <Route path='/database/trie' element={<ShowOneDatabase setTitle={props.setTitle} />} />
-                <Route path='/database/LRUK' element={<ShowTwoDatabase setTitle={props.setTitle} />} />
+                <Route path='/database/lru-and-lruk' element={<ShowTwoDatabase setTitle={props.setTitle} />} />
 
 
                 <Route path='/os' element={<ShowOs setTitle={props.setTitle} />} />
