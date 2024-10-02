@@ -66,7 +66,7 @@ export const ShowThreeGraph = (props) => {
             <div className={styles.img_container}>
                 <img src={img5} />
             </div>
-            <h2><a href="#/graph/four">Computing SCC of a DAG</a></h2>
+            <h2><a href="#/graph/four">Computing SCC of a Directed Graph</a></h2>
         </>
     );
 }
