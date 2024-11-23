@@ -29,7 +29,7 @@ export const ShowTwoDatabase = (props) => {
           start_color={"#35bd9b"}
           end_color={"#ad1328"}
         /> <br /> <br />
-        LRUK (k=2) maintains a record of the last two access histories for each page in the cache. During the eviction process, it selects the page that was accessed the earliest. Pages with insufficient access history (fewer than k records) become prime candidates for eviction. Among those with fewer than k records, the one with the earliest access history is chosen for eviction.
+        LRUK (k=2) maintains a record of the last two access histories for each page in the cache. During the eviction process, it selects the page that has the maximum k_distance. Pages with insufficient access history (fewer than k records) become prime candidates for eviction. Among those with fewer than k records, the one with the earliest access history is chosen for eviction.
         <br />
 
         Steps:
@@ -37,10 +37,10 @@ export const ShowTwoDatabase = (props) => {
         <br />
 
         - Iterate over the list of pages in the cache.  <br /> <br />
-        - Calculate the k_distancek\_distancek_distance for each page, which is the difference between the current timestamp and the page's earliest access timestamp. <br /> <br />
+        - Calculate the k_distance for each page, which is the difference between the current timestamp and the page's earliest access timestamp. <br /> <br />
         - Track the page with the maximum k_distance and mark it as a candidate for eviction. <br /> <br />
         - If a page has fewer than k access records, add it to a temporary list. <br /> <br />
-        - If the temporary list is not empty, find the page in the list with the earliest access timestamp and mark it for eviction instead of the one with the max k_distancek\_distancek_distance. <br /> <br />
+        - If the temporary list is not empty, find the page in the list with the earliest access timestamp and mark it for eviction instead of the one with the max k_distance. <br /> <br />
         - Evict the marked page from the cache. <br /> <br />
         <br /> <br />
         LRU is LRU with k=1 since we track only first access history.
