@@ -223,3 +223,9 @@ a {
 h2 {
   font-weight: normal;
 }
+
+hr{
+  border: 0.1px solid #88AB8E;
+  padding-bottom: 3px;
+
+}

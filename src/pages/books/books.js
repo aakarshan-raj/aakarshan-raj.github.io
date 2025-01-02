@@ -7,6 +7,7 @@ import ImgBook6 from './assets/book6.jpg'
 import ImgBook7 from './assets/book7.jpg'
 import ImgBook8 from './assets/book8.jpg'
 import ImgBook9 from './assets/book9.jpeg'
+import ImgBook10 from './assets/book10.jpg'
 
 import { useEffect } from 'react';
 
@@ -20,6 +21,21 @@ export const ShowBooks = (props) => {
     <>
 
       <hr></hr>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div className={styles.individual_book}>
+        <img src={ImgBook10} className={styles.book_img} />
+        <div>
+          <h1>C++ Concurrency in Action</h1>
+        </div>
+        <div>
+        </div>
+        <h2>(CURRENTLY READING)</h2>
+      </div>
+      <hr></hr>
+
       <div className={styles.individual_book}>
         <img src={ImgBook9} className={styles.book_img} />
         <div>
@@ -37,7 +53,6 @@ export const ShowBooks = (props) => {
           <h1>Operating system three easy pieces</h1>
         </div>
         <div>
-          <h2>(CURRENTLY READING)</h2>
         </div>
 
       </div>
@@ -48,7 +63,6 @@ export const ShowBooks = (props) => {
           <h1>Reinforcement Learning: An Introduction</h1>
         </div>
         <div>
-          <h2>(CURRENTLY READING)</h2>
         </div>
 
       </div>
@@ -107,6 +121,8 @@ export const ShowBooks = (props) => {
         </div>
       </div>
       <hr></hr>
+
+
     </>
   );
 }

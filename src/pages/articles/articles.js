@@ -15,6 +15,7 @@ export const ShowArticles = (props) => {
             <hr />
             <h1>1. <Link to="/articles/go-lessons">Lessons learnt from "Learn concurrent programming with go" </Link></h1>
             <h1>2. <Link to="/articles/virtual-machine">Virtual Machine </Link></h1>
+            <h1>3. <Link to="/articles/concurrency-in-action">Lessons learnt from "C++ Concurrency in Action" </Link></h1>
         </>
 
     );

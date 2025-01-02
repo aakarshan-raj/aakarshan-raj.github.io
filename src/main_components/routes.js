@@ -100,6 +100,7 @@ import { Article1 } from "../pages/articles/article1";
 import { ShowTwoDatabase } from "../pages/more/Database/articles/2/two";
 import { ShowThreeDatabase } from "../pages/more/Database/articles/3/three";
 import { Article2 } from "../pages/articles/article2";
+import { Article3 } from "../pages/articles/article3";
 
 export const DeclareRoutes = (props) => {
     return (
@@ -205,6 +206,7 @@ export const DeclareRoutes = (props) => {
                 <Route path='/articles' element={<ShowArticles setTitle={props.setTitle} />} />
                 <Route path='/articles/go-lessons' element={<Article1 setTitle={props.setTitle} />} />
                 <Route path='/articles/virtual-machine' element={<Article2 setTitle={props.setTitle} />} />
+                <Route path='/articles/concurrency-in-action' element={<Article3 setTitle={props.setTitle} />} />
 
             </Routes>
         </div>
