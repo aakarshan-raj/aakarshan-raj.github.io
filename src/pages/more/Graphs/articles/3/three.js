@@ -46,7 +46,7 @@ export const ShowThreeGraph = (props) => {
             <h2>Using Topological sort we can find linear ordering of a DAG, running DFS on a DAG would produce a linear order if we list all the vertex in descending order of their post-order number,
                 We would also need to make changes in DFS to detect a cycle since post-ordering data doesn't give anything about presence of cycles. </h2>
             <h2>Required changes in DFS to detect cycle: By checking if we are visiting already visited node from out vector of visited nodes we can if a cycle exists or not.</h2>
-
+            <h2>**Linearly ordered won't produce all the vertexs everytime.**</h2>
             <SubHeading
                 text={"Connectivity in DAG:"}
                 size={25}
