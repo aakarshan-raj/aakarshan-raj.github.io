@@ -34,8 +34,9 @@ export const Article1 = (props) => {
                         <li>original job is again put in ready queue and will be picked by CPU</li>
                     </ol><br></br>
                     <li>information about a job is stored in PCB(process context block)</li><br></br>
-                    <li> goroutines are user level threads, which are mapped to OS threads, M go routines are multiplexed to N OS threads, Go scheduler can move these goroutine from one thread to another and this all happens in one processs</li>
+                    <li> goroutines are user level threads, which are mapped to OS threads, M go routines are multiplexed to N OS threads, Go scheduler can move these goroutine from one kernal thread to another and this all happens in one processs, this way go can handle Blocking I/O by switching go routines from LRQ of one kernal level thread to another.</li>
                     <br></br>
+                    <li>cache-coherence insures the data accessed by between multiple caches is consistance, as the number of processes increases, the effort required to maintain this consistency also grows as each new processor would have separate cache.</li>
                     <li>atomic operation: instructions that cannot be interuppted</li><br></br>
                     <li>A race condition occurs when two or more threads (go routines) try to access the same critical section concurrently, and at least one of them is trying to modify shared data.</li>
                     <br></br>
