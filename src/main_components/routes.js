@@ -78,6 +78,8 @@ import { ShowGraph } from "../pages/more/Graphs/graphs";
 import { ShowOneGraph } from "../pages/more/Graphs/articles/1/one";
 import { ShowTwoGraph } from "../pages/more/Graphs/articles/2/two";
 import { ShowThreeGraph } from "../pages/more/Graphs/articles/3/three";
+import { ShowFourGraph } from "../pages/more/Graphs/articles/4/four";
+
 
 import { ShowInterpreter } from "../pages/more/Interpreter/interpreter";
 
@@ -119,6 +121,8 @@ export const DeclareRoutes = (props) => {
                 <Route path='/graph/one' element={<ShowOneGraph setTitle={props.setTitle} />} />
                 <Route path='/graph/two' element={<ShowTwoGraph setTitle={props.setTitle} />} />
                 <Route path='/graph/three' element={<ShowThreeGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/four' element={<ShowFourGraph setTitle={props.setTitle} />} />
+
 
                 <Route path='/interpreter' element={<ShowInterpreter setTitle={props.setTitle} />} />
 
