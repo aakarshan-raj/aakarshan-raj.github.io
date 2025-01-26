@@ -3,20 +3,22 @@ import {
     arta,
     hybrid, irBlack, monokai,
     sunburst,
-    vs2015, xt256, zenburn
+    vs2015, xt256, zenburn, dracula
 } from "react-code-blocks"
 
-const FormatCode = (props) => {
+export const FormatCode = (props) => {
     return (
-        <h3>
+        <h3 style={{ fontSize: '13.6px' }}>
             <CodeBlock
                 text={props.code}
                 language={(props?.lang) ? props.lang : "rust"}
                 showLineNumbers={true}
-                theme={monokai}
+                theme={dracula}
             />
         </h3>
     );
 }
-
+export const HighLight = (props) => {
+    return <span style={{ color: 'red', fontFamily: 'monospace', backgroundColor: 'black', fontSize:'14px' }}>{props.text}</span>
+}
 export default FormatCode;
