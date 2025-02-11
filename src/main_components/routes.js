@@ -103,6 +103,7 @@ import { ShowTwoDatabase } from "../pages/more/Database/articles/2/two";
 import { ShowThreeDatabase } from "../pages/more/Database/articles/3/three";
 import { Article2 } from "../pages/articles/article2";
 import { Article3 } from "../pages/articles/article3";
+import { ShowFiveGraph } from "../pages/more/Graphs/articles/5/five";
 
 export const DeclareRoutes = (props) => {
     return (
@@ -121,7 +122,8 @@ export const DeclareRoutes = (props) => {
                 <Route path='/graph/one' element={<ShowOneGraph setTitle={props.setTitle} />} />
                 <Route path='/graph/two' element={<ShowTwoGraph setTitle={props.setTitle} />} />
                 <Route path='/graph/three' element={<ShowThreeGraph setTitle={props.setTitle} />} />
-                <Route path='/graph/four' element={<ShowFourGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/compute-scc-dg' element={<ShowFourGraph setTitle={props.setTitle} />} />
+                <Route path='/graph/detecting-cycles' element={<ShowFiveGraph setTitle={props.setTitle} />} />
 
 
                 <Route path='/interpreter' element={<ShowInterpreter setTitle={props.setTitle} />} />
