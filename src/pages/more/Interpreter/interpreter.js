@@ -1,5 +1,5 @@
-import styles from '../../../styles/styles.module.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const ShowInterpreter = (props) => {
   const title = "Interpreter";
@@ -10,8 +10,7 @@ export const ShowInterpreter = (props) => {
     <>
 
       <hr></hr>
-      <div className={styles.book_content}></div>
-    
+      <h1>1. <Link to="/interpreter/lexer">Lexer</Link></h1>
     </>
   );
 }

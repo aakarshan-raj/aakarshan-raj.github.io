@@ -105,6 +105,8 @@ import { Article2 } from "../pages/articles/article2";
 import { Article3 } from "../pages/articles/article3";
 import { ShowFiveGraph } from "../pages/more/Graphs/articles/5/five";
 
+import { ShowLexer } from "../pages/more/Interpreter/lexer/lexer";
+
 export const DeclareRoutes = (props) => {
     return (
         <div>
@@ -213,6 +215,8 @@ export const DeclareRoutes = (props) => {
                 <Route path='/articles/go-lessons' element={<Article1 setTitle={props.setTitle} />} />
                 <Route path='/articles/virtual-machine' element={<Article2 setTitle={props.setTitle} />} />
                 <Route path='/articles/concurrency-in-action' element={<Article3 setTitle={props.setTitle} />} />
+
+                <Route path='/interpreter/lexer' element={<ShowLexer setTitle={props.setTitle} />} />
 
             </Routes>
         </div>
