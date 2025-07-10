@@ -2,6 +2,7 @@ import styles from '../../styles/styles.module.css';
 import IssueBanner from '../../main_components/issue_banner'
 import SubHeading from '../../main_components/sub_heading'
 import { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 
 export const ShowMain = (props) => {
@@ -11,6 +12,13 @@ export const ShowMain = (props) => {
   }, []);
   return (
     <>
+      <div className={styles.title}>
+        <h6>
+          <li>
+            <Link to="/interpreter/parser">How do parsers work?</Link>
+          </li>
+        </h6>
+      </div>
       <h2 className={styles.title}>
         <SubHeading text="RSA key for any communication" />
       </h2>

@@ -11,6 +11,7 @@ export const ShowInterpreter = (props) => {
 
       <hr></hr>
       <h1>1. <Link to="/interpreter/lexer">Lexer</Link></h1>
+      <h1>2. <Link to="/interpreter/parser">Parser</Link></h1>
     </>
   );
 }
