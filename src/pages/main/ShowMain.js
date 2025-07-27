@@ -14,9 +14,66 @@ export const ShowMain = (props) => {
     <>
       <div className={styles.title}>
         <h6>
-          <li>
+          
             <Link to="/interpreter/parser">How do parsers work?</Link>
-          </li>
+          <br></br>
+          <br></br>
+          
+            <Link to="/Assembly/instruction-set">Instruction Set</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/NandToTetris/cpu">Implementing a CPU</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/NandToTetris/ram16k">RAM from scrach</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/NandToTetris/computer">Assembling computer with previous components</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/Assembly/winDbg-intel-manual">Getting started with winDbg and intel manual</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/rust/four">Chat Server in Rust(tokio)</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/rust/six">Making GUI application with ICED in Rust</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/cpp/ecs">ECS Design Pattern</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/cpp/collision-detection-and-resolution">Collision Detection in Games</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/articles/concurrency-in-action">Lessons learnt from "C++ Concurrency in Action"</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/graph/one">Path between two vertices</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/graph/two">Number of connected components in a Graph</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/graph/compute-scc-dg">Compute SCC of a Directed Graph</Link>
+          <br></br>
+          <br></br>
+          
+            <Link to="/database/b+tree-and-dbms">B+Tree and its use in DBMS</Link>
+          <br></br>
+          <br></br>
         </h6>
       </div>
       <h2 className={styles.title}>
