@@ -107,6 +107,7 @@ import { ShowFiveGraph } from "../pages/more/Graphs/articles/5/five";
 
 import { ShowLexer } from "../pages/more/Interpreter/lexer/lexer";
 import { ShowParser } from "../pages/more/Interpreter/parser/parser";
+import { ShowPapers } from "../pages/more/ResearchPapers/papers";
 
 export const DeclareRoutes = (props) => {
     return (
@@ -219,6 +220,7 @@ export const DeclareRoutes = (props) => {
 
                 <Route path='/interpreter/lexer' element={<ShowLexer setTitle={props.setTitle} />} />
                 <Route path='/interpreter/parser' element={<ShowParser setTitle={props.setTitle} />} />
+                <Route path='/research_papers' element={<ShowPapers setTitle={props.setTitle} />} />
 
             </Routes>
         </div>
