@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 20px;
 
   ::-moz-selection {
     background: #ff2b48;
@@ -224,8 +224,13 @@ h2 {
   font-weight: normal;
 }
 
-hr{
+hr {
   border: 0.1px solid #88AB8E;
   padding-bottom: 3px;
 
+}
+
+.expand_link {
+  cursor: pointer;
+  padding: 30px;
 }
