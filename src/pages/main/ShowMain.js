@@ -26,6 +26,11 @@ export const ShowMain = (props) => {
           <h2>{keys}</h2>
         </div>
       </div>
+      <div className={styles.centered_container}>
+        <div className={styles.code_background_rsa}>
+          <h2>{email}</h2>
+        </div>
+      </div>
       <div className={styles.title}>
         <h6>
           <div className={styles.expand_link} onClick={expandHideArticleList}>
@@ -110,3 +115,5 @@ const keys =
   YwIDAQAB
   -----END PUBLIC KEY-----
 `;
+
+const email = `0x616b616@proton.me`
